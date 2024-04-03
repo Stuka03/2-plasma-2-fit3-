@@ -560,101 +560,101 @@ namespace InterfaceOneStation
         private void timer1_Tick(object sender, EventArgs e)
         {
             radioButtonVariable.Checked = CheckCncOutputState(OutputFunction.Aux_Function_Output_2);
-        //    //MONITOREO BW
-        //    if (CheckCncFunctionState(InputFunction.Torch_Collision))
-        //    {
-        //        if (BanderaBoxBW == false)
-        //        {
-        //            BanderaBoxBW = true;
-        //            CustomMessageBox customMessageBox = new CustomMessageBox("Torch Collision, Revisa estado del Breakaway!", Color.Red);
-        //            customMessageBox.ShowDialog();
-        //            //Check the result after the form is closed
-        //            if (customMessageBox.CustomDialogResult == DialogResult.OK)
-        //            {
-        //                BanderaBoxBW = false;
-        //            }
-        //        }
-        //    }
-        //    //MONITOREO SENSOR DE PRESION
-        //    if (CheckCncFunctionState(InputFunction.Aux_Function_Select_8))
-        //    {
-        //        if (BanderaBoxPS == false)
-        //        {
-        //            if (BanderaBoxPS == false)
-        //            {
-        //                BanderaBoxPS = true;
-        //                CustomMessageBox customMessageBox = new CustomMessageBox("Low Air Pressure\nProgram Inhibit Activado\n¡Revisa estado del Suministro!", Color.Red);
-        //                customMessageBox.ShowDialog();
-        //                //(InputFunction.Fast_Stop);
-        //                TurnCncFunctionTrue(InputFunction.Program_Inhibit);
-        //                //Check the result after the form is closed
-        //                if (customMessageBox.CustomDialogResult == DialogResult.OK)
-        //                {
-        //                    BanderaBoxPS = false;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else
-        //    { TurnCncFunctionFalse(InputFunction.Program_Inhibit); }
-        //    //MONITOREO PROGRAM RUNNING
-        //    if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
-        //    {
-        //        torch1Clamped();
-        //        torch2Free();
-        //        torch3Free();
-        //        torch4Clamped();
-        //        groupBox1.Enabled = false;
+            //MONITOREO BW
+            if (CheckCncFunctionState(InputFunction.Torch_Collision))
+            {
+                if (BanderaBoxBW == false)
+                {
+                    BanderaBoxBW = true;
+                    CustomMessageBox customMessageBox = new CustomMessageBox("Torch Collision, Revisa estado del Breakaway!", Color.Red);
+                    customMessageBox.ShowDialog();
+                    //Check the result after the form is closed
+                    if (customMessageBox.CustomDialogResult == DialogResult.OK)
+                    {
+                        BanderaBoxBW = false;
+                    }
+                }
+            }
+            //MONITOREO SENSOR DE PRESION
+            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_8))
+            {
+                if (BanderaBoxPS == false)
+                {
+                    if (BanderaBoxPS == false)
+                    {
+                        BanderaBoxPS = true;
+                        CustomMessageBox customMessageBox = new CustomMessageBox("Low Air Pressure\nProgram Inhibit Activado\n¡Revisa estado del Suministro!", Color.Red);
+                        customMessageBox.ShowDialog();
+                        //(InputFunction.Fast_Stop);
+                        TurnCncFunctionTrue(InputFunction.Program_Inhibit);
+                        //Check the result after the form is closed
+                        if (customMessageBox.CustomDialogResult == DialogResult.OK)
+                        {
+                            BanderaBoxPS = false;
+                        }
+                    }
+                }
+            }
+            else
+            { TurnCncFunctionFalse(InputFunction.Program_Inhibit); }
+            //MONITOREO PROGRAM RUNNING
+            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
+            {
+                torch1Clamped();
+                torch2Free();
+                torch3Free();
+                torch4Clamped();
+                groupBox1.Enabled = false;
 
-        //    }
-        //    else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
-        //    {
-        //        groupBox1.Enabled = true;
-        //    }
-        //    //PROGRAM INHIBIT - MOVE
-        //    radioButtonOkToMove.Checked = !CheckCncFunctionState(InputFunction.Program_Inhibit);
+            }
+            else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
+            {
+                groupBox1.Enabled = true;
+            }
+            //PROGRAM INHIBIT - MOVE
+            radioButtonOkToMove.Checked = !CheckCncFunctionState(InputFunction.Program_Inhibit);
 
-        //    //ERROR
-        //    radioButtonError.Checked = CheckCncFunctionState(InputFunction.Aux_Function_Select_1);
+            //ERROR
+            radioButtonError.Checked = CheckCncFunctionState(InputFunction.Aux_Function_Select_1);
 
-        //    //APAGAR OXICORTE SI SE ACTIVA UN ERROR
-        //    if (AppRunningAck && CheckCncFunctionState(InputFunction.Aux_Function_Select_1))
-        //    {
-        //        TurnOffOxyfuel();
-        //    }
+            //APAGAR OXICORTE SI SE ACTIVA UN ERROR
+            if (AppRunningAck && CheckCncFunctionState(InputFunction.Aux_Function_Select_1))
+            {
+                TurnOffOxyfuel();
+            }
 
-        //    //SI SE ACTIVA LA ESTACION Y CUT CONTROL SE ACTIVA PROGRAM INHIBIT PARA PAUSAR EL PROGRAMA DURANTE LA PERFORACION 
-        //    else if (!ProgramInihibitAck && CheckCncFunctionState(InputFunction.Aux_Function_Select_5) && CheckCncFunctionState(InputFunction.Manual_Select_2))
-        //    {
-        //        TurnCncFunctionTrue(InputFunction.Program_Inhibit);
-        //        ProgramInihibitAck = true;
-        //        TextBoxSystem.Text = "FIT+3 PERFORANDO";
-        //        pictureTorch.BackColor = Color.Yellow;
-        //    }
+            //SI SE ACTIVA LA ESTACION Y CUT CONTROL SE ACTIVA PROGRAM INHIBIT PARA PAUSAR EL PROGRAMA DURANTE LA PERFORACION 
+            else if (!ProgramInihibitAck && CheckCncFunctionState(InputFunction.Aux_Function_Select_5) && CheckCncFunctionState(InputFunction.Manual_Select_2))
+            {
+                TurnCncFunctionTrue(InputFunction.Program_Inhibit);
+                ProgramInihibitAck = true;
+                TextBoxSystem.Text = "FIT+3 PERFORANDO";
+                pictureTorch.BackColor = Color.Yellow;
+            }
 
-        //    //SI SE ACTIVA EL OXICORTE Y LA SENAL DE OK TO MOVE, SE ACTIVA MOVIMIENTO
-        //    else if (CheckCncFunctionState(InputFunction.Aux_Function_Select_2) && CheckCncFunctionState(InputFunction.Manual_Select_2))
-        //    {
-        //        TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-        //        TextBoxSystem.Text = "FIT+3 CORTANDO";
-        //        if (pictureTorch.BackColor != Color.Lime)
-        //        {
-        //            pictureTorch.BackColor = Color.Lime;
-        //        }
-        //        else
-        //        {
-        //            pictureTorch.BackColor = SystemColors.InactiveBorder;
-        //        }
-        //    }
+            //SI SE ACTIVA EL OXICORTE Y LA SENAL DE OK TO MOVE, SE ACTIVA MOVIMIENTO
+            else if (CheckCncFunctionState(InputFunction.Aux_Function_Select_2) && CheckCncFunctionState(InputFunction.Manual_Select_2))
+            {
+                TurnCncFunctionFalse(InputFunction.Program_Inhibit);
+                TextBoxSystem.Text = "FIT+3 CORTANDO";
+                if (pictureTorch.BackColor != Color.Lime)
+                {
+                    pictureTorch.BackColor = Color.Lime;
+                }
+                else
+                {
+                    pictureTorch.BackColor = SystemColors.InactiveBorder;
+                }
+            }
 
-        //    //SI SE ACTIVÓ UNA PERFORACION Y SE DESACTIVA CUT CONTROL SE TERMINA CORTE
-        //    else if (ProgramInihibitAck && !CheckCncFunctionState(InputFunction.Aux_Function_Select_5))
-        //    {
-        //        TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-        //        ProgramInihibitAck = false;
-        //        TextBoxSystem.Text = "FIT+3 CORTE FINALIZADO";
-        //        pictureTorch.BackColor = Color.Lime;
-        //    }
+            //SI SE ACTIVÓ UNA PERFORACION Y SE DESACTIVA CUT CONTROL SE TERMINA CORTE
+            else if (ProgramInihibitAck && !CheckCncFunctionState(InputFunction.Aux_Function_Select_5))
+            {
+                TurnCncFunctionFalse(InputFunction.Program_Inhibit);
+                ProgramInihibitAck = false;
+                TextBoxSystem.Text = "FIT+3 CORTE FINALIZADO";
+                pictureTorch.BackColor = Color.Lime;
+            }
         }
     }
         #endregion
