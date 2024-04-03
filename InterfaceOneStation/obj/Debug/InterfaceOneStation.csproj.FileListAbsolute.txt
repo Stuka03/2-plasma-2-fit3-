@@ -1,0 +1,458 @@
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\bin\Debug\Models.dll
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojResolveAssemblyReference.cache
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.Cache
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\Efrain\Documents\SharpDevelop Projects\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojResolveAssemblyReference.cache
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.Cache
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\EduardoFrancisco\Documents\INGENIERIA\OXICORTE\SoftOpCon\InterfaceOneStation\InterfaceOneStation\bin\Debug\Models.xml
+E:\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojResolveAssemblyReference.cache
+E:\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+E:\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.Cache
+E:\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+E:\InterfaceOneStation\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+E:\InterfaceOneStation\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+E:\InterfaceOneStation\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+E:\InterfaceOneStation\InterfaceOneStation\bin\Debug\InternalComms.dll
+E:\InterfaceOneStation\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+E:\InterfaceOneStation\InterfaceOneStation\bin\Debug\Models.xml
+E:\InterfaceOneStation\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\bin\Debug\InternalComms.dll
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\bin\Debug\Models.xml
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojResolveAssemblyReference.cache
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.Cache
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\simple oxicorte\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\bin\Debug\InternalComms.dll
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\bin\Debug\Models.xml
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojResolveAssemblyReference.cache
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.Cache
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+E:\PLASMA\ARCHIVOS\SOFTWARE\Interfaces\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojResolveAssemblyReference.cache
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.Cache
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\E-IP_16\Documents\oxicorte simple start stop\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\Interfaces\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\INTERFACE FOX v1\InterfaceOneStation\bin\Debug\Models.xml
+D:\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+D:\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\INTERFACE FOX v1\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\INTERFACE FOX v2\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\INTERFACE FOX v2\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\INTERFACE FOX v2\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\INTERFACE FOX v2\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\INTERFACE FOX v2\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\INTERFACE FOX v2\InterfaceOneStation\bin\Debug\Models.xml
+D:\INTERFACE FOX v2\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+D:\INTERFACE FOX v2\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\INTERFACE FOX v2\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\INTERFACE FOX v2\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\INTERFACE FOX v2\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\INTERFACE FOX v2\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\INTERFACE FOX v2\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\INTERFACE FOX v2\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\Models.xml
+D:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+D:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+E:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+E:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+E:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+E:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InternalComms.dll
+E:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+E:\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\Models.xml
+E:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+E:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+E:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+E:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+E:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+E:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+E:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+E:\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\Models.xml
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\CONTROL FOX\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.1\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.2\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.3\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.4\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Downloads\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\bin\Debug\Models.xml
+D:\Descargas\INTERFACE FOX v3.5\INTERFACE FOX v3.5\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\bin\Debug\Models.xml
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\Descargas\INTERFACE FOX v3.7\INTERFACE FOX v3.7\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\bin\Debug\Models.xml
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\SOPORTE\PROYECTOS\DRAGON X\FOXCONTROL\INTERFACE FOX v3.7 original\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csprojAssemblyReference.cache
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\eg-al\Documents\r0.0 19-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\E-IP_16\Documents\r0.1 21-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Models.dll
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InternalComms.dll
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Models.xml
+C:\Users\E-IP_16\Documents\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+D:\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Models.dll
+D:\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Models.xml
+D:\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+D:\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Models.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\nunit.framework.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Models.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\bin\Debug\nunit.framework.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.2 22-03-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\Models.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\nunit.framework.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\Models.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\bin\Debug\nunit.framework.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.3 21-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\Models.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\nunit.framework.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\Models.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\bin\Debug\nunit.framework.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\FIT+3\r0.4 22-08-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\Models.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\nunit.framework.dll
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\Models.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\Newtonsoft.Json.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\bin\Debug\nunit.framework.xml
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\3 Projects\14 innovations\3.- Oxyfuel\OXICORTE FIT 3\INTERFACES FIT3\r0.5 12-09-2023\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\Models.dll
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\nunit.framework.dll
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\Models.xml
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\Newtonsoft.Json.xml
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\bin\Debug\nunit.framework.xml
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\fit 3\InterfaceOneStation\obj\Debug\InterfaceOneStation.CustomMessageBox.resources
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe.config
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\InterfaceOneStation.exe
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\InterfaceOneStation.pdb
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\InternalComms.dll
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\Models.dll
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\Newtonsoft.Json.dll
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\nunit.framework.dll
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\Models.xml
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\Newtonsoft.Json.xml
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\bin\Debug\nunit.framework.xml
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.AssemblyReference.cache
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.CustomMessageBox.resources
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.MainForm.resources
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.Properties.Resources.resources
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.GenerateResource.cache
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CoreCompileInputs.cache
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.exe
+D:\6 Software\HYPERTHERM\Interfaces\INTERFACES SOFTOPCON\2 stations 2 fit3\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.pdb

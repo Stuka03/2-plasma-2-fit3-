@@ -1,0 +1,658 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Models</name>
+    </assembly>
+    <members>
+        <member name="T:Models.CuttingSystem">
+            <summary>
+            CuttingSystem Class 
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.#ctor(InternalComms.ICNC)">
+            <summary>
+            This is for test facilitation only.
+            CuttingSystem constructor for testing environment.
+            </summary>
+        </member>
+        <member name="P:Models.CuttingSystem.Instance">
+            <summary>
+            Create the singleton instance of a CuttingSystem.
+            Additional calls will return the same instance.
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.StartSync">
+            <summary>
+            Start the synchronization process.
+            Automatically pairs with Phoenix.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Models.CuttingSystem.StopSync">
+            <summary>
+            Stop the synchronization process.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Models.CuttingSystem.SetSyncTimerTick(System.Double)">
+            <summary>
+            Update the timer tick interval of the synchronization process.
+            </summary>
+            <param name="tick"></param>
+        </member>
+        <member name="M:Models.CuttingSystem.AddSyncHelper(System.Action)">
+            <summary>
+            The supplied action will be run immediately after the CuttingSystem
+            synchronization process, once every timer tick.
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:Models.CuttingSystem.AddStation(System.Int32)">
+            <summary>
+            Add a station with a Station ID to the CuttingSystem.
+            </summary>
+            <param name="stationIndex"></param>
+        </member>
+        <member name="M:Models.CuttingSystem.ConfigureStation(System.Int32,System.String)">
+            <summary>
+            Configure a station with a Station ID and Name.
+            </summary>
+            <param name="stationIndex"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Models.CuttingSystem.ConfigureStation(System.Int32,Models.CuttingTool,Models.Lifter,System.String)">
+            <summary>
+            Configure a station with a Station ID, Tool, Lifter, and Name.
+            </summary>
+            <param name="stationIndex"></param>
+            <param name="tool"></param>
+            <param name="lifter"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Models.CuttingSystem.SetStationMode(System.Int32,Models.StationMode)">
+            <summary>
+            Set a station's mode via index.
+            Mode options are: Disabled, Manual, Program.
+            </summary>
+            <param name="stationIndex"></param>
+            <param name="mode"></param>
+        </member>
+        <member name="M:Models.CuttingSystem.SetStationMode(System.String,Models.StationMode)">
+            <summary>
+            Set a station's mode via name.
+            Mode options are: Disabled, Manual, Program.
+            </summary>
+            <param name="stationName"></param>
+            <param name="mode"></param>
+        </member>
+        <member name="M:Models.CuttingSystem.DisableStation(System.Int32)">
+            <summary>
+            Disable a station via index.
+            </summary>
+            <param name="stationIndex"></param>
+        </member>
+        <member name="M:Models.CuttingSystem.DisableStation(System.String)">
+            <summary>
+            Disable a station via name.
+            </summary>
+            <param name="stationName"></param>
+        </member>
+        <member name="M:Models.CuttingSystem.DisableAllStations">
+            <summary>
+            Disable all stations.
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.ExecuteSelectedPartProgram">
+            <summary>
+            Execute the currently selected part program.
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.StopSelectedPartProgram">
+            <summary>
+            Stop the currently running part program.
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.ChangeSpeedMask(System.Int32,Models.SpeedMaskType)">
+            <summary>
+            Manually move
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.ToggleManualMode">
+            <summary>
+            Manually move
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.ManualXYMove(Models.XYMotionCmd,Models.XYMotionCmd)">
+            <summary>
+            Manually move
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.ManualZMoveAll(Models.ZMotionCmd,Models.ZMotionCmd)">
+            <summary>
+            Manually move
+            </summary>
+        </member>
+        <member name="P:Models.CuttingSystem.Ready">
+            <summary>
+            CuttingSystem is ready to cut.
+            </summary>
+        </member>
+        <member name="P:Models.CuttingSystem.Stations">
+            <summary>
+            Collection of stations, actively syncing with Phoenix.
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.GetAssignedIO">
+            <summary>
+            Get and populate assigned inputs and outputs.
+            </summary>
+        </member>
+        <member name="P:Models.CuttingSystem.Inputs">
+            <summary>
+            A dynamically, self-populated, collection of Phoenix inputs, actively syncing with Phoenix.
+            </summary>
+        </member>
+        <member name="P:Models.CuttingSystem.Outputs">
+            <summary>
+            A dynamically, self-populated, collection of Phoenix outputs, actively syncing with Phoenix.
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.StationActivate(System.String)">
+            <summary>
+            This is for test facilitation only.
+            This value will be set by the cnc when a part program executes.
+            </summary>
+            <param name="stationName"></param>
+        </member>
+        <member name="P:Models.CuttingSystem.cnc">
+            <summary>
+            This is for test facilitation only.
+            This is the communication protocol interface with Phoenix.
+            </summary>
+        </member>
+        <member name="E:Models.CuttingSystem.PropertyChanged">
+            <summary>
+            Event used to dynamically monitor CuttingSystem properties.
+            </summary>
+        </member>
+        <member name="M:Models.CuttingSystem.OnPropertyChanged(System.String)">
+            <summary>
+            Create the OnPropertyChanged method to raise an event when CuttingSystem data changes.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Models.CuttingTool">
+            <summary>
+            CuttingTool class.
+            </summary>
+        </member>
+        <member name="M:Models.CuttingTool.#ctor(System.String,InternalComms.ICNC)">
+            <summary>
+            CuttingTool constructor.
+            </summary>
+            <param name="name"></param>
+            <param name="cnc"></param>
+        </member>
+        <member name="P:Models.CuttingTool.Name">
+            <summary>
+            Property holding the Name of the CuttingTool.
+            </summary>
+        </member>
+        <member name="T:Models.InputPoint">
+            <summary>
+            InputPoint class.
+            </summary>
+        </member>
+        <member name="M:Models.InputPoint.#ctor(Models.InputFunction,InternalComms.ICNC)">
+            <summary>
+            InputPoint constructor.
+            </summary>
+            <param name="function"></param>
+            <param name="cnc"></param>
+        </member>
+        <member name="M:Models.InputPoint.SetState(System.Boolean)">
+            <summary>
+            Set the State of the InputPoint.
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="P:Models.InputPoint.Function">
+            <summary>
+            Property holding the desired functionality of the InputPoint.
+            </summary>
+        </member>
+        <member name="P:Models.InputPoint.State">
+            <summary>
+            Property holding the State of the InputPoint.
+            </summary>
+        </member>
+        <member name="P:Models.InputPoint.Write">
+            <summary>
+            Property representing the Write operation of the InputPoint.
+            </summary>
+        </member>
+        <member name="T:Models.IStationControl">
+            <summary>
+            A station model containing the minimum methods required to control one or more cutting stations
+            </summary>
+        </member>
+        <member name="M:Models.IStationControl.SetStationToProgramMode(System.Int32)">
+            <summary>
+            Set the station to program mode (Auto Select #)
+            </summary>
+            <param name="station">Station to set to program mode</param>
+        </member>
+        <member name="M:Models.IStationControl.SetStationToManualMode(System.Int32)">
+            <summary>
+            Set the station to manual mode (Manual Select #)
+            </summary>
+            <param name="station">Station to set to on mode</param>
+        </member>
+        <member name="M:Models.IStationControl.SetStationToDisabledMode(System.Int32)">
+            <summary>
+            Set the station to off mode (station # disabled)
+            </summary>
+            <param name="station">Station to disable</param>
+        </member>
+        <member name="T:Models.IManualMotion">
+            <summary>
+            A manual motion model containing the minimum methods required to control manual motion
+            </summary>
+        </member>
+        <member name="M:Models.IManualMotion.ToggleManualMode">
+            <summary>
+            Toggle manual mode
+            </summary>
+        </member>
+        <member name="M:Models.IManualMotion.ChangeJogSpeedMask(System.Int32,Models.SpeedMaskType)">
+            <summary>
+            Change the jog speed mask
+            </summary>
+            <param name="speedMask">A percentage mask to change the current speed</param>
+            <param name="maskType">Specify whether this is adjucsting jog speed or cut speed</param>
+        </member>
+        <member name="M:Models.IManualMotion.StartManualXYMotion(Models.XYMotionCmd)">
+            <summary>
+            Move in the given XY direction
+            </summary>
+            <param name="direction"></param>
+        </member>
+        <member name="M:Models.IManualMotion.StopManualXYMotion(Models.XYMotionCmd)">
+            <summary>
+            Stop XY motion in the given direction
+            </summary>
+            <param name="direction"></param>
+        </member>
+        <member name="M:Models.IManualMotion.StartLifterMotion(Models.ZMotionCmd)">
+            <summary>
+            Move all enabled lifters in the given direction
+            </summary>
+            <param name="direction">Start Z motion in the given direction</param>
+        </member>
+        <member name="M:Models.IManualMotion.StopLifterMotion(Models.ZMotionCmd)">
+            <summary>
+            Stop motion for all enabled lifters
+            </summary>
+            <param name="direction">Stop lifter from moving in the given direction</param>
+        </member>
+        <member name="T:Models.IProgramControl">
+            <summary>
+            A program control model containing the minimum methods required to run a program
+            </summary>
+        </member>
+        <member name="M:Models.IProgramControl.ChangeCutSpeedMask(System.Int32,Models.SpeedMaskType)">
+            <summary>
+            Change the cut speed mask
+            </summary>
+            <param name="speedMask">A percentage mask to change the current speed</param>
+            <param name="maskType">Specify whether this is adjucsting jog speed or cut speed</param>
+        </member>
+        <member name="M:Models.IProgramControl.StartProgram">
+            <summary>
+            Start the CNC's program
+            </summary>
+        </member>
+        <member name="M:Models.IProgramControl.StopProgram">
+            <summary>
+            Stop the CNC's program
+            </summary>
+        </member>
+        <member name="T:Models.IPlasmaFunctions">
+            <summary>
+            A plasma operation model containing the methods for controlling plasma process specific I/O
+            </summary>
+        </member>
+        <member name="M:Models.IPlasmaFunctions.SetFumeExtraction(System.Boolean)">
+            <summary>
+            Set the fume extraction output to its argument state
+            </summary>
+            <param name="state">True switches the fume extraction output on, false swtiches the output off</param>
+        </member>
+        <member name="T:Models.IOPoint">
+            <summary>
+            IOPoint class.
+            </summary>
+        </member>
+        <member name="M:Models.IOPoint.#ctor(InternalComms.ICNC)">
+            <summary>
+            IOPoint constructor.
+            </summary>
+            <param name="cnc"></param>
+        </member>
+        <member name="F:Models.IOPoint._function">
+            <summary>
+            Property holding the desired functionality of the IOPoint.
+            </summary>
+        </member>
+        <member name="F:Models.IOPoint._state">
+            <summary>
+            Property holding the State of the IOPoint.
+            </summary>
+        </member>
+        <member name="T:Models.OutputPoint">
+            <summary>
+            OutputPoint class.
+            </summary>
+        </member>
+        <member name="M:Models.OutputPoint.#ctor(Models.OutputFunction,InternalComms.ICNC)">
+            <summary>
+            OutputPoint constructor.
+            </summary>
+            <param name="function"></param>
+            <param name="cnc"></param>
+        </member>
+        <member name="P:Models.OutputPoint.Function">
+            <summary>
+            Property holding the desired functionality of the OutputPoint.
+            </summary>
+        </member>
+        <member name="P:Models.OutputPoint.State">
+            <summary>
+            Property holding the State of the OutputPoint.
+            </summary>
+        </member>
+        <member name="T:Models.Synchronizable">
+            <summary>
+            Synchroinizable class.
+            </summary>
+        </member>
+        <member name="M:Models.Synchronizable.#ctor(InternalComms.ICNC)">
+            <summary>
+            Internal Use Only.
+            Sychronizable constructor.
+            Base class for other classes, to allow synchronization with Phoenix.
+            </summary>
+            <param name="cnc"></param>
+        </member>
+        <member name="M:Models.Synchronizable.Synchronize">
+            <summary>
+            Internal Use Only.
+            Synchronize the CuttingSystem properties with Phoenix.
+            The internal synchronize process that runs in the background.
+            </summary>
+        </member>
+        <member name="T:Models.Lifter">
+            <summary>
+            Lifter class.  ##WIP##
+            </summary>
+        </member>
+        <member name="M:Models.Lifter.#ctor(System.Int64,InternalComms.ICNC)">
+            <summary>
+            Lifter Constructor.
+            </summary>
+            <param name="stationIndex"></param>
+            <param name="cnc"></param>
+        </member>
+        <member name="M:Models.Lifter.#ctor">
+            <summary>
+            Lifter empty Constructor.
+            </summary>
+        </member>
+        <member name="M:Models.Lifter.GoToAlignmentHeight">
+            <summary>
+            Move Lifter to predefined height for plate alignment process.
+            </summary>
+        </member>
+        <member name="M:Models.Lifter.ManualZMove(Models.ZMotionCmd,Models.ZMotionCmd)">
+            <summary>
+            Manually move
+            </summary>
+        </member>
+        <member name="P:Models.Lifter.IsAssigned">
+            <summary>
+            Property representing if the Station is assigned.
+            </summary>
+        </member>
+        <member name="P:Models.Lifter.Height">
+            <summary>
+            Current height of the Lifter.
+            </summary>
+        </member>
+        <member name="P:Models.Lifter.SlideLength">
+            <summary>
+            Length of the Lifter slide.
+            </summary>
+        </member>
+        <member name="P:Models.Lifter.StationIndex">
+            <summary>
+            Property representing the Station's unique ID.
+            </summary>
+        </member>
+        <member name="T:Models.StationMode">
+            <summary>
+            Enumeration listing of the possible modes of a Station.
+            Disabled    -> Station not selected.
+            Manual      -> Manual Select I/O.
+            Program     -> Auto Select I/O.
+            </summary>
+        </member>
+        <member name="F:Models.StationMode.Disabled">
+            Station not selected.
+        </member>
+        <member name="F:Models.StationMode.Manual">
+            Manual Select I/O.
+        </member>
+        <member name="F:Models.StationMode.Program">
+            Auto Select I/O.
+        </member>
+        <member name="T:Models.Station">
+            <summary>
+            A Station object contains Lifter and Tool object(s) when applicable.
+            as well as station specific properties such as:
+                ID:         station's index, unique identifier
+                Name:       name given during configuration
+                Mode:       station select mode - Disabled, Manual, Program(Auto)
+                Enabled:    station is/is not enabled
+            </summary>
+        </member>
+        <member name="M:Models.Station.#ctor(System.Int32,InternalComms.ICNC,System.String)">
+            <summary>
+            Station constructor.
+            </summary>
+            <param name="stationIndex"></param>
+            <param name="cnc"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Models.Station.Configure(Models.CuttingTool,Models.Lifter,System.String)">
+            <summary>
+            Configure the Station, with the given tool and lifter.  
+            The "name" is optional.
+            </summary>
+            <param name="tool"></param>
+            <param name="lifter"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Models.Station.Disable">
+            <summary>
+            Disable the Station.
+            </summary>
+        </member>
+        <member name="P:Models.Station.Tool">
+            <summary>
+            Property representing the Station's Tool.
+            </summary>
+        </member>
+        <member name="P:Models.Station.Lifter">
+            <summary>
+            Property representing the Station's Lifter.
+            </summary>
+        </member>
+        <member name="P:Models.Station.Name">
+            <summary>
+            Property representing the Station's Name.
+            </summary>
+        </member>
+        <member name="P:Models.Station.Index">
+            <summary>
+            Property representing the Station's unique ID.
+            </summary>
+        </member>
+        <member name="P:Models.Station.Mode">
+            <summary>
+            Property returns the Station Mode
+            See StationMode Enum: Disabled, Manual, Program(Auto)
+            </summary>
+        </member>
+        <member name="P:Models.Station.Enabled">
+            <summary>
+            Property representing if the Station is enabled.
+            </summary>
+        </member>
+        <member name="P:Models.Station.IsAssigned">
+            <summary>
+            Property representing if the Station is assigned.
+            </summary>
+        </member>
+        <member name="P:Models.Station.Write">
+            <summary>
+            Property representing if the Station is assigned.
+            </summary>
+        </member>
+        <member name="P:Models.Station.DisabledMode">
+            <summary>
+            Property used to wire button/toggle switch to Station "Disabled" Mode.
+            </summary>
+        </member>
+        <member name="P:Models.Station.ManualMode">
+            <summary>
+            Property used to wire button/toggle switch to Station "Manual" Mode.
+            </summary>
+        </member>
+        <member name="P:Models.Station.ProgramMode">
+            <summary>
+            Property used to wire button/toggle switch to Station "Program" Mode.
+            </summary>
+        </member>
+        <member name="P:Models.Station.IsDisabled">
+            <summary>
+            Property returns true if Station is Disabled.
+            </summary>
+        </member>
+        <member name="P:Models.Station.IsManual">
+            <summary>
+            Property returns true if Station is in Manual Mode.
+            </summary>
+        </member>
+        <member name="P:Models.Station.IsProgram">
+            <summary>
+            Property returns true if Station is in Program Mode.
+            </summary>
+        </member>
+        <member name="E:Models.Station.PropertyChanged">
+            <summary>
+            Event used to dynamically monitor Station properties.
+            </summary>
+        </member>
+        <member name="M:Models.Station.OnPropertyChanged(System.String)">
+            <summary>
+            Create the OnPropertyChanged method to raise an event when Station data changes.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Models.SystemInformation">
+            <summary>
+            SystemInformation
+            </summary>
+        </member>
+        <member name="M:Models.SystemInformation.#ctor(InternalComms.ICNC)">
+            <summary>
+            SystemInformation constructor.
+            </summary>
+        </member>
+        <member name="P:Models.SystemInformation.ApplicationId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.SystemInformation.ApplicationName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.SystemInformation.CurrentPhoenixOpConAPIVersion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.SystemInformation.SupportedPhoenixOpConAPIVersion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.SystemInformation.CurrentScreen">
+            <summary>
+            Property representing the current screen in Phoenix.
+            </summary>
+        </member>
+        <member name="P:Models.SystemInformation.ManualMode">
+            <summary>
+            Property indicating if Phoenix is in Manual mode.
+            </summary>
+        </member>
+        <member name="P:Models.SystemInformation.LatchMode">
+            <summary>
+            Property indicating the state of Latch Keys mode.
+            </summary>
+        </member>
+        <member name="E:Models.SystemInformation.PropertyChanged">
+            <summary>
+            Event used to dynamically monitor Station properties.
+            </summary>
+        </member>
+        <member name="M:Models.SystemInformation.OnPropertyChanged(System.String)">
+            <summary>
+            Create the OnPropertyChanged method to raise an event when Station data changes.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Models.Watchdogs">
+            <summary>
+            Watchdogs
+            </summary>
+        </member>
+        <member name="M:Models.Watchdogs.#ctor">
+            <summary>
+            Watchdogs constructor.
+            </summary>
+        </member>
+        <member name="M:Models.Watchdogs.GetSystemMetrics(System.Int32)">
+            <summary>
+            Retrieves the specified system metric or system configuration setting.
+            </summary>
+            <param name="nIndex"></param>
+        </member>
+        <member name="M:Models.Watchdogs.TouchScreenActive">
+            <summary>
+            Determines if there are currently any active TouchScreen devices
+            </summary>
+        </member>
+        <member name="M:Models.Watchdogs.MouseActive">
+            <summary>
+            Determines if there are currently any active mouse devices
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <LubricationEnabled>true</LubricationEnabled>
+  <IntervalTime>0</IntervalTime>
+  <ActivationTime>5</ActivationTime>
+</Root>
