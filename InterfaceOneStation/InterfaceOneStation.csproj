@@ -67,11 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acciones\Conexion\ConexionPhoenix.cs" />
+    <Compile Include="Acciones\Lubricasion\Lubricasion.cs" />
+    <Compile Include="Acciones\Variables\varibalesDatos.cs" />
     <Compile Include="CustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomMessageBox.designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lubricacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lubricacion.Designer.cs">
+      <DependentUpon>lubricacion.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -96,6 +105,9 @@
     <EmbeddedResource Include="CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="lubricacion.resx">
+      <DependentUpon>lubricacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,5 +124,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,17 +22,5 @@ namespace InterfaceOneStation.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("hola")]
-        public string variable {
-            get {
-                return ((string)(this["variable"]));
-            }
-            set {
-                this["variable"] = value;
-            }
-        }
     }
 }

@@ -2,5 +2,5 @@
 <Root>
   <LubricationEnabled>true</LubricationEnabled>
   <IntervalTime>0</IntervalTime>
-  <ActivationTime>5</ActivationTime>
+  <ActivationTime>0</ActivationTime>
 </Root>

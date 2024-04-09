@@ -14,16 +14,22 @@ using System.Windows.Forms;
 using Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml;
+using InterfaceOneStation.Acciones.ConexionPhoenix;
+using InterfaceOneStation.Acciones.Variables;
+using System.Collections.Generic;
 
 namespace InterfaceOneStation
 {
     public partial class MainForm : Form
     {
-
+        ConexionPhoenix obj=new ConexionPhoenix();
+        varibalesDatos var=new varibalesDatos();
+        CustomMessageBox customMessageBox = new CustomMessageBox();
         //INSTANCIA CUTTING SYSTEM
         private CuttingSystem SistemaCorte;
         //VARIABLES FIT3
-        private bool ProgramInihibitAck;
+        private bool PiercingAck;
+        private bool banPrueba;
         private bool AppRunningAck;
         //VARIABLES SISTEMA DE LUBRICACION
         private bool LubricationSystemEnable;
@@ -33,6 +39,9 @@ namespace InterfaceOneStation
         private int seconds;
         private int minuts;
         private int hours;
+        private int tiempoFuncionamiento;
+        private int tiempoOperacion;
+        private int tiempolubricacion; 
         private string filePath;
         private bool BanderaBoxLS;
         XDocument xmlDocument;
@@ -42,12 +51,13 @@ namespace InterfaceOneStation
         private DialogResult r;
         public MainForm()
         {
+            Dictionary < string, dynamic> datos=var.datos;
             //APP SETUP
             InitializeComponent();
             //CONFIG FILE SETUP
             InicializeAppConfigFile();
             //PHOENIX COM SETUP
-            IniciaConexionPhoenix();
+            SistemaCorte = obj.SistemaCorte;
             //LUBRICATION CONTROL SYSTEM
             UpdateValues();
             CheckLubricationSystem();
@@ -69,7 +79,11 @@ namespace InterfaceOneStation
             timer3.Interval = 1000;
             timer3.Enabled = false;
             timer3.Tick += new EventHandler(timer3_Tick);
-            
+
+            timer4.Interval = 1000;
+            timer4.Enabled = false;
+            timer4.Tick += new EventHandler(timer4_Tick);
+
         }
         #region //METODOS STANDAR SOC-PHOENIX
         public void InicializeAppConfigFile()
@@ -86,31 +100,12 @@ namespace InterfaceOneStation
                 xmlDocument = new XDocument(new XElement("Root"));
             }
         }
-        public void IniciaConexionPhoenix()
-        {
-            try
-            {   //INICIAR CONEXION
-                SistemaCorte = CuttingSystem.Instance;
-                do
-                {
-                    SistemaCorte.GetAssignedIO();
-                } while (SistemaCorte.Inputs.Count <= 0 &&
-                SistemaCorte.Outputs.Count <= 0);
-                //SINCRONIZAR
-                SistemaCorte.SetSyncTimerTick(0.5);
-                SistemaCorte.StartSync();
-                SistemaCorte.Synchronize();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Conexion Phoenix");
-            }
-        }
         public void TurnCncFunctionTrue(InputFunction f)
         {
             try
             {   //INICIAR CONEXION
                 SistemaCorte.Inputs[f].SetState(true);
+
             }
             catch (Exception ex)
             {
@@ -157,7 +152,9 @@ namespace InterfaceOneStation
             if (BanderaBoxLS == false)
             {
                 BanderaBoxLS = true;
-                MessageBox.Show("Dar de alta la funcion: " + f.ToString(), (ex));
+                
+                customMessageBox.set_color_texto((ex) + "\nDar de alta la funcion: " + f.ToString(), Color.Red);
+                customMessageBox.ShowDialog();
             }
         }
         private void CncVariableExOut(string ex, OutputFunction f)
@@ -165,7 +162,9 @@ namespace InterfaceOneStation
             if (BanderaBoxLS == false)
             {
                 BanderaBoxLS = true;
-                MessageBox.Show("Dar de alta la funcion: " + f.ToString(), (ex));
+               
+                customMessageBox.set_color_texto((ex) + "\nDar de alta la funcion: " + f.ToString(), Color.Red);
+                customMessageBox.ShowDialog();
             }
         }
         #endregion
@@ -173,8 +172,7 @@ namespace InterfaceOneStation
         //TORCH 1 CONTROLS
         private void pictureBoxClamp1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Properties.Settings.Default.variable.ToString());
-            //Properties.Settings.Default.variable.ToString();
+            
             pictureBoxUnclamp1.Visible = true;
             pictureBoxClamp1.Visible = false;
             labelMaster1Clamp.Text = "Unclamped";
@@ -194,7 +192,7 @@ namespace InterfaceOneStation
             pictureBoxAncla1.Visible = true;
             pictureBoxMove1.Visible = false;
             labelMaster1.Text = "Parked";
-            TurnCncFunctionTrue(InputFunction.Park_SKR);
+            TurnCncFunctionTrue(InputFunction.Aux_Function_Select_4);
         }
         //TORCH 3 CONTROLS
         private void pictureBoxAncla2_Click(object sender, EventArgs e)
@@ -204,7 +202,7 @@ namespace InterfaceOneStation
         }
         private void pictureBoxMove2_Click(object sender, EventArgs e)
         {
-            TurnCncFunctionTrue(InputFunction.Park_DSKR);
+            TurnCncFunctionTrue(InputFunction.Aux_Function_Select_5);
             pictureBoxAncla2.Visible = true;
             pictureBoxMove2.Visible = false;
             labelMaster2.Text = "Parked";
@@ -235,11 +233,11 @@ namespace InterfaceOneStation
             pictureBoxAncla1.Visible = false;
             pictureBoxMove1.Visible = true;
             labelMaster1.Text = "Free";
-            TurnCncFunctionFalse(InputFunction.Park_SKR);
+            TurnCncFunctionFalse(InputFunction.Aux_Function_Select_4);
         }
         private void torch3Free()
         {
-            TurnCncFunctionFalse(InputFunction.Park_DSKR);
+            TurnCncFunctionFalse(InputFunction.Aux_Function_Select_5);
             pictureBoxAncla2.Visible = false;
             pictureBoxMove2.Visible = true;
             labelMaster2.Text = "Free";
@@ -256,13 +254,13 @@ namespace InterfaceOneStation
         //BOTON MODO AUTOMATICO/MANUAL
         private void pictureBoxTorchManualHC_Click(object sender, EventArgs e)
         {
-            TurnCncFunctionFalse(InputFunction.Aux_Function_Select_6);
+            TurnCncFunctionFalse(InputFunction.Aux_Function_Select_7);
             pictureBoxTorchManualHC.Visible = false;
             pictureBoxTorchAutomaticHC.Visible = true;
         }
         private void pictureBoxTorchAutomaticHC_Click(object sender, EventArgs e)
         {
-            TurnCncFunctionTrue(InputFunction.Aux_Function_Select_6);
+            TurnCncFunctionTrue(InputFunction.Aux_Function_Select_7);
             pictureBoxTorchManualHC.Visible = true;
             pictureBoxTorchAutomaticHC.Visible = false;
         }
@@ -295,7 +293,7 @@ namespace InterfaceOneStation
         //BOTON ANTORCHA2
         private void pictureTorch2_Click(object sender, EventArgs e)
         {
-            if (pictureTorch.BackColor == Color.Lime || pictureTorch.BackColor == Color.Red)
+            if (pictureTorch2.BackColor == Color.Lime || pictureTorch2.BackColor == Color.Red)
             {
                 TurnOffOxyfuel2();
             }
@@ -314,53 +312,59 @@ namespace InterfaceOneStation
             TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
             AppRunningAck = true;
+            banPrueba = true;
         }
         private void ManualTurnOnOxyfuel2()
         {
             TurnCncFunctionTrue(InputFunction.Manual_Select_4);
-            pictureTorch.BackColor = Color.Lime;
-            TextBoxSystem.Text = "FIT+3 ST 2HABILITADA";
+            pictureTorch2.BackColor = Color.Lime;
+            TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
             AppRunningAck = true;
+            banPrueba = true;
         }
         private void TurnOffOxyfuel()
         {
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_8) && pictureTorch.BackColor != Color.Red)
+            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && pictureTorch.BackColor != Color.Red)
             {
                 TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
                 TextBoxSystem.Text = "FIT+3 ST1 ERROR, PANEL STOP";
                 pictureTorch.BackColor = Color.Red;
             }
-            else
+            else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
             {
-                TurnCncFunctionFalse(InputFunction.Manual_Select_3);
+                //TurnCncFunctionFalse(InputFunction.Manual_Select_3);
                 DisableOxyfuel(1);
             }
         }
         private void TurnOffOxyfuel2()
         {
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_8) && pictureTorch2.BackColor != Color.Red)
+            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && pictureTorch2.BackColor != Color.Red)
             {
                 TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
                 TextBoxSystem.Text = "FIT+3 ST2 ERROR, PANEL STOP";
-                pictureTorch.BackColor = Color.Red;
+                pictureTorch2.BackColor = Color.Red;
             }
-            else
+            else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
             {
-                TurnCncFunctionFalse(InputFunction.Manual_Select_4);
+                //TurnCncFunctionFalse(InputFunction.Manual_Select_4);
                 DisableOxyfuel(2);
             }
         }
         private void DisableOxyfuel(int s)
         {
             //SI SE APAGA LA ESTACION 1 Y LA 2 SIGUE ENCENDIA
-            if (s==1 && CheckCncFunctionState(InputFunction.Manual_Select_4))
+            if (s==1 )
             {
+                TurnCncFunctionFalse(InputFunction.Manual_Select_3);
+                pictureTorch.BackColor = SystemColors.InactiveBorder;
                 TextBoxSystem.Text = "FIT+3 ST1 DESHABILITADA";
             }
             //SI SE APAGA LA ESTACION 2 Y LA 1 SIGUE ENCENDIA
-            else if (s == 2 && CheckCncFunctionState(InputFunction.Manual_Select_3))
+            else if (s == 2 )
             {
+                TurnCncFunctionFalse(InputFunction.Manual_Select_4);
+                pictureTorch2.BackColor = SystemColors.InactiveBorder;
                 TextBoxSystem.Text = "FIT+3 ST2 DESHABILITADA";
             }
             //SI LAS DOS ESTAN APAGADAS
@@ -370,7 +374,9 @@ namespace InterfaceOneStation
                 TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
                 TextBoxSystem.Text = "FIT+3 DESHABILITADA";
                 pictureTorch.BackColor = SystemColors.InactiveBorder;
+                pictureTorch2.BackColor = SystemColors.InactiveBorder;
             }
+            
         }
         #endregion
         #region //LUBRICATION CONTROLS        
@@ -379,7 +385,10 @@ namespace InterfaceOneStation
             checkBoxEnableLubrication.Enabled = false;
             comboBoxLubricationInterval.Enabled = false;
             comboBoxLubricationActive.Enabled = false;
+            button2.Enabled = false;
+            button1.Enabled = false;
             buttonSave.Enabled = false;
+            button3.Enabled = false;
             checkBoxEnableLubrication.Enabled = false;
         }
         private void EnableButtons()
@@ -388,6 +397,9 @@ namespace InterfaceOneStation
             comboBoxLubricationInterval.Enabled = true;
             comboBoxLubricationActive.Enabled = true;
             buttonSave.Enabled = true;
+            button3.Enabled = true;
+            button2.Enabled = true;
+            button1.Enabled = true;
             checkBoxEnableLubrication.Enabled = true;
         }
         private void buttonEnter_Click(object sender, EventArgs e)
@@ -395,7 +407,15 @@ namespace InterfaceOneStation
             if (textBoxPassword.Text == "1396")
             {
                 EnableButtons();
+                buttonEnter.Enabled = false;
+                customMessageBox.set_color_texto("Contraseña Valida", Color.Lime);
+                customMessageBox.ShowDialog();
+                return;
             }
+            customMessageBox.set_color_texto("Contraseña Invalida", Color.Red);
+            customMessageBox.ShowDialog();
+            textBoxPassword.Text = "";
+
         }
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -405,14 +425,19 @@ namespace InterfaceOneStation
                 //intervalo
                 if (comboBoxLubricationInterval.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please select a valid item from the Interval list.");
-                    comboBoxLubricationInterval.SelectedIndex = 0; // Set the index to a default value or any other appropriate action.
+                    customMessageBox.set_color_texto("Please select a valid item from the Interval list.",Color.Yellow);
+                    customMessageBox.ShowDialog();
+                    comboBoxLubricationInterval.SelectedIndex = 0;
+                    return;
+                    // Set the index to a default value or any other appropriate action.
                 }
                 //ciclo activo
                 else if (comboBoxLubricationActive.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please select a valid item from the Timer list.");
+                    customMessageBox.set_color_texto("Please select a valid item from the Timer list.", Color.Yellow);
+                    customMessageBox.ShowDialog();
                     comboBoxLubricationActive.SelectedIndex = 0; // Set the index to a default value or any other appropriate action.
+                    return;
                 }
                 else
                 {
@@ -424,13 +449,16 @@ namespace InterfaceOneStation
                     xmlDocument.Root.Add(new XElement("IntervalTime", comboBoxLubricationInterval.SelectedIndex));
                     xmlDocument.Root.Add(new XElement("ActivationTime", comboBoxLubricationActive.SelectedIndex));
                     xmlDocument.Save(filePath);
-                    MessageBox.Show("Data saved succesfully.");
+                    customMessageBox.set_color_texto("Data saved succesfully.", Color.Lime);
+                    customMessageBox.ShowDialog();
                 }
      
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "No se pudo guardar configuracion, intente manualmente");
+                customMessageBox.set_color_texto("No se pudo guardar configuracion, intente manualmente", Color.Red);
+                customMessageBox.ShowDialog();
+                return;
             }
             //ACTUALIZA VALORES, DESHABILITA CONTROLES Y REINICIA EL SISTEMA DE LUBRICACION CON LOS NUEVOS VALORES
             UpdateValues();
@@ -455,25 +483,15 @@ namespace InterfaceOneStation
         private void timer2_Tick(object sender, EventArgs e)
         {
             seconds = seconds + 1;
-            if (seconds == 60)
-            {
-                minuts = minuts + 1;
-                seconds = 0;
-            }
-            if (minuts == 60)
-            {
-                hours = hours + 1;
-                minuts = 0;
-            }
-            labelTime.Text = hours.ToString() + ":" + minuts.ToString() + ":" + seconds.ToString();
+            
+            labelTime.Text = TimeSpan.FromSeconds(seconds).ToString();
             if (seconds >= 30)
             //if (hours == LubricationInterval)
             {
                 timer3.Enabled = true;
                 timer2.Enabled = false;
                 seconds = 0;
-                minuts = 0;
-                hours = 0;
+               
             }
         }
         //#3 TIMER LUBRICACION, ACTIVA SEÑALES DE LUBRICACION Y CUENTA TIEMPO DE ACTIVACION
@@ -483,12 +501,38 @@ namespace InterfaceOneStation
             TurnCncFunctionTrue(InputFunction.Aux_Function_Select_1);
             radioButtonLSAactive.Checked = true;
             //CUENTA LOS SEGUNDOS
-            seconds = seconds + 1;
+            seconds++;
+            tiempolubricacion++;
             labelTime.Text = seconds.ToString();
             //TERMINA LA LUBRICACION AL TRANSCURRIR EL TIEMPO DEFINIDO PARA TRANS Y RIELES
             if (seconds >= LubricationActive)
             {
                 EndTimerLubrication();
+            }
+        }
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            //ENCIENDE BOMBA
+           
+            //CUENTA LOS SEGUNDOS
+            
+            seconds++;
+            tiempolubricacion++;
+            customMessageBox.set_texto((seconds).ToString());
+            labelTime.Text = seconds.ToString();
+            //TERMINA LA LUBRICACION AL TRANSCURRIR EL TIEMPO DEFINIDO PARA TRANS Y RIELES
+            if (seconds >= LubricationActive)
+            { 
+                LubricationActive = 0;
+                timer4.Enabled = false;
+                seconds = 0;
+                TurnCncFunctionFalse(InputFunction.Aux_Function_Select_1);
+                radioButtonLSAactive.Checked = false;
+                button1.Enabled=true;
+                button2.Enabled=true;
+                EnableButtons();
+                labelTime.Text = "";
+                customMessageBox.Close();
             }
         }
         //#4 TERMINA SECUENCIA DE LUBRICACION, ACTUALIZA LOS VALORES DE LA CONFIGURACION Y REINICIA EL CICLO
@@ -505,6 +549,7 @@ namespace InterfaceOneStation
             UpdateValues();
             CheckLubricationSystem();
         }
+
         private void UpdateValues()
         {
             try
@@ -552,21 +597,30 @@ namespace InterfaceOneStation
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "No se actualizaron valores");
+                customMessageBox.set_color_texto("No se actualizaron valores", Color.Red);
+                customMessageBox.ShowDialog();
+
             }
         }
         #endregion
         #region //MONITOREO BW & SENSOR DE PRESION
         private void timer1_Tick(object sender, EventArgs e)
         {
-            radioButtonVariable.Checked = CheckCncOutputState(OutputFunction.Aux_Function_Output_2);
+            if(radioButtonTest.Checked)
+            {
+                TurnCncFunctionTrue(InputFunction.Aux_Function_Select_8);
+            }
+            if (radioButtonTest2.Checked)
+            {
+                TurnCncFunctionFalse(InputFunction.Aux_Function_Select_8);
+            }
             //MONITOREO BW
             if (CheckCncFunctionState(InputFunction.Torch_Collision))
             {
                 if (BanderaBoxBW == false)
                 {
                     BanderaBoxBW = true;
-                    CustomMessageBox customMessageBox = new CustomMessageBox("Torch Collision, Revisa estado del Breakaway!", Color.Red);
+                    customMessageBox.set_color_texto("Torch Collision, Revisa estado del Breakaway!", Color.Red);
                     customMessageBox.ShowDialog();
                     //Check the result after the form is closed
                     if (customMessageBox.CustomDialogResult == DialogResult.OK)
@@ -576,86 +630,163 @@ namespace InterfaceOneStation
                 }
             }
             //MONITOREO SENSOR DE PRESION
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_8))
+            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_6))
             {
                 if (BanderaBoxPS == false)
                 {
+                    TurnCncFunctionTrue(InputFunction.Fast_Stop);
                     if (BanderaBoxPS == false)
                     {
                         BanderaBoxPS = true;
-                        CustomMessageBox customMessageBox = new CustomMessageBox("Low Air Pressure\nProgram Inhibit Activado\n¡Revisa estado del Suministro!", Color.Red);
+                        customMessageBox.set_color_texto("Low Air Pressure\nProgram Inhibit Activado\n¡Revisa estado del Suministro!", Color.Red);
                         customMessageBox.ShowDialog();
-                        //(InputFunction.Fast_Stop);
-                        TurnCncFunctionTrue(InputFunction.Program_Inhibit);
                         //Check the result after the form is closed
                         if (customMessageBox.CustomDialogResult == DialogResult.OK)
                         {
+                            TurnCncFunctionFalse(InputFunction.Fast_Stop);
                             BanderaBoxPS = false;
                         }
                     }
                 }
             }
-            else
-            { TurnCncFunctionFalse(InputFunction.Program_Inhibit); }
             //MONITOREO PROGRAM RUNNING
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
+            if (CheckCncOutputState(OutputFunction.Program_Running))
             {
                 torch1Clamped();
                 torch2Free();
                 torch3Free();
                 torch4Clamped();
-                groupBox1.Enabled = false;
+                groupBox2.Enabled = false;
 
             }
-            else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
+            else if (!CheckCncOutputState(OutputFunction.Program_Running))
             {
-                groupBox1.Enabled = true;
+                groupBox2.Enabled = true;
             }
             //PROGRAM INHIBIT - MOVE
             radioButtonOkToMove.Checked = !CheckCncFunctionState(InputFunction.Program_Inhibit);
-
             //ERROR
-            radioButtonError.Checked = CheckCncFunctionState(InputFunction.Aux_Function_Select_1);
-
+            radioButtonError.Checked = CheckCncFunctionState(InputFunction.Aux_Function_Select_9);
             //APAGAR OXICORTE SI SE ACTIVA UN ERROR
-            if (AppRunningAck && CheckCncFunctionState(InputFunction.Aux_Function_Select_1))
+            if (AppRunningAck && CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
             {
-                TurnOffOxyfuel();
+                if (CheckCncFunctionState(InputFunction.Manual_Select_3))
+                {
+                    TurnOffOxyfuel();
+                }
+                if (CheckCncFunctionState(InputFunction.Manual_Select_4))
+                {
+                    TurnOffOxyfuel2();
+                }
             }
-
             //SI SE ACTIVA LA ESTACION Y CUT CONTROL SE ACTIVA PROGRAM INHIBIT PARA PAUSAR EL PROGRAMA DURANTE LA PERFORACION 
-            else if (!ProgramInihibitAck && CheckCncFunctionState(InputFunction.Aux_Function_Select_5) && CheckCncFunctionState(InputFunction.Manual_Select_2))
+            else if (!PiercingAck && CheckCncOutputState(OutputFunction.Cut_Control) && (CheckCncFunctionState(InputFunction.Manual_Select_3) || CheckCncFunctionState(InputFunction.Manual_Select_4)))
             {
                 TurnCncFunctionTrue(InputFunction.Program_Inhibit);
-                ProgramInihibitAck = true;
-                TextBoxSystem.Text = "FIT+3 PERFORANDO";
-                pictureTorch.BackColor = Color.Yellow;
-            }
-
-            //SI SE ACTIVA EL OXICORTE Y LA SENAL DE OK TO MOVE, SE ACTIVA MOVIMIENTO
-            else if (CheckCncFunctionState(InputFunction.Aux_Function_Select_2) && CheckCncFunctionState(InputFunction.Manual_Select_2))
-            {
-                TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-                TextBoxSystem.Text = "FIT+3 CORTANDO";
-                if (pictureTorch.BackColor != Color.Lime)
+                if (CheckCncFunctionState(InputFunction.Manual_Select_3) && !CheckCncFunctionState(InputFunction.Manual_Select_4))
                 {
-                    pictureTorch.BackColor = Color.Lime;
+                    TextBoxSystem.Text = "FIT+3 ST1 PERFORANDO";
+                    pictureTorch.BackColor = Color.Yellow;
                 }
+                else if (CheckCncFunctionState(InputFunction.Manual_Select_4) && !CheckCncFunctionState(InputFunction.Manual_Select_3))
+                    {
+                        TextBoxSystem.Text = "FIT+3 ST2 PERFORANDO";
+                        pictureTorch2.BackColor = Color.Yellow;
+                    }
                 else
                 {
-                    pictureTorch.BackColor = SystemColors.InactiveBorder;
+                    TextBoxSystem.Text = "FIT+3 PERFORANDO";
+                    pictureTorch.BackColor = Color.Yellow;
+                    pictureTorch2.BackColor = Color.Yellow;
                 }
+                PiercingAck = true;
             }
-
-            //SI SE ACTIVÓ UNA PERFORACION Y SE DESACTIVA CUT CONTROL SE TERMINA CORTE
-            else if (ProgramInihibitAck && !CheckCncFunctionState(InputFunction.Aux_Function_Select_5))
+            //SI SE ACTIVA EL OXICORTE Y LA SENAL DE OK TO MOVE, SE ACTIVA MOVIMIENTO
+            else if (banPrueba && CheckCncOutputState(OutputFunction.Cut_Control) && CheckCncFunctionState(InputFunction.Aux_Function_Select_8) && (CheckCncFunctionState(InputFunction.Manual_Select_3) || CheckCncFunctionState(InputFunction.Manual_Select_4)))
             {
                 TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-                ProgramInihibitAck = false;
+
+                if (pictureTorch.BackColor != Color.Lime && CheckCncFunctionState(InputFunction.Manual_Select_3) && !CheckCncFunctionState(InputFunction.Manual_Select_4))
+                {
+                    TextBoxSystem.Text = "FIT+3 ST1 CORTANDO";
+                    pictureTorch.BackColor = Color.Lime;
+                }
+                else if (pictureTorch2.BackColor != Color.Lime && CheckCncFunctionState(InputFunction.Manual_Select_4) && !CheckCncFunctionState(InputFunction.Manual_Select_3))
+                {
+                    TextBoxSystem.Text = "FIT+3 ST2 CORTANDO";
+                    pictureTorch2.BackColor = Color.Lime;
+                }
+                else if (pictureTorch.BackColor != Color.Lime  && pictureTorch2.BackColor != Color.Lime)
+                {
+                    TextBoxSystem.Text = "FIT+3 CORTANDO";
+                    pictureTorch.BackColor = Color.Lime;
+                    pictureTorch2.BackColor = Color.Lime;
+                }
+                banPrueba = false;
+            }
+            //SI SE ACTIVÓ UNA PERFORACION Y SE DESACTIVA CUT CONTROL SE TERMINA CORTE
+            else if (PiercingAck && !CheckCncOutputState(OutputFunction.Cut_Control))
+            {
+                TurnCncFunctionFalse(InputFunction.Program_Inhibit);
+                PiercingAck = false;
                 TextBoxSystem.Text = "FIT+3 CORTE FINALIZADO";
-                pictureTorch.BackColor = Color.Lime;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label2.Visible = true;
+            comboBoxLubricationInterval.Visible = true;
+            label3.Text = "Cycle Time";
+            buttonSave.Visible = true;
+            button3.Visible = false;
+
+        }
+
+        private void buttonPruebaLubrication_Click(object sender, EventArgs e)
+        {
+            label2.Visible = false;
+            comboBoxLubricationInterval.Visible = false;
+            label3.Text = "Testing Period"; 
+            
+            buttonSave.Visible = false;
+            button3.Visible = true;
+            
+            
+        }
+        private void buttonTesting_Click(object sender, EventArgs e)
+        {
+            //ciclo activo
+            if (comboBoxLubricationActive.SelectedIndex == -1)
+            {
+                customMessageBox.set_color_texto("Please select a valid item from the Timer list.", Color.Yellow);
+                customMessageBox.ShowDialog();
+                comboBoxLubricationActive.SelectedIndex = 0; // Set the index to a default value or any other appropriate action.
+                return;
+            }
+            DisableControls();
+            TurnCncFunctionTrue(InputFunction.Aux_Function_Select_1);
+            timer4.Enabled = true;
+            LubricationActive = (comboBoxLubricationActive.SelectedIndex+1)*5;
+            radioButtonLSAactive.Checked = true;
+
+            customMessageBox.set_color_texto(seconds.ToString(), Color.Gray);
+            customMessageBox.ShowDialog();
+        }
+
+        private void Funcionamiento_Tick(object sender, EventArgs e)
+        {
+            tiempoFuncionamiento++;
+            if (CheckCncOutputState(OutputFunction.Motion_Output))
+            {
+                tiempoOperacion++;
+            }
+            Etiqueta1Funcionamiento.Text = TimeSpan.FromSeconds(tiempoFuncionamiento).ToString();
+            EtiquetaProduccion.Text= TimeSpan.FromSeconds(tiempoOperacion).ToString();
+            EtiquetaLubricacion.Text = TimeSpan.FromSeconds(tiempolubricacion).ToString();
+        }
+
+       
     }
         #endregion
 }
