@@ -12,9 +12,11 @@ namespace InterfaceOneStation.Acciones.ConexionPhoenix
     {
         public CuttingSystem SistemaCorte;
         CustomMessageBox customMessageBox = new CustomMessageBox();
+        private bool BanderaBoxLS;
         public ConexionPhoenix()
         {
             SistemaCorte = CuttingSystem.Instance;
+            BanderaBoxLS = true;
             _IniciaConexionPhoenix();
         }
 
@@ -35,8 +37,40 @@ namespace InterfaceOneStation.Acciones.ConexionPhoenix
             }
             catch (Exception ex)
             {
-                
                 customMessageBox.set_color_texto("Falló conexion con Phoenix!", Color.Red);
+                customMessageBox.ShowDialog();
+            }
+        }
+        public void TurnCncFunctionTrue(InputFunction f)
+        {
+            try
+            {   //INICIAR CONEXION
+                SistemaCorte.Inputs[f].SetState(true);
+
+            }
+            catch (Exception ex)
+            {
+                CncVariableEx(ex.Message, f);
+            }
+        }
+        public void TurnCncFunctionFalse(InputFunction f)
+        {
+            try
+            {
+                SistemaCorte.Inputs[f].SetState(false);
+            }
+            catch (Exception ex)
+            {
+                CncVariableEx(ex.Message, f);
+            }
+        }
+        private void CncVariableEx(string ex, InputFunction f)
+        {
+            if (BanderaBoxLS == false)
+            {
+                BanderaBoxLS = true;
+
+                customMessageBox.set_color_texto((ex) + "\nDar de alta la funcion: " + f.ToString(), Color.Red);
                 customMessageBox.ShowDialog();
             }
         }

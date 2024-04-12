@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Root>
   <LubricationEnabled>true</LubricationEnabled>
-  <IntervalTime>0</IntervalTime>
-  <ActivationTime>0</ActivationTime>
+  <IntervalTime>1</IntervalTime>
+  <ActivationTime>1</ActivationTime>
 </Root>
