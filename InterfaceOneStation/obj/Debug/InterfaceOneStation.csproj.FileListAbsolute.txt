@@ -476,3 +476,4 @@ C:\Users\E-IP_L_04\Desktop\Interface de .net\new version\InterfaceOneStation\bin
 C:\Users\E-IP_L_04\Desktop\Interface de .net\new version\InterfaceOneStation\bin\Debug\nunit.framework.xml
 C:\Users\E-IP_L_04\Desktop\Interface de .net\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.csproj.CopyComplete
 C:\Users\E-IP_L_04\Desktop\Interface de .net\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.lubricacion.resources
+C:\Users\E-IP_L_04\Desktop\Interface de .net\new version\InterfaceOneStation\obj\Debug\InterfaceOneStation.Tranverse_Control.resources

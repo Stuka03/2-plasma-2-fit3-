@@ -61,24 +61,25 @@ namespace InterfaceOneStation
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Etiqueta1Funcionamiento = new System.Windows.Forms.Label();
-            this.EtiquetaLubricacion = new System.Windows.Forms.Label();
             this.EtiquetaMovimiento = new System.Windows.Forms.Label();
+            this.EtiquetaLubricacion = new System.Windows.Forms.Label();
+            this.Etiqueta1Funcionamiento = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonOkToMove = new System.Windows.Forms.RadioButton();
-            this.radioButtonError = new System.Windows.Forms.RadioButton();
-            this.pictureTorch = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTorchAutomaticHC = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTorchManualHC = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLaserPointer = new System.Windows.Forms.PictureBox();
-            this.TextBoxSystem = new System.Windows.Forms.RichTextBox();
             this.pictureTorch2 = new System.Windows.Forms.PictureBox();
+            this.TextBoxSystem = new System.Windows.Forms.RichTextBox();
+            this.pictureBoxLaserPointer = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTorchManualHC = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTorchAutomaticHC = new System.Windows.Forms.PictureBox();
+            this.pictureTorch = new System.Windows.Forms.PictureBox();
+            this.radioButtonError = new System.Windows.Forms.RadioButton();
+            this.radioButtonOkToMove = new System.Windows.Forms.RadioButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUnclamp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClamp1)).BeginInit();
@@ -92,11 +93,11 @@ namespace InterfaceOneStation
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTorch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTorchAutomaticHC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTorchManualHC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaserPointer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTorch2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaserPointer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTorchManualHC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTorchAutomaticHC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTorch)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,11 +116,11 @@ namespace InterfaceOneStation
             this.groupBox2.Controls.Add(this.pictureBoxAncla1);
             this.groupBox2.Controls.Add(this.pictureBoxUnclamp1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(9, 248);
+            this.groupBox2.Location = new System.Drawing.Point(9, 153);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(321, 117);
+            this.groupBox2.Size = new System.Drawing.Size(321, 126);
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "TRANSVERSE CONTROL";
@@ -138,7 +139,7 @@ namespace InterfaceOneStation
             // 
             this.pictureBoxUnclamp2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.pictureBoxUnclamp2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUnclamp2.Image")));
-            this.pictureBoxUnclamp2.Location = new System.Drawing.Point(244, 33);
+            this.pictureBoxUnclamp2.Location = new System.Drawing.Point(243, 33);
             this.pictureBoxUnclamp2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxUnclamp2.Name = "pictureBoxUnclamp2";
             this.pictureBoxUnclamp2.Size = new System.Drawing.Size(49, 67);
@@ -341,49 +342,16 @@ namespace InterfaceOneStation
             this.tabPage4.Text = "TIEMPOS";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // EtiquetaMovimiento
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(-2, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(225, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tiempo de funcionamiento:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(-2, 98);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tiempo de libricacion:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(-2, 59);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(192, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Tiempo de movimiento:";
-            // 
-            // Etiqueta1Funcionamiento
-            // 
-            this.Etiqueta1Funcionamiento.AutoSize = true;
-            this.Etiqueta1Funcionamiento.Font = new System.Drawing.Font("Century", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Etiqueta1Funcionamiento.Location = new System.Drawing.Point(215, 20);
-            this.Etiqueta1Funcionamiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Etiqueta1Funcionamiento.Name = "Etiqueta1Funcionamiento";
-            this.Etiqueta1Funcionamiento.Size = new System.Drawing.Size(88, 23);
-            this.Etiqueta1Funcionamiento.TabIndex = 2;
-            this.Etiqueta1Funcionamiento.Text = "00:00:00";
+            this.EtiquetaMovimiento.AutoSize = true;
+            this.EtiquetaMovimiento.Font = new System.Drawing.Font("Century", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EtiquetaMovimiento.Location = new System.Drawing.Point(215, 59);
+            this.EtiquetaMovimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EtiquetaMovimiento.Name = "EtiquetaMovimiento";
+            this.EtiquetaMovimiento.Size = new System.Drawing.Size(88, 23);
+            this.EtiquetaMovimiento.TabIndex = 3;
+            this.EtiquetaMovimiento.Text = "00:00:00";
             // 
             // EtiquetaLubricacion
             // 
@@ -396,16 +364,49 @@ namespace InterfaceOneStation
             this.EtiquetaLubricacion.TabIndex = 2;
             this.EtiquetaLubricacion.Text = "00:00:00";
             // 
-            // EtiquetaMovimiento
+            // Etiqueta1Funcionamiento
             // 
-            this.EtiquetaMovimiento.AutoSize = true;
-            this.EtiquetaMovimiento.Font = new System.Drawing.Font("Century", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EtiquetaMovimiento.Location = new System.Drawing.Point(215, 59);
-            this.EtiquetaMovimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.EtiquetaMovimiento.Name = "EtiquetaMovimiento";
-            this.EtiquetaMovimiento.Size = new System.Drawing.Size(88, 23);
-            this.EtiquetaMovimiento.TabIndex = 3;
-            this.EtiquetaMovimiento.Text = "00:00:00";
+            this.Etiqueta1Funcionamiento.AutoSize = true;
+            this.Etiqueta1Funcionamiento.Font = new System.Drawing.Font("Century", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Etiqueta1Funcionamiento.Location = new System.Drawing.Point(215, 20);
+            this.Etiqueta1Funcionamiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Etiqueta1Funcionamiento.Name = "Etiqueta1Funcionamiento";
+            this.Etiqueta1Funcionamiento.Size = new System.Drawing.Size(88, 23);
+            this.Etiqueta1Funcionamiento.TabIndex = 2;
+            this.Etiqueta1Funcionamiento.Text = "00:00:00";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(-2, 59);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(192, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Tiempo de movimiento:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(-2, 98);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(182, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tiempo de libricacion:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(-2, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(225, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Tiempo de funcionamiento:";
             // 
             // tabPage5
             // 
@@ -446,55 +447,43 @@ namespace InterfaceOneStation
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OXICORTE";
             // 
-            // radioButtonOkToMove
+            // pictureTorch2
             // 
-            this.radioButtonOkToMove.AutoSize = true;
-            this.radioButtonOkToMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonOkToMove.Location = new System.Drawing.Point(243, 154);
-            this.radioButtonOkToMove.Name = "radioButtonOkToMove";
-            this.radioButtonOkToMove.Size = new System.Drawing.Size(74, 17);
-            this.radioButtonOkToMove.TabIndex = 31;
-            this.radioButtonOkToMove.TabStop = true;
-            this.radioButtonOkToMove.Text = "MOTION";
-            this.radioButtonOkToMove.UseVisualStyleBackColor = true;
+            this.pictureTorch2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureTorch2.Image = ((System.Drawing.Image)(resources.GetObject("pictureTorch2.Image")));
+            this.pictureTorch2.Location = new System.Drawing.Point(88, 38);
+            this.pictureTorch2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureTorch2.Name = "pictureTorch2";
+            this.pictureTorch2.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.pictureTorch2.Size = new System.Drawing.Size(73, 143);
+            this.pictureTorch2.TabIndex = 40;
+            this.pictureTorch2.TabStop = false;
+            this.pictureTorch2.Click += new System.EventHandler(this.pictureTorch2_Click);
             // 
-            // radioButtonError
+            // TextBoxSystem
             // 
-            this.radioButtonError.AutoSize = true;
-            this.radioButtonError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonError.Location = new System.Drawing.Point(243, 124);
-            this.radioButtonError.Name = "radioButtonError";
-            this.radioButtonError.Size = new System.Drawing.Size(69, 17);
-            this.radioButtonError.TabIndex = 32;
-            this.radioButtonError.TabStop = true;
-            this.radioButtonError.Text = "ERROR";
-            this.radioButtonError.UseVisualStyleBackColor = true;
+            this.TextBoxSystem.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.TextBoxSystem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxSystem.Location = new System.Drawing.Point(6, 19);
+            this.TextBoxSystem.Name = "TextBoxSystem";
+            this.TextBoxSystem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TextBoxSystem.Size = new System.Drawing.Size(200, 19);
+            this.TextBoxSystem.TabIndex = 0;
+            this.TextBoxSystem.Text = "BIENVENIDO!";
             // 
-            // pictureTorch
+            // pictureBoxLaserPointer
             // 
-            this.pictureTorch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureTorch.Image = ((System.Drawing.Image)(resources.GetObject("pictureTorch.Image")));
-            this.pictureTorch.Location = new System.Drawing.Point(10, 38);
-            this.pictureTorch.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureTorch.Name = "pictureTorch";
-            this.pictureTorch.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.pictureTorch.Size = new System.Drawing.Size(73, 143);
-            this.pictureTorch.TabIndex = 34;
-            this.pictureTorch.TabStop = false;
-            this.pictureTorch.Click += new System.EventHandler(this.pictureTorch_Click);
-            // 
-            // pictureBoxTorchAutomaticHC
-            // 
-            this.pictureBoxTorchAutomaticHC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxTorchAutomaticHC.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTorchAutomaticHC.Image")));
-            this.pictureBoxTorchAutomaticHC.Location = new System.Drawing.Point(165, 115);
-            this.pictureBoxTorchAutomaticHC.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxTorchAutomaticHC.Name = "pictureBoxTorchAutomaticHC";
-            this.pictureBoxTorchAutomaticHC.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.pictureBoxTorchAutomaticHC.Size = new System.Drawing.Size(73, 67);
-            this.pictureBoxTorchAutomaticHC.TabIndex = 36;
-            this.pictureBoxTorchAutomaticHC.TabStop = false;
-            this.pictureBoxTorchAutomaticHC.Click += new System.EventHandler(this.pictureBoxTorchAutomaticHC_Click);
+            this.pictureBoxLaserPointer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxLaserPointer.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaserPointer.Image")));
+            this.pictureBoxLaserPointer.Location = new System.Drawing.Point(165, 38);
+            this.pictureBoxLaserPointer.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLaserPointer.Name = "pictureBoxLaserPointer";
+            this.pictureBoxLaserPointer.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.pictureBoxLaserPointer.Size = new System.Drawing.Size(120, 66);
+            this.pictureBoxLaserPointer.TabIndex = 39;
+            this.pictureBoxLaserPointer.TabStop = false;
+            this.pictureBoxLaserPointer.Click += new System.EventHandler(this.pictureBoxLaserPointer_Click);
             // 
             // pictureBoxTorchManualHC
             // 
@@ -510,43 +499,55 @@ namespace InterfaceOneStation
             this.pictureBoxTorchManualHC.Visible = false;
             this.pictureBoxTorchManualHC.Click += new System.EventHandler(this.pictureBoxTorchManualHC_Click);
             // 
-            // pictureBoxLaserPointer
+            // pictureBoxTorchAutomaticHC
             // 
-            this.pictureBoxLaserPointer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxLaserPointer.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaserPointer.Image")));
-            this.pictureBoxLaserPointer.Location = new System.Drawing.Point(165, 38);
-            this.pictureBoxLaserPointer.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxLaserPointer.Name = "pictureBoxLaserPointer";
-            this.pictureBoxLaserPointer.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.pictureBoxLaserPointer.Size = new System.Drawing.Size(120, 66);
-            this.pictureBoxLaserPointer.TabIndex = 39;
-            this.pictureBoxLaserPointer.TabStop = false;
-            this.pictureBoxLaserPointer.Click += new System.EventHandler(this.pictureBoxLaserPointer_Click);
+            this.pictureBoxTorchAutomaticHC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxTorchAutomaticHC.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTorchAutomaticHC.Image")));
+            this.pictureBoxTorchAutomaticHC.Location = new System.Drawing.Point(165, 115);
+            this.pictureBoxTorchAutomaticHC.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxTorchAutomaticHC.Name = "pictureBoxTorchAutomaticHC";
+            this.pictureBoxTorchAutomaticHC.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.pictureBoxTorchAutomaticHC.Size = new System.Drawing.Size(73, 67);
+            this.pictureBoxTorchAutomaticHC.TabIndex = 36;
+            this.pictureBoxTorchAutomaticHC.TabStop = false;
+            this.pictureBoxTorchAutomaticHC.Click += new System.EventHandler(this.pictureBoxTorchAutomaticHC_Click);
             // 
-            // TextBoxSystem
+            // pictureTorch
             // 
-            this.TextBoxSystem.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.TextBoxSystem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxSystem.Location = new System.Drawing.Point(6, 19);
-            this.TextBoxSystem.Name = "TextBoxSystem";
-            this.TextBoxSystem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TextBoxSystem.Size = new System.Drawing.Size(200, 19);
-            this.TextBoxSystem.TabIndex = 0;
-            this.TextBoxSystem.Text = "BIENVENIDO!";
+            this.pictureTorch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureTorch.Image = ((System.Drawing.Image)(resources.GetObject("pictureTorch.Image")));
+            this.pictureTorch.Location = new System.Drawing.Point(10, 38);
+            this.pictureTorch.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureTorch.Name = "pictureTorch";
+            this.pictureTorch.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.pictureTorch.Size = new System.Drawing.Size(73, 143);
+            this.pictureTorch.TabIndex = 34;
+            this.pictureTorch.TabStop = false;
+            this.pictureTorch.Click += new System.EventHandler(this.pictureTorch_Click);
             // 
-            // pictureTorch2
+            // radioButtonError
             // 
-            this.pictureTorch2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureTorch2.Image = ((System.Drawing.Image)(resources.GetObject("pictureTorch2.Image")));
-            this.pictureTorch2.Location = new System.Drawing.Point(88, 38);
-            this.pictureTorch2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureTorch2.Name = "pictureTorch2";
-            this.pictureTorch2.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.pictureTorch2.Size = new System.Drawing.Size(73, 143);
-            this.pictureTorch2.TabIndex = 40;
-            this.pictureTorch2.TabStop = false;
-            this.pictureTorch2.Click += new System.EventHandler(this.pictureTorch2_Click);
+            this.radioButtonError.AutoSize = true;
+            this.radioButtonError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonError.Location = new System.Drawing.Point(243, 124);
+            this.radioButtonError.Name = "radioButtonError";
+            this.radioButtonError.Size = new System.Drawing.Size(69, 17);
+            this.radioButtonError.TabIndex = 32;
+            this.radioButtonError.TabStop = true;
+            this.radioButtonError.Text = "ERROR";
+            this.radioButtonError.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOkToMove
+            // 
+            this.radioButtonOkToMove.AutoSize = true;
+            this.radioButtonOkToMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonOkToMove.Location = new System.Drawing.Point(243, 154);
+            this.radioButtonOkToMove.Name = "radioButtonOkToMove";
+            this.radioButtonOkToMove.Size = new System.Drawing.Size(74, 17);
+            this.radioButtonOkToMove.TabIndex = 31;
+            this.radioButtonOkToMove.TabStop = true;
+            this.radioButtonOkToMove.Text = "MOTION";
+            this.radioButtonOkToMove.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -562,6 +563,15 @@ namespace InterfaceOneStation
             this.tabControl1.Size = new System.Drawing.Size(333, 361);
             this.tabControl1.TabIndex = 15;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Location = new System.Drawing.Point(10, 282);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(324, 83);
+            this.groupBox3.TabIndex = 51;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Prueba";
+            // 
             // MainForm
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
@@ -569,7 +579,8 @@ namespace InterfaceOneStation
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(342, 366);
+            this.ClientSize = new System.Drawing.Size(342, 376);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -599,11 +610,11 @@ namespace InterfaceOneStation
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTorch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTorchAutomaticHC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTorchManualHC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaserPointer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTorch2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaserPointer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTorchManualHC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTorchAutomaticHC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTorch)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -658,5 +669,6 @@ namespace InterfaceOneStation
         private System.Windows.Forms.RadioButton radioButtonError;
         private System.Windows.Forms.RadioButton radioButtonOkToMove;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

@@ -100,6 +100,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Tranverse_Control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tranverse_Control.Designer.cs">
+      <DependentUpon>Tranverse_Control.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CustomMessageBox.resx">
@@ -114,6 +120,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tranverse_Control.resx">
+      <DependentUpon>Tranverse_Control.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
