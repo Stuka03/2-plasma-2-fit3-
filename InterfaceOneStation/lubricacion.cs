@@ -49,6 +49,9 @@ namespace InterfaceOneStation
             timer4.Interval = 1000;
             timer4.Enabled = false;
             timer4.Tick += new EventHandler(timer4_Tick);
+
+            checkBox1.Visible = true;
+            checkBox2.Visible = true;
         }
         public void InicializeAppConfigFile()
         {
@@ -310,6 +313,10 @@ namespace InterfaceOneStation
                 labelTime.Text = "";
                
             }
+        }
+        public int getTimepoLubricacion()
+        {
+            return tiempolubricacion;
         }
 
         

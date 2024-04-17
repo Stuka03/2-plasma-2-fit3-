@@ -100,11 +100,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Tranverse_Control.cs">
+    <Compile Include="Tranverse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tranverse_Control.Designer.cs">
-      <DependentUpon>Tranverse_Control.cs</DependentUpon>
+    <Compile Include="Tranverse.Designer.cs">
+      <DependentUpon>Tranverse.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -121,8 +121,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tranverse_Control.resx">
-      <DependentUpon>Tranverse_Control.cs</DependentUpon>
+    <EmbeddedResource Include="Tranverse.aa.resx">
+      <DependentUpon>Tranverse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tranverse.resx">
+      <DependentUpon>Tranverse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

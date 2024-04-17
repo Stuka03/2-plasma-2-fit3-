@@ -74,5 +74,6 @@ namespace InterfaceOneStation.Acciones.ConexionPhoenix
                 customMessageBox.ShowDialog();
             }
         }
+        
     }
 }

@@ -80,6 +80,32 @@ namespace InterfaceOneStation
             labelMaster2Clamp.Text = "Unclamped";
             sistemaCorte.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_3);
         }
+
+        public void ProgramanRuning()
+        {
+            pictureBoxUnclamp1.Visible = false;
+            pictureBoxClamp1.Visible = true;
+            labelMaster1Clamp.Text = "Clamped";
+            sistemaCorte.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_2);
+
+            pictureBoxAncla1.Visible = false;
+            pictureBoxMove1.Visible = true;
+            labelMaster1.Text = "Free";
+            sistemaCorte.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_4);
+
+            sistemaCorte.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_5);
+            pictureBoxAncla2.Visible = false;
+            pictureBoxMove2.Visible = true;
+            labelMaster2.Text = "Free";
+
+            pictureBoxClamp2.Visible = true;
+            pictureBoxUnclamp2.Visible = false;
+            labelMaster2Clamp.Text = "Clamped";
+            sistemaCorte.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_3);
+
+        }
+
+        
     }
 
 

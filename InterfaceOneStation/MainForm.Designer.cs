@@ -40,23 +40,7 @@ namespace InterfaceOneStation
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelMaster1Clamp = new System.Windows.Forms.Label();
-            this.pictureBoxUnclamp2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClamp1 = new System.Windows.Forms.PictureBox();
-            this.labelMaster2 = new System.Windows.Forms.Label();
-            this.pictureBoxMove1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClamp2 = new System.Windows.Forms.PictureBox();
-            this.labelMaster2Clamp = new System.Windows.Forms.Label();
-            this.pictureBoxAncla2 = new System.Windows.Forms.PictureBox();
-            this.labelMaster1 = new System.Windows.Forms.Label();
-            this.pictureBoxMove2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxAncla1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxUnclamp1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.Funcionamiento = new System.Windows.Forms.Timer(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -79,16 +63,8 @@ namespace InterfaceOneStation
             this.radioButtonError = new System.Windows.Forms.RadioButton();
             this.radioButtonOkToMove = new System.Windows.Forms.RadioButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUnclamp2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClamp1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMove1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClamp2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncla2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMove2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncla1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUnclamp1)).BeginInit();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,166 +76,6 @@ namespace InterfaceOneStation
             ((System.ComponentModel.ISupportInitialize)(this.pictureTorch)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.labelMaster1Clamp);
-            this.groupBox2.Controls.Add(this.pictureBoxUnclamp2);
-            this.groupBox2.Controls.Add(this.pictureBoxClamp1);
-            this.groupBox2.Controls.Add(this.labelMaster2);
-            this.groupBox2.Controls.Add(this.pictureBoxMove1);
-            this.groupBox2.Controls.Add(this.pictureBoxClamp2);
-            this.groupBox2.Controls.Add(this.labelMaster2Clamp);
-            this.groupBox2.Controls.Add(this.pictureBoxAncla2);
-            this.groupBox2.Controls.Add(this.labelMaster1);
-            this.groupBox2.Controls.Add(this.pictureBoxMove2);
-            this.groupBox2.Controls.Add(this.pictureBoxAncla1);
-            this.groupBox2.Controls.Add(this.pictureBoxUnclamp1);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(9, 153);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(321, 126);
-            this.groupBox2.TabIndex = 50;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "TRANSVERSE CONTROL";
-            // 
-            // labelMaster1Clamp
-            // 
-            this.labelMaster1Clamp.AutoSize = true;
-            this.labelMaster1Clamp.Location = new System.Drawing.Point(16, 102);
-            this.labelMaster1Clamp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelMaster1Clamp.Name = "labelMaster1Clamp";
-            this.labelMaster1Clamp.Size = new System.Drawing.Size(72, 20);
-            this.labelMaster1Clamp.TabIndex = 40;
-            this.labelMaster1Clamp.Text = "Clamped";
-            // 
-            // pictureBoxUnclamp2
-            // 
-            this.pictureBoxUnclamp2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pictureBoxUnclamp2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUnclamp2.Image")));
-            this.pictureBoxUnclamp2.Location = new System.Drawing.Point(243, 33);
-            this.pictureBoxUnclamp2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxUnclamp2.Name = "pictureBoxUnclamp2";
-            this.pictureBoxUnclamp2.Size = new System.Drawing.Size(49, 67);
-            this.pictureBoxUnclamp2.TabIndex = 48;
-            this.pictureBoxUnclamp2.TabStop = false;
-            this.pictureBoxUnclamp2.Visible = false;
-            this.pictureBoxUnclamp2.Click += new System.EventHandler(this.pictureBoxUnclamp2_Click);
-            // 
-            // pictureBoxClamp1
-            // 
-            this.pictureBoxClamp1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pictureBoxClamp1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClamp1.Image")));
-            this.pictureBoxClamp1.Location = new System.Drawing.Point(18, 33);
-            this.pictureBoxClamp1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxClamp1.Name = "pictureBoxClamp1";
-            this.pictureBoxClamp1.Size = new System.Drawing.Size(49, 67);
-            this.pictureBoxClamp1.TabIndex = 39;
-            this.pictureBoxClamp1.TabStop = false;
-            this.pictureBoxClamp1.Click += new System.EventHandler(this.pictureBoxClamp1_Click);
-            // 
-            // labelMaster2
-            // 
-            this.labelMaster2.AutoSize = true;
-            this.labelMaster2.Location = new System.Drawing.Point(175, 102);
-            this.labelMaster2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelMaster2.Name = "labelMaster2";
-            this.labelMaster2.Size = new System.Drawing.Size(42, 20);
-            this.labelMaster2.TabIndex = 47;
-            this.labelMaster2.Text = "Free";
-            // 
-            // pictureBoxMove1
-            // 
-            this.pictureBoxMove1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMove1.Image")));
-            this.pictureBoxMove1.Location = new System.Drawing.Point(93, 33);
-            this.pictureBoxMove1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxMove1.Name = "pictureBoxMove1";
-            this.pictureBoxMove1.Size = new System.Drawing.Size(49, 67);
-            this.pictureBoxMove1.TabIndex = 43;
-            this.pictureBoxMove1.TabStop = false;
-            this.pictureBoxMove1.Click += new System.EventHandler(this.pictureBoxMove_Click);
-            // 
-            // pictureBoxClamp2
-            // 
-            this.pictureBoxClamp2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pictureBoxClamp2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClamp2.Image")));
-            this.pictureBoxClamp2.Location = new System.Drawing.Point(243, 33);
-            this.pictureBoxClamp2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxClamp2.Name = "pictureBoxClamp2";
-            this.pictureBoxClamp2.Size = new System.Drawing.Size(49, 67);
-            this.pictureBoxClamp2.TabIndex = 38;
-            this.pictureBoxClamp2.TabStop = false;
-            this.pictureBoxClamp2.Click += new System.EventHandler(this.pictureBoxClamp2_Click);
-            // 
-            // labelMaster2Clamp
-            // 
-            this.labelMaster2Clamp.AutoSize = true;
-            this.labelMaster2Clamp.Location = new System.Drawing.Point(241, 102);
-            this.labelMaster2Clamp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelMaster2Clamp.Name = "labelMaster2Clamp";
-            this.labelMaster2Clamp.Size = new System.Drawing.Size(72, 20);
-            this.labelMaster2Clamp.TabIndex = 41;
-            this.labelMaster2Clamp.Text = "Clamped";
-            // 
-            // pictureBoxAncla2
-            // 
-            this.pictureBoxAncla2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAncla2.Image")));
-            this.pictureBoxAncla2.Location = new System.Drawing.Point(168, 33);
-            this.pictureBoxAncla2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxAncla2.Name = "pictureBoxAncla2";
-            this.pictureBoxAncla2.Size = new System.Drawing.Size(49, 67);
-            this.pictureBoxAncla2.TabIndex = 45;
-            this.pictureBoxAncla2.TabStop = false;
-            this.pictureBoxAncla2.Visible = false;
-            this.pictureBoxAncla2.Click += new System.EventHandler(this.pictureBoxAncla2_Click);
-            // 
-            // labelMaster1
-            // 
-            this.labelMaster1.AutoSize = true;
-            this.labelMaster1.Location = new System.Drawing.Point(101, 102);
-            this.labelMaster1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelMaster1.Name = "labelMaster1";
-            this.labelMaster1.Size = new System.Drawing.Size(42, 20);
-            this.labelMaster1.TabIndex = 46;
-            this.labelMaster1.Text = "Free";
-            // 
-            // pictureBoxMove2
-            // 
-            this.pictureBoxMove2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMove2.Image")));
-            this.pictureBoxMove2.Location = new System.Drawing.Point(168, 33);
-            this.pictureBoxMove2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxMove2.Name = "pictureBoxMove2";
-            this.pictureBoxMove2.Size = new System.Drawing.Size(49, 67);
-            this.pictureBoxMove2.TabIndex = 44;
-            this.pictureBoxMove2.TabStop = false;
-            this.pictureBoxMove2.Click += new System.EventHandler(this.pictureBoxMove2_Click);
-            // 
-            // pictureBoxAncla1
-            // 
-            this.pictureBoxAncla1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAncla1.Image")));
-            this.pictureBoxAncla1.Location = new System.Drawing.Point(93, 33);
-            this.pictureBoxAncla1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxAncla1.Name = "pictureBoxAncla1";
-            this.pictureBoxAncla1.Size = new System.Drawing.Size(49, 67);
-            this.pictureBoxAncla1.TabIndex = 42;
-            this.pictureBoxAncla1.TabStop = false;
-            this.pictureBoxAncla1.Visible = false;
-            this.pictureBoxAncla1.Click += new System.EventHandler(this.pictureBoxAncla_Click);
-            // 
-            // pictureBoxUnclamp1
-            // 
-            this.pictureBoxUnclamp1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pictureBoxUnclamp1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUnclamp1.Image")));
-            this.pictureBoxUnclamp1.Location = new System.Drawing.Point(18, 33);
-            this.pictureBoxUnclamp1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxUnclamp1.Name = "pictureBoxUnclamp1";
-            this.pictureBoxUnclamp1.Size = new System.Drawing.Size(49, 67);
-            this.pictureBoxUnclamp1.TabIndex = 47;
-            this.pictureBoxUnclamp1.TabStop = false;
-            this.pictureBoxUnclamp1.Visible = false;
-            this.pictureBoxUnclamp1.Click += new System.EventHandler(this.pictureBoxUnclamp1_Click);
             // 
             // Funcionamiento
             // 
@@ -291,35 +107,36 @@ namespace InterfaceOneStation
             "FUNCTION CONFIG:",
             "",
             "\tLUBRICATION SYSTEM",
-            "1.- LUBRICATION SYSTEM\tAUXILIAR FUNCTION 1",
+            "1.- LUBRICATION SYSTEM - AUXILIAR FUNCTION 1",
             "",
             "\tTRACTION CONTROL",
-            "2.- CLAMP 1\t\tAUXILIAR FUNCTION 2",
-            "3.- CLAMP 2\t\tAUXILIAR FUNCTION 3",
-            "4.- DUAL PARK HEAD 1\t",
-            "5.- DUAL PARK HEAD 2\t",
-            "6.- PRESSURE SENSOR\tAUXILIAR FUNCTION 4",
-            "7.- PROGRAM RUNNING\tAUXILIAR FUNCTION 5",
+            "2.- CLAMP 1 - AUXILIAR FUNCTION 2",
+            "3.- CLAMP 2 - AUXILIAR FUNCTION 3",
+            "4.- LOCK TRANSVERSE 1 - AUXILIAR FUCTION 4",
+            "5.- LOCK TRANSVERSEE 2 - AUXILIAR FUNCTION 5",
+            "6.- CONTROLS LOCK - PROGRAM RUNNING",
+            "7.- PRESSURE SENSOR - AUXILIAR FUNCTION 6",
+            "8.- PRESSURE ERROR RELEASE - FAST STOP",
             "",
             "\tOXYFUEL SYSTEM",
-            "8.- LASER POINTER\t- LASER POINTER SELECT",
-            "9.- APC TORCH 1 DISABLE INPUT - MANUAL SELECT 3 NC",
-            "10.- APC TORCH 2 DISABLE INPUT  - MANUAL SELECT 4 NC",
-            "11.- APC START PROCESS INPUT - CUT CONTROL\t",
-            "12.- APC HC OFF INPUT - AUXILIAR FUNCTION SELECT 6",
-            "13.- APC OK TO MOVE OUTPUT - AUXILIAR FUNCTION SELECT 7",
-            "14.- APC ERROR OUTPUT - AUXILIAR FUNCTION SELECT 8 NC",
-            "15.- STOP MOTION DURING PIERCING - PROGRAM INHIBIT",
-            "16.- CUT CONTROL SOC FEEDBACK - AUXILIAR FUNCTION SELECT 9",
-            "17.- ERROR RELEASE - FRONT PANEL STOP",
+            "9.- LASER POINTER - LASER POINTER SELECT",
+            "10.- APC TORCH 1 DISABLE INPUT - MANUAL SELECT 3 NC",
+            "11.- APC TORCH 2 DISABLE INPUT - MANUAL SELECT 4 NC",
+            "12.- APC START PROCESS INPUT - CUT CONTROL\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+            "13.- APC HC OFF INPUT - AUXILIAR FUNCTION SELECT 7",
+            "14.- APC OK TO MOVE OUTPUT - AUXILIAR FUNCTION SELECT 8",
+            "15.- APC ERROR OUTPUT - AUXILIAR FUNCTION SELECT 9 NC",
+            "16.- STOP MOTION DURING PIERCING - PROGRAM INHIBIT\t\t",
+            "17.- APC ERROR RELEASE - FRONT PANEL STOP",
             "",
             "\tSAFETY CONTROL",
-            "18.- TORCH COLLISION - FRONT PANEL STOP",
-            "19.- TORCH COLLISION RESET - AUXILIAR FUNCTION 10",
+            "18.- TORCH COLLISION",
             "",
-            "-\tNOTES:",
-            "CONTROL PROGRAM INHIBIT DELAY WITH PIERCE TIME PARAMETER",
-            "IN THE PROCESS CONFIG WINDOW"});
+            "\tNOTES:",
+            "-MATCH THE CNC FUNCTIONS WITH THE PHYSICAL IO FOR PROPER FUNCTIONING ",
+            "-CONTROL PROGRAM INHIBIT DELAY WITH PIERCE TIME PARAMETER",
+            "IN THE PROCESS CONFIG WINDOW\t\t\t"});
             this.listBox1.Location = new System.Drawing.Point(5, 10);
             this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
@@ -563,14 +380,21 @@ namespace InterfaceOneStation
             this.tabControl1.Size = new System.Drawing.Size(333, 361);
             this.tabControl1.TabIndex = 15;
             // 
-            // groupBox3
+            // groupBox2
             // 
-            this.groupBox3.Location = new System.Drawing.Point(10, 282);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(324, 83);
-            this.groupBox3.TabIndex = 51;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Prueba";
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(14, 236);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(318, 126);
+            this.groupBox2.TabIndex = 51;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "TRANSVERSE CONTROL";
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // MainForm
             // 
@@ -580,7 +404,6 @@ namespace InterfaceOneStation
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(342, 376);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -594,16 +417,6 @@ namespace InterfaceOneStation
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "INTERFACE VIRTUAL";
             this.TopMost = true;
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUnclamp2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClamp1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMove1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClamp2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncla2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMove2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncla1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUnclamp1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
@@ -630,23 +443,7 @@ namespace InterfaceOneStation
         {
 
         }
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label labelMaster1Clamp;
-        private System.Windows.Forms.PictureBox pictureBoxUnclamp2;
-        private System.Windows.Forms.PictureBox pictureBoxClamp1;
-        private System.Windows.Forms.Label labelMaster2;
-        private System.Windows.Forms.PictureBox pictureBoxMove1;
-        private System.Windows.Forms.PictureBox pictureBoxClamp2;
-        private System.Windows.Forms.Label labelMaster2Clamp;
-        private System.Windows.Forms.PictureBox pictureBoxAncla2;
-        private System.Windows.Forms.Label labelMaster1;
-        private System.Windows.Forms.PictureBox pictureBoxMove2;
-        private System.Windows.Forms.PictureBox pictureBoxAncla1;
-        private System.Windows.Forms.PictureBox pictureBoxUnclamp1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Timer Funcionamiento;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListBox listBox1;
@@ -669,6 +466,7 @@ namespace InterfaceOneStation
         private System.Windows.Forms.RadioButton radioButtonError;
         private System.Windows.Forms.RadioButton radioButtonOkToMove;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Timer timer2;
     }
 }
