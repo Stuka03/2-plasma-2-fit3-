@@ -31,7 +31,7 @@ namespace InterfaceOneStation
         private CuttingSystem SistemaCorte;
         //VARIABLES FIT3
         private bool PiercingAck;
-        private bool banPrueba;
+        private bool activacionBotones;
         private bool AppRunningAck;
         private bool corteEncendidoT1=false;
         private bool corteEncendidoT2=false;
@@ -193,7 +193,7 @@ namespace InterfaceOneStation
                 TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
                 TextBoxSystem.BackColor = SystemColors.InactiveBorder;
                 AppRunningAck = true;
-                banPrueba = true;
+                activacionBotones = true;
             }
             else
             {
@@ -216,7 +216,7 @@ namespace InterfaceOneStation
                 TextBoxSystem.Text = "FIT+3 ST2 DESAHABILITADA";
                 TextBoxSystem.BackColor = SystemColors.InactiveBorder;
                 AppRunningAck = true;
-                banPrueba = true;
+                activacionBotones = true;
             }
             else
             {
@@ -235,7 +235,7 @@ namespace InterfaceOneStation
             TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
             AppRunningAck = true;
-            banPrueba = true;
+            activacionBotones = true;
             
         }
         private void ManualTurnOnOxyfuel2()
@@ -245,7 +245,7 @@ namespace InterfaceOneStation
             TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
             AppRunningAck = true;
-            banPrueba = true;
+            activacionBotones = true;
         }
         private void TurnOffOxyfuel()
         {
@@ -355,7 +355,7 @@ namespace InterfaceOneStation
                 tranverse.ProgramanRuning();
                 groupBox2.Enabled = false;
             }
-            else if (!CheckCncOutputState(OutputFunction.Program_Running))
+            else
             {
                 groupBox2.Enabled = true;
             }
@@ -403,7 +403,7 @@ namespace InterfaceOneStation
                 PiercingAck = true;
             }
             //SI SE ACTIVA EL OXICORTE Y LA SENAL DE OK TO MOVE, SE ACTIVA MOVIMIENTO
-            else if (banPrueba && CheckCncOutputState(OutputFunction.Cut_Control) && CheckCncFunctionState(InputFunction.Aux_Function_Select_8) && (CheckCncFunctionState(InputFunction.Manual_Select_3) || CheckCncFunctionState(InputFunction.Manual_Select_4)))
+            else if (activacionBotones && CheckCncOutputState(OutputFunction.Cut_Control) && CheckCncFunctionState(InputFunction.Aux_Function_Select_8) && (CheckCncFunctionState(InputFunction.Manual_Select_3) || CheckCncFunctionState(InputFunction.Manual_Select_4)))
             {
                 obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
                 
@@ -425,7 +425,7 @@ namespace InterfaceOneStation
                     pictureTorch2.BackColor = Color.Lime;
                 }
                 
-                banPrueba = false;
+                //activacionBotones = false;
             }
 
             //SI SE ACTIVÓ UNA PERFORACION Y SE DESACTIVA CUT CONTROL SE TERMINA CORTE
