@@ -59,26 +59,26 @@ namespace InterfaceOneStation
             pos = 0;
              matriz= new int[,]
                             {
-                                {2, 4, 0, 0, 0, 0},
-                                {1, 3, 5, 5, 11, 0},
-                                {4, 2, 7, 7, 12, 0},
-                                {3, 1, 10, 10, 13, 0},
-                                {1, 0, 0, 0, 6, 14},
-                                {1, 0, 2, 2, 0, 15},
-                                {8, 6, 0, 0, 9, 16},
-                                {0, 1, 4, 4, 0, 17},
-                                {8, 6, 3, 3, 0, 18},
-                                {0, 1, 0, 0, 8, 19},
-                                {0, 0, 0, 0, 0, 2},
-                                {0, 0, 0, 0, 0, 3},
-                                {0, 0, 0, 0, 0, 4},
-                                {0, 0, 0, 0, 0, 5},
-                                {0, 0, 0, 0, 0, 6},
-                                {0, 0, 0, 0, 0, 7},
-                                {0, 0, 0, 0, 0, 8},
-                                {0, 0, 0, 0, 0, 9},
-                                {0, 0, 0, 0, 0, 10}
-                                };
+                                {2, 4, 0, 0, 0},
+                                {1, 3, 5, 11, 0},
+                                {4, 2, 7, 12, 0},
+                                {3, 1, 10, 13, 0},
+                                {1, 0, 0, 6, 14},
+                                {1, 0, 2, 0, 15},
+                                {10, 5, 0, 9, 16},
+                                {0, 1, 4, 0, 17},
+                                {8, 6, 3, 0, 18},
+                                {0, 1, 0, 8, 19},
+                                {0, 0, 0, 0, 2},
+                                {0, 0, 0, 0, 3},
+                                {0, 0, 0, 0, 4},
+                                {0, 0, 0, 0, 5},
+                                {0, 0, 0, 0, 6},
+                                {0, 0, 0, 0, 7},
+                                {0, 0, 0, 0, 8},
+                                {0, 0, 0, 0, 9},
+                                {0, 0, 0, 0, 10}
+                             };
             Dictionary < string, dynamic> datos=var.datos;
             //APP SETUP
             InitializeComponent();
@@ -508,17 +508,15 @@ namespace InterfaceOneStation
             switch (pos+1)
             {
                 case 1:
-                    if(posicion==0)
+                    if (posicion == 0)
                         DesactivarTorch1();
                     else
                         DesactivarTorch2();
+                    if (CheckCncOutputState(OutputFunction.Cut_Control))
+                        obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
                     break;
                 case 2:
-                    if (posicion == 2)
-                    {
-                        EncedidoTorch1();
-                    }
-                    if (posicion == 0)
+                    if (posicion == 0 || posicion==2)
                         EncedidoTorch1();
                     else
                         DesactivarTorch2();
@@ -537,9 +535,13 @@ namespace InterfaceOneStation
                     break;
                 case 5:
                     PerforacionTorch1();
-                    TextBoxSystem.Text = "FIT+3 ST1 Perforando";
+                    TextBoxSystem.Text = "FIT+3 ST1 PERFORANDO";
                     break;
                 case 6:
+                    if (posicion == 1)
+                        DesactivarTorch2();
+                    CorteTorch1();
+                    TextBoxSystem.Text = "FIT+3 ST1 CORTANDO";
                     break;
                 case 7:
                     PerforacionTorch1();
@@ -547,6 +549,10 @@ namespace InterfaceOneStation
                     TextBoxSystem.Text = "FIT + 3 PERFORANDO";
                     break;
                 case 8:
+                    if (posicion == 0)
+                        DesactivarTorch1();
+                    CorteTorch2();
+                    TextBoxSystem.Text = "FIT+3 ST2 CORTANDO";
                     break;
                 case 9:
                     break;
@@ -573,6 +579,18 @@ namespace InterfaceOneStation
 
 
             }
+        }
+        private void CorteTorch1()
+        {
+            pictureTorch.BackColor = Color.Blue;
+            TextBoxSystem.Text = "FIT+3 ST1 Cortando";
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+        }
+        private void CorteTorch2()
+        {
+            pictureTorch2.BackColor = Color.Blue;
+            TextBoxSystem.Text = "FIT+3 ST2 Cortando";
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         private void PerforacionTorch1()
         {
