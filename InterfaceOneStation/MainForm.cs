@@ -17,6 +17,7 @@ using System.Xml;
 using InterfaceOneStation.Acciones.ConexionPhoenix;
 using InterfaceOneStation.Acciones.Variables;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 
 namespace InterfaceOneStation
 {
@@ -51,9 +52,33 @@ namespace InterfaceOneStation
         private bool BanderaBoxBW;
         private bool BanderaBoxPS;
         private DialogResult r;
+        private int[,] matriz;
+        private int pos;
         public MainForm()
         {
-          
+            pos = 0;
+             matriz= new int[,]
+                            {
+                                {2, 4, 0, 0, 0, 0},
+                                {1, 3, 5, 5, 11, 0},
+                                {4, 2, 7, 7, 12, 0},
+                                {3, 1, 10, 10, 13, 0},
+                                {1, 0, 0, 0, 6, 14},
+                                {1, 0, 2, 2, 0, 15},
+                                {8, 6, 0, 0, 9, 16},
+                                {0, 1, 4, 4, 0, 17},
+                                {8, 6, 3, 3, 0, 18},
+                                {0, 1, 0, 0, 8, 19},
+                                {0, 0, 0, 0, 0, 2},
+                                {0, 0, 0, 0, 0, 3},
+                                {0, 0, 0, 0, 0, 4},
+                                {0, 0, 0, 0, 0, 5},
+                                {0, 0, 0, 0, 0, 6},
+                                {0, 0, 0, 0, 0, 7},
+                                {0, 0, 0, 0, 0, 8},
+                                {0, 0, 0, 0, 0, 9},
+                                {0, 0, 0, 0, 0, 10}
+                                };
             Dictionary < string, dynamic> datos=var.datos;
             //APP SETUP
             InitializeComponent();
@@ -462,9 +487,82 @@ namespace InterfaceOneStation
             EtiquetaLubricacion.Text = TimeSpan.FromSeconds(lubri.getTimepoLubricacion()).ToString();
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void EstadoSistema(int posicion)
         {
-            
+            pos = matriz[pos, posicion];
+            switch (pos-1)
+            {
+                case 0:
+                    DesactivarTorch1();
+                    DesactivarTorch2();
+                    break;
+                case 1:
+                    EncedidoTorch1();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    EncendidoTorch2();
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+                case 12:
+                    break;
+                case 13:
+                    break;
+                case 14:
+                    break;
+                case 15:
+                    break;
+                case 17:
+                    break;
+                case 18:
+                    break;
+                case 19:
+                    break;
+
+
+            }
+        }
+        private void EncedidoTorch1()
+        {
+            obj.TurnCncFunctionTrue(InputFunction.Manual_Select_3);
+            pictureTorch.BackColor = Color.Lime;
+            TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+        }
+        private void EncendidoTorch2()
+        {
+            obj.TurnCncFunctionTrue(InputFunction.Manual_Select_4);
+            pictureTorch2.BackColor = Color.Lime;
+            TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+        }
+        private void DesactivarTorch1()
+        {
+            obj.TurnCncFunctionFalse(InputFunction.Manual_Select_3);
+            pictureTorch.BackColor = SystemColors.InactiveBorder;
+            TextBoxSystem.Text = "FIT+3 ST2 DESAHABILITADA";
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+        }
+        private void DesactivarTorch2()
+        {
+            obj.TurnCncFunctionFalse(InputFunction.Manual_Select_4);
+            pictureTorch2.BackColor = SystemColors.InactiveBorder;
+            TextBoxSystem.Text = "FIT+3 ST2 DESAHABILITADA";
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
     }
         #endregion
