@@ -35,6 +35,7 @@ namespace InterfaceOneStation
             richTextBox1.BackColor = color;
             pictureBox1.BackColor = color;
             buttonOK.BackColor = color;
+            groupBox1.BackColor = color;
         }
         public void set_texto(string datos) {
             richTextBox1.Text = datos;

@@ -448,6 +448,21 @@ namespace InterfaceOneStation
                     corteEncendidoT2 =false;
                 }
             }
+            if (!CheckCncOutputState(OutputFunction.Cut_Control))
+            {
+                if (pictureTorch.BackColor == Color.Yellow)
+                {
+                    pictureTorch.BackColor = Color.Lime;
+                    TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
+                    TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+                }
+                if (pictureTorch2.BackColor == Color.Yellow)
+                {
+                    pictureTorch2.BackColor = Color.Lime;
+                    TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
+                    TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+                }
+            }
         }
 
         private void Funcionamiento_Tick(object sender, EventArgs e)
