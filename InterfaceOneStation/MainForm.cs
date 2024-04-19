@@ -473,6 +473,21 @@ namespace InterfaceOneStation
                     corteEncendidoT2 =false;
                 }
             }
+            if(!CheckCncOutputState(OutputFunction.Cut_Control))
+            {
+                if (pictureTorch.BackColor == Color.Yellow)
+                {
+                    pictureTorch.BackColor = Color.Lime;
+                    TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
+                    TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+                }
+                if (pictureTorch2.BackColor == Color.Yellow)
+                {
+                    pictureTorch2.BackColor = Color.Lime;
+                    TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
+                    TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+                }
+            }
         }
 
         private void Funcionamiento_Tick(object sender, EventArgs e)
@@ -490,31 +505,54 @@ namespace InterfaceOneStation
         private void EstadoSistema(int posicion)
         {
             pos = matriz[pos, posicion];
-            switch (pos-1)
+            switch (pos+1)
             {
-                case 0:
-                    DesactivarTorch1();
-                    DesactivarTorch2();
-                    break;
                 case 1:
-                    EncedidoTorch1();
+                    if(posicion==0)
+                        DesactivarTorch1();
+                    else
+                        DesactivarTorch2();
                     break;
                 case 2:
+                    if (posicion == 2)
+                    {
+                        EncedidoTorch1();
+                    }
+                    if (posicion == 0)
+                        EncedidoTorch1();
+                    else
+                        DesactivarTorch2();
                     break;
                 case 3:
-                    EncendidoTorch2();
+                    if(posicion==0)
+                        DesactivarTorch1();
+                    else
+                        EncendidoTorch2();
                     break;
                 case 4:
+                    if (posicion == 0)
+                        DesactivarTorch1();
+                    else
+                        EncendidoTorch2();
                     break;
                 case 5:
+                    PerforacionTorch1();
+                    TextBoxSystem.Text = "FIT+3 ST1 Perforando";
+                    break;
+                case 6:
                     break;
                 case 7:
+                    PerforacionTorch1();
+                    PerforracionTorch2();
+                    TextBoxSystem.Text = "FIT + 3 PERFORANDO";
                     break;
                 case 8:
                     break;
                 case 9:
                     break;
                 case 10:
+                    PerforracionTorch2();
+                    TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
                     break;
                 case 11:
                     break;
@@ -535,6 +573,16 @@ namespace InterfaceOneStation
 
 
             }
+        }
+        private void PerforacionTorch1()
+        {
+            pictureTorch.BackColor = Color.Yellow;
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+        }
+        private void PerforracionTorch2()
+        {
+            pictureTorch2.BackColor = Color.Yellow;
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         private void EncedidoTorch1()
         {
@@ -563,6 +611,23 @@ namespace InterfaceOneStation
             pictureTorch2.BackColor = SystemColors.InactiveBorder;
             TextBoxSystem.Text = "FIT+3 ST2 DESAHABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (CheckCncOutputState(OutputFunction.Cut_Control))
+            {
+                obj.TurnCncFunctionTrue(InputFunction.Program_Inhibit);
+                EstadoSistema(2);
+            }
+            if(!CheckCncOutputState(OutputFunction.Cut_Control))
+                EstadoSistema(2);
+
+            if (CheckCncOutputState(OutputFunction.Aux_Function_Output_8))
+            { 
+                obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
+                EstadoSistema(3);
+            }
         }
     }
         #endregion

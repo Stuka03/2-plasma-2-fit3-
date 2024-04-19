@@ -391,7 +391,11 @@ namespace InterfaceOneStation
             this.groupBox2.TabIndex = 51;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "TRANSVERSE CONTROL";
-           // 
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // MainForm
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
