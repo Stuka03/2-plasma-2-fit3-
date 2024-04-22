@@ -218,7 +218,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox3.CausesValidation = false;
             this.groupBox3.Controls.Add(this.comboBoxLubricationInterval);
             this.groupBox3.Controls.Add(this.comboBoxLubricationActive);

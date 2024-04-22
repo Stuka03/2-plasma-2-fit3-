@@ -254,6 +254,7 @@ namespace InterfaceOneStation
                 obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
                 TextBoxSystem.Text = "FIT+3 ST1 ERROR, PANEL STOP";
                 pictureTorch.BackColor = Color.Red;
+                
             }
             else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
             {
@@ -313,7 +314,7 @@ namespace InterfaceOneStation
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
-                obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
+                obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
             //MONITOREO BW
             if (CheckCncFunctionState(InputFunction.Torch_Collision))
             {

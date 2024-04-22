@@ -35,8 +35,7 @@ namespace InterfaceOneStation
             LubricationActive = 0;
             InitializeComponent();
             InicializeAppConfigFile();
-            UpdateValues();
-            CheckLubricationSystem();
+            
 
             timer2.Interval = 1000;
             timer2.Enabled = false;
@@ -50,8 +49,11 @@ namespace InterfaceOneStation
             timer4.Enabled = false;
             timer4.Tick += new EventHandler(timer4_Tick);
 
-            checkBox1.Visible = true;
-            checkBox2.Visible = true;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            UpdateValues();
+            CheckLubricationSystem();
+
         }
         public void InicializeAppConfigFile()
         {

@@ -41,26 +41,26 @@ namespace InterfaceOneStation
             pictureBoxAncla1.Visible = true;
             pictureBoxMove1.Visible = false;
             labelMaster1.Text = "Parked";
-            sistemaCorte.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_4);
+            sistemaCorte.TurnCncFunctionTrue(InputFunction.Park_SKR);
         }
         private void pictureBoxAncla_Click(object sender, EventArgs e)
         {
             pictureBoxAncla1.Visible = false;
             pictureBoxMove1.Visible = true;
             labelMaster1.Text = "Free";
-            sistemaCorte.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_4);
+            sistemaCorte.TurnCncFunctionFalse(InputFunction.Park_SKR);
 
         }
         private void pictureBoxAncla2_Click(object sender, EventArgs e)
         {
-            sistemaCorte.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_5);
+            sistemaCorte.TurnCncFunctionFalse(InputFunction.Park_DSKR);
             pictureBoxAncla2.Visible = false;
             pictureBoxMove2.Visible = true;
             labelMaster2.Text = "Free";
         }
         private void pictureBoxMove2_Click(object sender, EventArgs e)
         {
-            sistemaCorte.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_5);
+            sistemaCorte.TurnCncFunctionTrue(InputFunction.Park_DSKR);
             pictureBoxAncla2.Visible = true;
             pictureBoxMove2.Visible = false;
             labelMaster2.Text = "Parked";
@@ -91,9 +91,9 @@ namespace InterfaceOneStation
             pictureBoxAncla1.Visible = false;
             pictureBoxMove1.Visible = true;
             labelMaster1.Text = "Free";
-            sistemaCorte.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_4);
+            sistemaCorte.TurnCncFunctionFalse(InputFunction.Park_SKR);
 
-            sistemaCorte.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_5);
+            sistemaCorte.TurnCncFunctionFalse(InputFunction.Park_DSKR);
             pictureBoxAncla2.Visible = false;
             pictureBoxMove2.Visible = true;
             labelMaster2.Text = "Free";
