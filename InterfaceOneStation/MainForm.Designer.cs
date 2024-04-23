@@ -65,6 +65,7 @@ namespace InterfaceOneStation
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -249,6 +250,7 @@ namespace InterfaceOneStation
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureTorch2);
             this.groupBox1.Controls.Add(this.TextBoxSystem);
             this.groupBox1.Controls.Add(this.pictureBoxLaserPointer);
@@ -396,6 +398,15 @@ namespace InterfaceOneStation
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(192, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "posicion";
+            // 
             // MainForm
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
@@ -468,5 +479,6 @@ namespace InterfaceOneStation
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label1;
     }
 }

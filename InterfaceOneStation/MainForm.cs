@@ -12,12 +12,9 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Models;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Xml;
 using InterfaceOneStation.Acciones.ConexionPhoenix;
 using InterfaceOneStation.Acciones.Variables;
 using System.Collections.Generic;
-using System.Drawing.Drawing2D;
 
 namespace InterfaceOneStation
 {
@@ -54,31 +51,27 @@ namespace InterfaceOneStation
         private DialogResult r;
         private int[,] matriz;
         private int pos;
+        private bool EstadoCorte=true;
+        private bool EstadoError=true;
         public MainForm()
         {
             pos = 0;
-             matriz= new int[,]
-                            {
-                                {2, 4, 0, 0, 0},
-                                {1, 3, 5, 11, 0},
-                                {4, 2, 7, 12, 0},
-                                {3, 1, 10, 13, 0},
-                                {1, 0, 0, 6, 14},
-                                {1, 0, 2, 0, 15},
-                                {10, 5, 0, 9, 16},
-                                {0, 1, 4, 0, 17},
-                                {8, 6, 3, 0, 18},
-                                {0, 1, 0, 8, 19},
-                                {0, 0, 0, 0, 2},
-                                {0, 0, 0, 0, 3},
-                                {0, 0, 0, 0, 4},
-                                {0, 0, 0, 0, 5},
-                                {0, 0, 0, 0, 6},
-                                {0, 0, 0, 0, 7},
-                                {0, 0, 0, 0, 8},
-                                {0, 0, 0, 0, 9},
-                                {0, 0, 0, 0, 10}
-                             };
+            matriz = new int[,]
+                           {
+                                { 1,  3, -1, -1, -1},
+                                { 0,  2,  4, -1, 10},
+                                { 3,  1,  6, -1, 11},
+                                { 2,  0,  9, -1, 12},
+                                { 0, -1,  1,  5, 10},
+                                { 0, -1,  1, -1, 10},
+                                { 9,  4,  2,  8, 11},
+                                {-1,  0,  3, -1, 12},
+                                { 7,  5,  2, -1, 11},
+                                {-1,  0,  3,  7, 12},
+                                {0, -1, -1, -1,  1},
+                                {12, 10, -1, -1,  2},
+                                {-1, 0, -1, -1,  3},
+                            };
             Dictionary < string, dynamic> datos=var.datos;
             //APP SETUP
             InitializeComponent();
@@ -93,9 +86,11 @@ namespace InterfaceOneStation
             seconds = 0;
             
             //MONITOREO
-            timer1.Interval = 500;
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Enabled = true;
+
+            timer2.Interval = 500;
+            timer2.Tick += new EventHandler(timer2_Tick);
+            timer2.Enabled = true;
+
             BanderaBoxBW = false;
             BanderaBoxPS = false;
 
@@ -207,289 +202,14 @@ namespace InterfaceOneStation
         //BOTON ANTORCHA
         private void pictureTorch_Click(object sender, EventArgs e)
         {
-            if (pictureTorch.BackColor == Color.Lime || pictureTorch.BackColor == Color.Red)
-            {
-                TurnOffOxyfuel();
-            }
-            else if (pictureTorch.BackColor == Color.Yellow)
-            {
-                obj.TurnCncFunctionFalse(InputFunction.Manual_Select_3);
-                pictureTorch.BackColor = SystemColors.InactiveBorder;
-                TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
-                TextBoxSystem.BackColor = SystemColors.InactiveBorder;
-                AppRunningAck = true;
-                activacionBotones = true;
-            }
-            else
-            {
-                if(!CheckCncOutputState(OutputFunction.Cut_Control) && !CheckCncOutputState(OutputFunction.Motion_Output))
-                    ManualTurnOnOxyfuel();
-            }
-           
+            EstadoSistema(0); 
         }
         //BOTON ANTORCHA2
         private void pictureTorch2_Click(object sender, EventArgs e)
         {
-            if (pictureTorch2.BackColor == Color.Lime || pictureTorch2.BackColor == Color.Red)
-            {
-                TurnOffOxyfuel2();
-            }
-           else if (pictureTorch2.BackColor == Color.Yellow)
-            {
-                obj.TurnCncFunctionFalse(InputFunction.Manual_Select_4);
-                pictureTorch2.BackColor = SystemColors.InactiveBorder;
-                TextBoxSystem.Text = "FIT+3 ST2 DESAHABILITADA";
-                TextBoxSystem.BackColor = SystemColors.InactiveBorder;
-                AppRunningAck = true;
-                activacionBotones = true;
-            }
-            else
-            {
-                if (!CheckCncOutputState(OutputFunction.Cut_Control) && !CheckCncOutputState(OutputFunction.Motion_Output))
-                    ManualTurnOnOxyfuel2();
-            }
-            
+            EstadoSistema(1);
         }
         #endregion
-        #region //METODOS OXICORTE
-        //ENCENDIDO DE OXICORTE / ERROR RESET
-        private void ManualTurnOnOxyfuel()
-        {
-            obj.TurnCncFunctionTrue(InputFunction.Manual_Select_3);
-            pictureTorch.BackColor = Color.Lime;
-            TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
-            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
-            AppRunningAck = true;
-            activacionBotones = true;
-            
-        }
-        private void ManualTurnOnOxyfuel2()
-        {
-            obj.TurnCncFunctionTrue(InputFunction.Manual_Select_4);
-            pictureTorch2.BackColor = Color.Lime;
-            TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
-            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
-            AppRunningAck = true;
-            activacionBotones = true;
-        }
-        private void TurnOffOxyfuel()
-        {
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && pictureTorch.BackColor != Color.Red)
-            {
-                obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
-                TextBoxSystem.Text = "FIT+3 ST1 ERROR, PANEL STOP";
-                pictureTorch.BackColor = Color.Red;
-            }
-            else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
-            {
-                obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
-                DisableOxyfuel(1);
-            }
-        }
-        private void TurnOffOxyfuel2()
-        {
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && pictureTorch2.BackColor != Color.Red)
-            {
-                obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
-                TextBoxSystem.Text = "FIT+3 ST2 ERROR, PANEL STOP";
-                pictureTorch2.BackColor = Color.Red;
-            }
-            else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
-            {
-                //TurnCncFunctionFalse(InputFunction.Manual_Select_4);
-                DisableOxyfuel(2);
-            }
-        }
-        private void DisableOxyfuel(int s)
-        {
-            //SI SE APAGA LA ESTACION 1 Y LA 2 SIGUE ENCENDIA
-            if (s==1 )
-            {
-                obj.TurnCncFunctionFalse(InputFunction.Manual_Select_3);
-                pictureTorch.BackColor = SystemColors.InactiveBorder;
-                TextBoxSystem.Text = "FIT+3 ST1 DESHABILITADA";
-            }
-            //SI SE APAGA LA ESTACION 2 Y LA 1 SIGUE ENCENDIA
-            else if (s == 2 )
-            {
-                obj.TurnCncFunctionFalse(InputFunction.Manual_Select_4);
-                pictureTorch2.BackColor = SystemColors.InactiveBorder;
-                TextBoxSystem.Text = "FIT+3 ST2 DESHABILITADA"; 
-            }
-            //SI LAS DOS ESTAN APAGADAS
-            else
-            {
-                obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-                obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
-                TextBoxSystem.Text = "FIT+3 DESHABILITADA";
-                pictureTorch.BackColor = SystemColors.InactiveBorder;
-                pictureTorch2.BackColor = SystemColors.InactiveBorder;
-            }
-            
-        }
-        #endregion
-        #region //EVENTOS LUBRICACION   
-        //#4 TERMINA SECUENCIA DE LUBRICACION, ACTUALIZA LOS VALORES DE LA CONFIGURACION Y REINICIA EL CICLO
-        
-        
-      
-        #endregion
-        #region //MONITOREO BW & SENSOR DE PRESION
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
-                obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
-            //MONITOREO BW
-            if (CheckCncFunctionState(InputFunction.Torch_Collision))
-            {
-                if (BanderaBoxBW == false)
-                {
-                    BanderaBoxBW = true;
-                    customMessageBox.set_color_texto("Torch Collision, Revisa estado del Breakaway!", Color.Red);
-                    customMessageBox.ShowDialog();
-                    //Check the result after the form is closed
-                    if (customMessageBox.CustomDialogResult == DialogResult.OK)
-                    {
-                        BanderaBoxBW = false;
-                    }
-                }
-            }
-            //MONITOREO SENSOR DE PRESION
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_6))
-            {
-                if (BanderaBoxPS == false)
-                {
-                    obj.TurnCncFunctionTrue(InputFunction.Fast_Stop);
-                    if (BanderaBoxPS == false)
-                    {
-                        BanderaBoxPS = true;
-                        customMessageBox.set_color_texto("Low Air Pressure\nProgram Inhibit Activado\n¡Revisa estado del Suministro!", Color.Red);
-                        customMessageBox.ShowDialog();
-                        //Check the result after the form is closed
-                        if (customMessageBox.CustomDialogResult == DialogResult.OK)
-                        {
-                            obj.TurnCncFunctionFalse(InputFunction.Fast_Stop);
-                            BanderaBoxPS = false;
-                        }
-                    }
-                }
-            }
-            //MONITOREO PROGRAM RUNNING
-            if (CheckCncOutputState(OutputFunction.Program_Running))
-            {
-                tranverse.ProgramanRuning();
-                groupBox2.Enabled = false;
-            }
-            else
-            {
-                groupBox2.Enabled = true;
-            }
-            //PROGRAM INHIBIT - MOVE
-            radioButtonOkToMove.Checked = !CheckCncFunctionState(InputFunction.Program_Inhibit);
-            //ERROR
-            radioButtonError.Checked = CheckCncFunctionState(InputFunction.Aux_Function_Select_9);
-           
-            //APAGAR OXICORTE SI SE ACTIVA UN ERROR
-            if (AppRunningAck && CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
-            {
-                if (CheckCncFunctionState(InputFunction.Manual_Select_3))
-                {
-                    TurnOffOxyfuel();
-                }
-                if (CheckCncFunctionState(InputFunction.Manual_Select_4))
-                {
-                    TurnOffOxyfuel2();
-                }
-            }
-            //SI SE ACTIVA LA ESTACION Y CUT CONTROL SE ACTIVA PROGRAM INHIBIT PARA PAUSAR EL PROGRAMA DURANTE LA PERFORACION 
-            else if (!PiercingAck && CheckCncOutputState(OutputFunction.Cut_Control) && (CheckCncFunctionState(InputFunction.Manual_Select_3) || CheckCncFunctionState(InputFunction.Manual_Select_4)))
-            {
-                obj.TurnCncFunctionTrue(InputFunction.Program_Inhibit);
-                if (CheckCncFunctionState(InputFunction.Manual_Select_3) && !CheckCncFunctionState(InputFunction.Manual_Select_4))
-                {
-                    TextBoxSystem.Text = "FIT+3 ST1 PERFORANDO";
-                    pictureTorch.BackColor = Color.Yellow;
-                    corteEncendidoT1 = true;
-                }
-                else if (CheckCncFunctionState(InputFunction.Manual_Select_4) && !CheckCncFunctionState(InputFunction.Manual_Select_3))
-                    {
-                        TextBoxSystem.Text = "FIT+3 ST2 PERFORANDO";
-                        pictureTorch2.BackColor = Color.Yellow;
-                        corteEncendidoT2 = true;
-                }
-                else
-                {
-                    TextBoxSystem.Text = "FIT+3 PERFORANDO";
-                    pictureTorch.BackColor = Color.Yellow;
-                    pictureTorch2.BackColor = Color.Yellow;
-                    corteEncendidoT1 = true;
-                    corteEncendidoT2 = true;
-                }
-                PiercingAck = true;
-            }
-            //SI SE ACTIVA EL OXICORTE Y LA SENAL DE OK TO MOVE, SE ACTIVA MOVIMIENTO
-            else if (activacionBotones && CheckCncOutputState(OutputFunction.Cut_Control) && CheckCncFunctionState(InputFunction.Aux_Function_Select_8) && (CheckCncFunctionState(InputFunction.Manual_Select_3) || CheckCncFunctionState(InputFunction.Manual_Select_4)))
-            {
-                obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-                
-
-                if (pictureTorch.BackColor != Color.Lime && CheckCncFunctionState(InputFunction.Manual_Select_3) && !CheckCncFunctionState(InputFunction.Manual_Select_4))
-                {
-                    TextBoxSystem.Text = "FIT+3 ST1 CORTANDO";
-                    pictureTorch.BackColor = Color.Lime;
-                }
-                else if (pictureTorch2.BackColor != Color.Lime && CheckCncFunctionState(InputFunction.Manual_Select_4) && !CheckCncFunctionState(InputFunction.Manual_Select_3))
-                {
-                    TextBoxSystem.Text = "FIT+3 ST2 CORTANDO";
-                    pictureTorch2.BackColor = Color.Lime;
-                }
-                else if (pictureTorch.BackColor != Color.Lime  && pictureTorch2.BackColor != Color.Lime)
-                {
-                    TextBoxSystem.Text = "FIT+3 CORTANDO";
-                    pictureTorch.BackColor = Color.Lime;
-                    pictureTorch2.BackColor = Color.Lime;
-                }
-                
-                //activacionBotones = false;
-            }
-
-            //SI SE ACTIVÓ UNA PERFORACION Y SE DESACTIVA CUT CONTROL SE TERMINA CORTE
-            else if (PiercingAck && !CheckCncOutputState(OutputFunction.Cut_Control))
-            {
-                obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-                PiercingAck = false;
-                TextBoxSystem.Text = "FIT+3 CORTE FINALIZADO";
-            }
-            if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && CheckCncOutputState(OutputFunction.Cut_Control))
-            {
-                if (corteEncendidoT1 == true)
-                {
-                    pictureTorch.BackColor = Color.Yellow;
-                    corteEncendidoT1=false;
-                }
-                if (corteEncendidoT2 == true)
-                {
-                    pictureTorch2.BackColor = Color.Yellow;
-                    corteEncendidoT2 =false;
-                }
-            }
-            if(!CheckCncOutputState(OutputFunction.Cut_Control))
-            {
-                if (pictureTorch.BackColor == Color.Yellow)
-                {
-                    pictureTorch.BackColor = Color.Lime;
-                    TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
-                    TextBoxSystem.BackColor = SystemColors.InactiveBorder;
-                }
-                if (pictureTorch2.BackColor == Color.Yellow)
-                {
-                    pictureTorch2.BackColor = Color.Lime;
-                    TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
-                    TextBoxSystem.BackColor = SystemColors.InactiveBorder;
-                }
-            }
-        }
-
         private void Funcionamiento_Tick(object sender, EventArgs e)
         {
             tiempoFuncionamiento++;
@@ -504,81 +224,135 @@ namespace InterfaceOneStation
 
         private void EstadoSistema(int posicion)
         {
-            pos = matriz[pos, posicion];
-            switch (pos+1)
+
+            if (matriz[pos, posicion] != -1)
+                pos = matriz[pos, posicion];
+            label1.Text = (pos).ToString() + " " + posicion.ToString();
+            switch (pos)
             {
-                case 1:
-                    if (posicion == 0)
+                case 0:
+                    if(posicion==4)
+                    {
                         DesactivarTorch1();
+                        DesactivarTorch2();
+                    }
+                    else if (posicion == 0)
+                    {
+                        DesactivarTorch1();
+                    }
                     else
                         DesactivarTorch2();
                     if (CheckCncOutputState(OutputFunction.Cut_Control))
-                        obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
+                        obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
+
+                    if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
+                    {
+                        obj.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_9);
+                        EstadoError = true;
+                    }
                     break;
-                case 2:
-                    if (posicion == 0 || posicion==2)
+                case 1:
+
+                    if (posicion == 0 || posicion == 2 || posicion==4)
+                    {
                         EncedidoTorch1();
+                        if(CheckCncFunctionState(InputFunction.Front_Panel_Stop))
+                            obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
+                    }
                     else
                         DesactivarTorch2();
                     break;
+                case 2:
+                    if (posicion == 2 || posicion==4)
+                    {
+                        EncedidoTorch1();
+                        EncendidoTorch2();
+                    }
+                    else if (posicion == 0)
+                    {
+                        EncedidoTorch1();
+                        if (CheckCncFunctionState(InputFunction.Front_Panel_Stop))
+                            obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
+                    }
+
+                    else
+                        EncendidoTorch2();
+                    break;
                 case 3:
-                    if(posicion==0)
+                    if (posicion == 0 || posicion == 2 || posicion == 4)
                         DesactivarTorch1();
                     else
                         EncendidoTorch2();
                     break;
                 case 4:
-                    if (posicion == 0)
-                        DesactivarTorch1();
-                    else
-                        EncendidoTorch2();
-                    break;
-                case 5:
+                    if(posicion==1)
+                        DesactivarTorch2();
                     PerforacionTorch1();
                     TextBoxSystem.Text = "FIT+3 ST1 PERFORANDO";
                     break;
-                case 6:
+                case 5:
                     if (posicion == 1)
                         DesactivarTorch2();
                     CorteTorch1();
                     TextBoxSystem.Text = "FIT+3 ST1 CORTANDO";
                     break;
-                case 7:
+                case 6:
                     PerforacionTorch1();
                     PerforracionTorch2();
-                    TextBoxSystem.Text = "FIT + 3 PERFORANDO";
+                    TextBoxSystem.Text = "FIT+3 PERFORANDO";
                     break;
-                case 8:
+                case 7:
                     if (posicion == 0)
                         DesactivarTorch1();
                     CorteTorch2();
                     TextBoxSystem.Text = "FIT+3 ST2 CORTANDO";
                     break;
-                case 9:
+                case 8:
+                    CorteTorch1();
+                    CorteTorch2();
+                    TextBoxSystem.Text = "FIT+3 CORTANDO";
                     break;
-                case 10:
+                case 9:
+                    if (posicion == 0)
+                        DesactivarTorch1();
                     PerforracionTorch2();
                     TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
                     break;
+                case 10:
+                    if (posicion == 1)
+                        DesactivarTorch2();
+                    errorTorch1();
+                    TextBoxSystem.Text = "FIT+3 ST1 ERROR";
+                    break;
                 case 11:
+                    errorTorch1();
+                    errorTorch2();
+                    TextBoxSystem.Text = "FIT+3 ERROR";
                     break;
                 case 12:
+                    if (posicion == 0)
+                        DesactivarTorch1();
+                    errorTorch2();
+                    TextBoxSystem.Text = "FIT+3 ST2 ERROR";
                     break;
                 case 13:
+                    errorTorch1();
+                    errorTorch2();
                     break;
-                case 14:
-                    break;
-                case 15:
-                    break;
-                case 17:
-                    break;
-                case 18:
-                    break;
-                case 19:
-                    break;
-
 
             }
+        }
+        private void errorTorch1()
+        {
+            obj.TurnCncFunctionFalse(InputFunction.Manual_Select_3);
+            pictureTorch.BackColor = Color.Red;
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
+        }
+        private void errorTorch2()
+        {
+            obj.TurnCncFunctionFalse(InputFunction.Manual_Select_4);
+            pictureTorch2.BackColor = Color.Red;
+            TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         private void CorteTorch1()
         {
@@ -633,20 +407,85 @@ namespace InterfaceOneStation
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (CheckCncOutputState(OutputFunction.Cut_Control))
+            //MONITOREO BW
+            if (CheckCncFunctionState(InputFunction.Torch_Collision))
             {
-                obj.TurnCncFunctionTrue(InputFunction.Program_Inhibit);
-                EstadoSistema(2);
+                if (BanderaBoxBW == false)
+                {
+                    BanderaBoxBW = true;
+                    customMessageBox.set_color_texto("Torch Collision, Revisa estado del Breakaway!", Color.Red);
+                    customMessageBox.ShowDialog();
+                    //Check the result after the form is closed
+                    if (customMessageBox.CustomDialogResult == DialogResult.OK)
+                    {
+                        BanderaBoxBW = false;
+                    }
+                }
             }
-            if(!CheckCncOutputState(OutputFunction.Cut_Control))
-                EstadoSistema(2);
+            //MONITOREO SENSOR DE PRESION
+            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_6))
+            {
+                if (BanderaBoxPS == false)
+                {
+                    obj.TurnCncFunctionTrue(InputFunction.Fast_Stop);
+                    if (BanderaBoxPS == false)
+                    {
+                        BanderaBoxPS = true;
+                        customMessageBox.set_color_texto("Low Air Pressure\nProgram Inhibit Activado\n¡Revisa estado del Suministro!", Color.Red);
+                        customMessageBox.ShowDialog();
+                        //Check the result after the form is closed
+                        if (customMessageBox.CustomDialogResult == DialogResult.OK)
+                        {
+                            obj.TurnCncFunctionFalse(InputFunction.Fast_Stop);
+                            BanderaBoxPS = false;
+                        }
+                    }
+                }
+            }
+            //MONITOREO PROGRAM RUNNING
+            if (CheckCncOutputState(OutputFunction.Program_Running))
+            {
+                tranverse.ProgramanRuning();
+                groupBox2.Enabled = false;
+            }
+            else
+            {
+                groupBox2.Enabled = true;
+            }
+            //PROGRAM INHIBIT - MOVE
+            radioButtonOkToMove.Checked = !CheckCncFunctionState(InputFunction.Program_Inhibit);
+            //ERROR
+            radioButtonError.Checked = CheckCncFunctionState(InputFunction.Aux_Function_Select_9);
 
+            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && EstadoError)
+            {
+                obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
+                EstadoSistema(4);
+                EstadoError = false;
+            }
+            else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && !EstadoError)
+            {
+                obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
+                EstadoSistema(4);
+                EstadoError = true;
+            }
             if (CheckCncOutputState(OutputFunction.Aux_Function_Output_8))
             { 
                 obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
                 EstadoSistema(3);
             }
+            if (CheckCncOutputState(OutputFunction.Cut_Control )&& EstadoCorte)
+            {
+                obj.TurnCncFunctionTrue(InputFunction.Program_Inhibit);
+                EstadoSistema(2);
+                EstadoCorte = false;
+            }else if(!CheckCncOutputState(OutputFunction.Cut_Control) && !EstadoCorte)
+            {
+                EstadoSistema(2);
+                EstadoCorte = true;
+            }
+
+
         }
     }
-        #endregion
 }
