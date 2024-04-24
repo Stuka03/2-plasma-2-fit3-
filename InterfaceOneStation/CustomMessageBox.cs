@@ -17,12 +17,7 @@ namespace InterfaceOneStation
         public DialogResult CustomDialogResult { get; private set; }
         public CustomMessageBox()
         {
-
             InitializeComponent();
-            /*richTextBox1.Text = message;
-            richTextBox1.BackColor = color;
-            pictureBox1.BackColor = color;
-            buttonOK.BackColor = color;*/
         }
         private void buttonOK_Click(object sender, EventArgs e)
         {
@@ -35,7 +30,7 @@ namespace InterfaceOneStation
             richTextBox1.BackColor = color;
             pictureBox1.BackColor = color;
             buttonOK.BackColor = color;
-            groupBox1.BackColor = color;
+            groupBox1.BackColor= color;
         }
         public void set_texto(string datos) {
             richTextBox1.Text = datos;

@@ -54,6 +54,7 @@ namespace InterfaceOneStation
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureTorch2 = new System.Windows.Forms.PictureBox();
             this.TextBoxSystem = new System.Windows.Forms.RichTextBox();
             this.pictureBoxLaserPointer = new System.Windows.Forms.PictureBox();
@@ -134,7 +135,8 @@ namespace InterfaceOneStation
             "18.- TORCH COLLISION",
             "",
             "\tMOTION",
-            "19.- MOTION_OUTPUT",
+            "19.- MOTION OUTPUT",
+            "",
             "\tNOTES:",
             "-MATCH THE CNC FUNCTIONS WITH THE PHYSICAL IO FOR PROPER FUNCTIONING ",
             "-CONTROL PROGRAM INHIBIT DELAY WITH PIERCE TIME PARAMETER",
@@ -251,6 +253,7 @@ namespace InterfaceOneStation
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureTorch2);
             this.groupBox1.Controls.Add(this.TextBoxSystem);
             this.groupBox1.Controls.Add(this.pictureBoxLaserPointer);
@@ -265,6 +268,15 @@ namespace InterfaceOneStation
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OXICORTE";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(192, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "posicion";
             // 
             // pictureTorch2
             // 
@@ -470,5 +482,6 @@ namespace InterfaceOneStation
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label1;
     }
 }
