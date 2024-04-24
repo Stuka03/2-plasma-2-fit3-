@@ -27,15 +27,7 @@ namespace InterfaceOneStation
         Lubricacion lubri;
         //INSTANCIA CUTTING SYSTEM
         private CuttingSystem SistemaCorte;
-        //VARIABLES FIT3
-        private bool PiercingAck;
-        private bool activacionBotones;
-        private bool AppRunningAck;
-        private bool corteEncendidoT1=false;
-        private bool corteEncendidoT2=false;
         //VARIABLES SISTEMA DE LUBRICACION
-        private bool LubricationSystemEnable;
-        private int LubricationInterval;
         public int LubricationActive;
         public int LubricationActiveRails;
         private int seconds;
@@ -75,18 +67,14 @@ namespace InterfaceOneStation
             Dictionary < string, dynamic> datos=var.datos;
             //APP SETUP
             InitializeComponent();
-            //CONFIG FILE SETUP
-            InicializeAppConfigFile();
+          
             //PHOENIX COM SETUP
             SistemaCorte = obj.SistemaCorte;
             //LUBRICATION CONTROL SYSTEM
-           
-            
             BanderaBoxLS = false;
             seconds = 0;
             
             //MONITOREO
-
             timer2.Interval = 500;
             timer2.Tick += new EventHandler(timer2_Tick);
             timer2.Enabled = true;
@@ -94,15 +82,15 @@ namespace InterfaceOneStation
             BanderaBoxBW = false;
             BanderaBoxPS = false;
 
+            //LLAMADA DEL FORM TRANCERSE Y COLOCASION DENTRO DEL GROUPBOX2
             tranverse = new Tranverse(obj);
-            
             tranverse.Size = groupBox2.Size;
             tranverse.TopLevel = false;
             tranverse.Dock = DockStyle.Fill;
             groupBox2.Controls.Add(tranverse);
             tranverse.Show();
             
-
+            //LLAMADA DEL FROM LUBRICACION Y COLOCACION DEL ELEMENTOS tabPage5
             lubri = new Lubricacion(obj);
             lubri.Dock = DockStyle.Fill; // Opcional: ajusta el tamaño del formulario secundario al tamaño del TabPage
             lubri.Size = tabPage5.Size;
@@ -111,20 +99,7 @@ namespace InterfaceOneStation
             lubri.Show();
         }
         #region //METODOS STANDAR SOC-PHOENIX
-        public void InicializeAppConfigFile()
-        {
-            filePath = "AppConfig.xml";
-            if (File.Exists(filePath))
-            {
-                // Load the existing XML file
-                xmlDocument = XDocument.Load(filePath);
-            }
-            else
-            {
-                // Create a new XML file
-                xmlDocument = new XDocument(new XElement("Root"));
-            }
-        }
+        
         
         private bool CheckCncFunctionState(InputFunction f)
         {
@@ -210,6 +185,7 @@ namespace InterfaceOneStation
             EstadoSistema(1);
         }
         #endregion
+        //FUNCION QUE OCTIENE LOS TIMEPO DE ENCENDIDO, MOVIMIENTO Y LUBRICASION.
         private void Funcionamiento_Tick(object sender, EventArgs e)
         {
             tiempoFuncionamiento++;
@@ -219,17 +195,20 @@ namespace InterfaceOneStation
             }
             Etiqueta1Funcionamiento.Text = TimeSpan.FromSeconds(tiempoFuncionamiento).ToString();
             EtiquetaMovimiento.Text= TimeSpan.FromSeconds(tiempoOperacion).ToString();
-            EtiquetaLubricacion.Text = TimeSpan.FromSeconds(lubri.getTimepoLubricacion()).ToString();
+            EtiquetaLubricacion.Text = TimeSpan.FromSeconds(lubri.getTimepoLubricacion()).ToString();//Octiene el tiempo de lubricacion desde el form de lubricasion
         }
-
+        /*FUNCION ENFOCADA EN PODER CAMBIAR ENTRE LOS DISTINTOS ESTADOS QUE PUEDE TEBER EL SISTEMA, DESDE ENCENDIO, APARAGDO
+          ERROR, MOVILIDAD, PERFORRACION Y CORTE. ESTO MEDIANTE LA MATRIZ DE ESTADOS QUE INDICA A CUAL SE TIENE QUE DESPLAZAR.
+         */
         private void EstadoSistema(int posicion)
         {
 
-            if (matriz[pos, posicion] != -1)
+            if (matriz[pos, posicion] != -1)//Siempre que la pocicion  octenida de la matis desa diferente a -1 este cambiara la pocision del estado
                 pos = matriz[pos, posicion];
-            label1.Text = (pos).ToString() + " " + posicion.ToString();
+            label1.Text = (pos).ToString() + " " + posicion.ToString();//muestra en una label el esto actual en donde se encuntra la matriz
             switch (pos)
             {
+                //Opcion para apagado de las 2 antorchas
                 case 0:
                     if(posicion==4)
                     {
@@ -251,6 +230,7 @@ namespace InterfaceOneStation
                         EstadoError = true;
                     }
                     break;
+                //Opcion para el encendio de la antorcha 1 y apagado de la antorcha 2
                 case 1:
 
                     if (posicion == 0 || posicion == 2 || posicion==4)
@@ -262,6 +242,7 @@ namespace InterfaceOneStation
                     else
                         DesactivarTorch2();
                     break;
+                //Opcion para el encendio de las dos antorchas
                 case 2:
                     if (posicion == 2 || posicion==4)
                     {
@@ -278,94 +259,105 @@ namespace InterfaceOneStation
                     else
                         EncendidoTorch2();
                     break;
+                //Opcion para el encendio de la antorcha 2 y el apagado de la antorhca 1
                 case 3:
                     if (posicion == 0 || posicion == 2 || posicion == 4)
                         DesactivarTorch1();
                     else
                         EncendidoTorch2();
                     break;
+                //Opcion para iniciar la perforacion cunado solo este iniciada la antorcha 1
                 case 4:
                     if(posicion==1)
                         DesactivarTorch2();
                     PerforacionTorch1();
                     TextBoxSystem.Text = "FIT+3 ST1 PERFORANDO";
                     break;
+                //Opcion para iniciar el corte de la antocha 1
                 case 5:
                     if (posicion == 1)
                         DesactivarTorch2();
                     CorteTorch1();
                     TextBoxSystem.Text = "FIT+3 ST1 CORTANDO";
                     break;
+                //Opcion para iniciar la perforacion de las dos antorchas
                 case 6:
                     PerforacionTorch1();
                     PerforracionTorch2();
                     TextBoxSystem.Text = "FIT+3 PERFORANDO";
                     break;
+                //Opcion para iniciar el corte de la antorcha 1
                 case 7:
                     if (posicion == 0)
                         DesactivarTorch1();
                     CorteTorch2();
                     TextBoxSystem.Text = "FIT+3 ST2 CORTANDO";
                     break;
+                //Opcion para iniciar el corte de las 2 antorchas
                 case 8:
                     CorteTorch1();
                     CorteTorch2();
                     TextBoxSystem.Text = "FIT+3 CORTANDO";
                     break;
+                //Opcion para iniciar la perforacion de la antorcha 2
                 case 9:
                     if (posicion == 0)
                         DesactivarTorch1();
                     PerforracionTorch2();
                     TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
                     break;
+                //Opcion de error que se actuiva cunado el errro es detectado, y indica que hay un problema cambiando la antorcha 1 a color rojo
                 case 10:
                     if (posicion == 1)
                         DesactivarTorch2();
                     errorTorch1();
                     TextBoxSystem.Text = "FIT+3 ST1 ERROR";
                     break;
+                //Opcion de error que se actuiva cunado el errro es detectado, y indica que hay un problema cambiando las 2 antorcha a color rojo
                 case 11:
                     errorTorch1();
                     errorTorch2();
                     TextBoxSystem.Text = "FIT+3 ERROR";
                     break;
+                //Opcion de error que se actuiva cunado el errro es detectado, y indica que hay un problema cambiando la antorcha 2 a color rojo
                 case 12:
                     if (posicion == 0)
                         DesactivarTorch1();
                     errorTorch2();
                     TextBoxSystem.Text = "FIT+3 ST2 ERROR";
                     break;
-                case 13:
-                    errorTorch1();
-                    errorTorch2();
-                    break;
-
             }
         }
+        //Metodo encargado de desabilitar en manuel select 3 y cambia de color a la antorcha  1 a color rojo
         private void errorTorch1()
         {
             obj.TurnCncFunctionFalse(InputFunction.Manual_Select_3);
             pictureTorch.BackColor = Color.Red;
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
+        //Metodo encargado de desabilitar en manuel select 4 y cambia de color a la antorcha  2 a color rojo
         private void errorTorch2()
         {
             obj.TurnCncFunctionFalse(InputFunction.Manual_Select_4);
             pictureTorch2.BackColor = Color.Red;
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
+        //Metodo que cambia a la antorcha 1 a color azul(indica que esta cortando con el oxicorte) cuando la perforacion ha terminado
         private void CorteTorch1()
         {
             pictureTorch.BackColor = Color.Blue;
             TextBoxSystem.Text = "FIT+3 ST1 Cortando";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
+        //Metodo que cambia a la antorcha 2 a color azul(indica que esta cortando con el oxicorte) cuando la perforacion ha terminado
+
         private void CorteTorch2()
         {
             pictureTorch2.BackColor = Color.Blue;
             TextBoxSystem.Text = "FIT+3 ST2 Cortando";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
+        //Metodo que 
         private void PerforacionTorch1()
         {
             pictureTorch.BackColor = Color.Yellow;

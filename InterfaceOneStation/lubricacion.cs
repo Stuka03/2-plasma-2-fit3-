@@ -34,9 +34,6 @@ namespace InterfaceOneStation
             seconds = 0;
             LubricationActive = 0;
             InitializeComponent();
-            InicializeAppConfigFile();
-            UpdateValues();
-            CheckLubricationSystem();
 
             timer2.Interval = 1000;
             timer2.Enabled = false;
@@ -50,8 +47,9 @@ namespace InterfaceOneStation
             timer4.Enabled = false;
             timer4.Tick += new EventHandler(timer4_Tick);
 
-            checkBox1.Visible = true;
-            checkBox2.Visible = true;
+            InicializeAppConfigFile();
+            UpdateValues();
+            CheckLubricationSystem();
         }
         public void InicializeAppConfigFile()
         {
@@ -246,20 +244,6 @@ namespace InterfaceOneStation
             CheckLubricationSystem();
         }
 
-        private void checkBox1_Click(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-                conexionPhoenix.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_9);
-           else
-                conexionPhoenix.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_9);
-        }
-        private void checkBox2_Click(object sender, EventArgs e)
-        {
-            if (checkBox2.Checked)
-                conexionPhoenix.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_8);
-            else
-                conexionPhoenix.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_8);
-        }
         //#2 TIMER INTERVALO, CUENTA TIEMPO DE INTERVALO Y LUEGO INICIALIZA TIMER DE LUBRICACION
         private void timer2_Tick(object sender, EventArgs e)
         {

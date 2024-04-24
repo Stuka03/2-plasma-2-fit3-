@@ -54,6 +54,7 @@ namespace InterfaceOneStation
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureTorch2 = new System.Windows.Forms.PictureBox();
             this.TextBoxSystem = new System.Windows.Forms.RichTextBox();
             this.pictureBoxLaserPointer = new System.Windows.Forms.PictureBox();
@@ -65,7 +66,6 @@ namespace InterfaceOneStation
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -133,6 +133,9 @@ namespace InterfaceOneStation
             "",
             "\tSAFETY CONTROL",
             "18.- TORCH COLLISION",
+            "",
+            "\tMOTION",
+            "19.- MOTION OUTPUT",
             "",
             "\tNOTES:",
             "-MATCH THE CNC FUNCTIONS WITH THE PHYSICAL IO FOR PROPER FUNCTIONING ",
@@ -266,6 +269,15 @@ namespace InterfaceOneStation
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OXICORTE";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(192, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "posicion";
+            // 
             // pictureTorch2
             // 
             this.pictureTorch2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -397,15 +409,6 @@ namespace InterfaceOneStation
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(192, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "posicion";
             // 
             // MainForm
             // 
