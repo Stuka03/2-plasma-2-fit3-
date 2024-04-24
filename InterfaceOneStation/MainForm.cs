@@ -461,7 +461,7 @@ namespace InterfaceOneStation
                 EstadoSistema(4);
                 EstadoError = true;
             }
-            if (CheckCncOutputState(OutputFunction.Aux_Function_Output_8))
+            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_8))
             { 
                 obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
                 EstadoSistema(3);

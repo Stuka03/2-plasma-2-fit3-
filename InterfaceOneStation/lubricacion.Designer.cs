@@ -19,8 +19,6 @@
             this.lubricacionTime = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
@@ -192,33 +190,9 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.buttonTesting_Click);
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(120, 192);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(72, 17);
-            this.checkBox2.TabIndex = 57;
-            this.checkBox2.Text = "LS Active";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.Click += new System.EventHandler(this.checkBox2_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(19, 192);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(76, 17);
-            this.checkBox1.TabIndex = 56;
-            this.checkBox1.Text = "Error False";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Click += new System.EventHandler(this.checkBox1_Click);
-            // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox3.CausesValidation = false;
             this.groupBox3.Controls.Add(this.comboBoxLubricationInterval);
             this.groupBox3.Controls.Add(this.comboBoxLubricationActive);
@@ -242,14 +216,12 @@
             // Lubricacion
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(327, 221);
             this.ControlBox = false;
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Lubricacion";
@@ -275,8 +247,6 @@
         private System.Windows.Forms.Label lubricacionTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.ComponentModel.IContainer components;
         private System.Windows.Forms.Timer timer2;
