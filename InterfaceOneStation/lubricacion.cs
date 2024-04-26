@@ -23,6 +23,9 @@ namespace InterfaceOneStation
         XDocument xmlDocument=new XDocument();
         private string filePath;
         private int seconds;
+        private bool activo;
+        private bool BombaL;
+        private string messageStatus;
         private int LubricationActive;
         private int LubricationInterval;
         private int tiempolubricacion;
@@ -30,6 +33,8 @@ namespace InterfaceOneStation
         private bool LubricationSystemEnable;
         public Lubricacion(ConexionPhoenix conexionPhoenix)
         {
+            activo = true;
+            BombaL = true;
             this.conexionPhoenix = conexionPhoenix;
             seconds = 0;
             LubricationActive = 0;
@@ -133,23 +138,35 @@ namespace InterfaceOneStation
 
         private void buttonTesting_Click(object sender, EventArgs e)
         {
-            seconds = 0;
-            timer2.Enabled = false;
-            //ciclo activo
-            if (comboBoxLubricationActive.SelectedIndex == -1)
+            if (activo)
             {
-                customMessageBox.set_color_texto("Please select a valid item from the Timer list.", Color.Yellow);
+                messageStatus = "Espera entre cliclo, lleva: ";
+                DisableControls();
+                button3.Enabled = true;
+                button3.BackColor= Color.Lime;
+                timer2.Enabled = false;
+                seconds = 0;
+                timer4.Enabled = true;
+                activo = false;
+                radioButtonLSAactive.Checked = true;
+                customMessageBox.set_color_texto(seconds.ToString(), Color.Gray);
                 customMessageBox.ShowDialog();
-                comboBoxLubricationActive.SelectedIndex = 0; // Set the index to a default value or any other appropriate action.
-                return;
             }
-            DisableControls();
-            conexionPhoenix.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_1);
-            timer4.Enabled = true;
-            LubricationActive = (comboBoxLubricationActive.SelectedIndex + 1) * 5;
-            radioButtonLSAactive.Checked = true;
-            customMessageBox.set_color_texto(seconds.ToString(), Color.Gray);
-            customMessageBox.ShowDialog();
+            else
+            {
+                conexionPhoenix.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_1);
+                EnableButtons();
+                button3.Enabled = true;
+                button3.BackColor = SystemColors.ButtonFace;
+                radioButtonLSAactive.Checked = false;
+                timer4.Enabled = false;
+                seconds = 0;
+                timer2.Enabled = true;
+                activo = true;
+                lubricacionTime.Text = "Time";
+            }
+            
+            
         }
         private void EnableButtons()
         {
@@ -277,27 +294,27 @@ namespace InterfaceOneStation
         }
         private void timer4_Tick(object sender, EventArgs e)
         {
-            //ENCIENDE BOMBA
-
-            //CUENTA LOS SEGUNDOS
-
             seconds++;
-            tiempolubricacion++;
-            customMessageBox.set_texto("Prueba de Lubricasion lleva "+(seconds).ToString()+" segundos trascurridos");
-            labelTime.Text = TimeSpan.FromSeconds(seconds).ToString();
-            //TERMINA LA LUBRICACION AL TRANSCURRIR EL TIEMPO DEFINIDO PARA TRANS Y RIELES
-            if (seconds >= LubricationActive)
+            if(seconds>30 && BombaL)
             {
-                LubricationActive = 0;
-                timer4.Enabled = false;
-                timer2.Enabled = true;
-                seconds = 0;
                 conexionPhoenix.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_1);
-                radioButtonLSAactive.Checked = false;
-                EnableButtons();
-                labelTime.Text = "";
-               
+                seconds = 0;
+                messageStatus = "Espera entre cliclo, lleva: ";
+                lubricacionTime.Text = "time espera:";
+                BombaL = false;
             }
+            if(BombaL)
+                tiempolubricacion++;
+            if(seconds>30 && !BombaL) {
+                conexionPhoenix.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_1);
+                seconds = 0;
+                messageStatus = "Lubricacion activa, lleva:";
+                BombaL = true;
+                lubricacionTime.Text = "time lubracacion:";
+            }
+                customMessageBox.set_texto(messageStatus + (seconds).ToString() + " segundos trascurridos");
+                labelTime.Text = TimeSpan.FromSeconds(seconds).ToString();
+
         }
         public int getTimepoLubricacion()
         {

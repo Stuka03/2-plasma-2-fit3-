@@ -170,6 +170,9 @@ namespace InterfaceOneStation
                         obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
                         EstadoError = true;
                     }
+                    if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
+                        obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
+                    TextBoxSystem.Text = "FIT+3 DEHABILITADA";
                     break;
                 //Opcion para el encendio de la antorcha 1 y apagado de la antorcha 2
                 case 1:
@@ -183,7 +186,9 @@ namespace InterfaceOneStation
                         }
                         else
                             DesactivarTorch2();
-                    }else
+                        TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
+                    }
+                    else
                         pos = 0;
                     break;
                 //Opcion para el encendio de las dos antorchas
@@ -201,15 +206,17 @@ namespace InterfaceOneStation
                     }
                     else
                         EncendidoTorch2();
+                    TextBoxSystem.Text = "FIT+3 HABILITADA";
                     break;
                 //Opcion para el encendio de la antorcha 2 y el apagado de la antorhca 1
                 case 3:
                     if (!obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
                     {
-                        if (posicion == 0 || posicion == 2 || posicion == 4)
-                            DesactivarTorch1();
-                        else
+                        if (posicion == 1 || posicion == 2 || posicion == 4)
                             EncendidoTorch2();
+                        else
+                            DesactivarTorch1();
+                        TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
                     }
                     else
                         pos = 0;
@@ -294,7 +301,6 @@ namespace InterfaceOneStation
         private void CorteTorch1()
         {
             pictureTorch.BackColor = Color.Blue;
-            TextBoxSystem.Text = "FIT+3 ST1 Cortando";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         //Metodo que cambia a la antorcha 2 a color azul(indica que esta cortando con el oxicorte) cuando la perforacion ha terminado
@@ -302,7 +308,6 @@ namespace InterfaceOneStation
         private void CorteTorch2()
         {
             pictureTorch2.BackColor = Color.Blue;
-            TextBoxSystem.Text = "FIT+3 ST2 Cortando";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         //Metodo que 
@@ -320,28 +325,24 @@ namespace InterfaceOneStation
         {
             obj.TurnCncFunctionTrue(InputFunction.Manual_Select_3);
             pictureTorch.BackColor = Color.Lime;
-            TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         private void EncendidoTorch2()
         {
             obj.TurnCncFunctionTrue(InputFunction.Manual_Select_4);
             pictureTorch2.BackColor = Color.Lime;
-            TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         private void DesactivarTorch1()
         {
             obj.TurnCncFunctionFalse(InputFunction.Manual_Select_3);
             pictureTorch.BackColor = SystemColors.InactiveBorder;
-            TextBoxSystem.Text = "FIT+3 ST2 DESAHABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         private void DesactivarTorch2()
         {
             obj.TurnCncFunctionFalse(InputFunction.Manual_Select_4);
             pictureTorch2.BackColor = SystemColors.InactiveBorder;
-            TextBoxSystem.Text = "FIT+3 ST2 DESAHABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         //FUNCION QUE OCTIENE LOS TIMEPO DE ENCENDIDO, MOVIMIENTO Y LUBRICASION.
@@ -415,6 +416,8 @@ namespace InterfaceOneStation
 
             if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && EstadoError)
             {
+                if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
+                    obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
                 obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
                 EstadoSistema(4);
                 EstadoError = false;
@@ -437,6 +440,8 @@ namespace InterfaceOneStation
                 EstadoCorte = false;
             }else if(!obj.CheckCncOutputState(OutputFunction.Cut_Control) && !EstadoCorte)
             {
+                if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
+                    obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
                 EstadoSistema(2);
                 EstadoCorte = true;
             }
