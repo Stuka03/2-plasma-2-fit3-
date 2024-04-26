@@ -45,12 +45,15 @@ namespace InterfaceOneStation
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.EtiquetaCorte = new System.Windows.Forms.Label();
+            this.tiempoCorte = new System.Windows.Forms.Label();
             this.EtiquetaMovimiento = new System.Windows.Forms.Label();
             this.EtiquetaLubricacion = new System.Windows.Forms.Label();
             this.Etiqueta1Funcionamiento = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LFuncionamiento = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -68,6 +71,7 @@ namespace InterfaceOneStation
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTorch2)).BeginInit();
@@ -103,8 +107,9 @@ namespace InterfaceOneStation
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 9;
             this.listBox1.Items.AddRange(new object[] {
-            "SoftOpCon 2 Stations Plasma + 2 Stations Fit3 + Lubrication system\tRev.0.0",
-            "",
+            "SoftOpCon 2 Stations Plasma + 2 Stations Fit3 + Lubrication system",
+            "\t",
+            "\t\t\t\t\tRev.1.0-2sp2sf1L",
             "FUNCTION CONFIG:",
             "",
             "\tLUBRICATION SYSTEM",
@@ -149,12 +154,7 @@ namespace InterfaceOneStation
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.EtiquetaMovimiento);
-            this.tabPage4.Controls.Add(this.EtiquetaLubricacion);
-            this.tabPage4.Controls.Add(this.Etiqueta1Funcionamiento);
-            this.tabPage4.Controls.Add(this.label5);
-            this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Controls.Add(this.label4);
+            this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
@@ -163,71 +163,109 @@ namespace InterfaceOneStation
             this.tabPage4.Text = "TIEMPOS";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.EtiquetaCorte);
+            this.groupBox3.Controls.Add(this.tiempoCorte);
+            this.groupBox3.Controls.Add(this.EtiquetaMovimiento);
+            this.groupBox3.Controls.Add(this.EtiquetaLubricacion);
+            this.groupBox3.Controls.Add(this.Etiqueta1Funcionamiento);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.LFuncionamiento);
+            this.groupBox3.Location = new System.Drawing.Point(3, -6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(321, 207);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            // 
+            // EtiquetaCorte
+            // 
+            this.EtiquetaCorte.AutoSize = true;
+            this.EtiquetaCorte.Font = new System.Drawing.Font("Century", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EtiquetaCorte.Location = new System.Drawing.Point(228, 100);
+            this.EtiquetaCorte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EtiquetaCorte.Name = "EtiquetaCorte";
+            this.EtiquetaCorte.Size = new System.Drawing.Size(88, 23);
+            this.EtiquetaCorte.TabIndex = 13;
+            this.EtiquetaCorte.Text = "00:00:00";
+            // 
+            // tiempoCorte
+            // 
+            this.tiempoCorte.AutoSize = true;
+            this.tiempoCorte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tiempoCorte.Location = new System.Drawing.Point(4, 100);
+            this.tiempoCorte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.tiempoCorte.Name = "tiempoCorte";
+            this.tiempoCorte.Size = new System.Drawing.Size(146, 20);
+            this.tiempoCorte.TabIndex = 12;
+            this.tiempoCorte.Text = "Tiempo de Corte:";
+            // 
             // EtiquetaMovimiento
             // 
             this.EtiquetaMovimiento.AutoSize = true;
             this.EtiquetaMovimiento.Font = new System.Drawing.Font("Century", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EtiquetaMovimiento.Location = new System.Drawing.Point(215, 59);
+            this.EtiquetaMovimiento.Location = new System.Drawing.Point(228, 58);
             this.EtiquetaMovimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EtiquetaMovimiento.Name = "EtiquetaMovimiento";
             this.EtiquetaMovimiento.Size = new System.Drawing.Size(88, 23);
-            this.EtiquetaMovimiento.TabIndex = 3;
+            this.EtiquetaMovimiento.TabIndex = 11;
             this.EtiquetaMovimiento.Text = "00:00:00";
             // 
             // EtiquetaLubricacion
             // 
             this.EtiquetaLubricacion.AutoSize = true;
             this.EtiquetaLubricacion.Font = new System.Drawing.Font("Century", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EtiquetaLubricacion.Location = new System.Drawing.Point(215, 98);
+            this.EtiquetaLubricacion.Location = new System.Drawing.Point(228, 143);
             this.EtiquetaLubricacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EtiquetaLubricacion.Name = "EtiquetaLubricacion";
             this.EtiquetaLubricacion.Size = new System.Drawing.Size(88, 23);
-            this.EtiquetaLubricacion.TabIndex = 2;
+            this.EtiquetaLubricacion.TabIndex = 9;
             this.EtiquetaLubricacion.Text = "00:00:00";
             // 
             // Etiqueta1Funcionamiento
             // 
             this.Etiqueta1Funcionamiento.AutoSize = true;
             this.Etiqueta1Funcionamiento.Font = new System.Drawing.Font("Century", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Etiqueta1Funcionamiento.Location = new System.Drawing.Point(215, 20);
+            this.Etiqueta1Funcionamiento.Location = new System.Drawing.Point(228, 15);
             this.Etiqueta1Funcionamiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Etiqueta1Funcionamiento.Name = "Etiqueta1Funcionamiento";
             this.Etiqueta1Funcionamiento.Size = new System.Drawing.Size(88, 23);
-            this.Etiqueta1Funcionamiento.TabIndex = 2;
+            this.Etiqueta1Funcionamiento.TabIndex = 10;
             this.Etiqueta1Funcionamiento.Text = "00:00:00";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(-2, 59);
+            this.label5.Location = new System.Drawing.Point(4, 58);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(192, 20);
-            this.label5.TabIndex = 1;
+            this.label5.TabIndex = 8;
             this.label5.Text = "Tiempo de movimiento:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(-2, 98);
+            this.label6.Location = new System.Drawing.Point(4, 143);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(182, 20);
-            this.label6.TabIndex = 0;
+            this.label6.TabIndex = 6;
             this.label6.Text = "Tiempo de libricacion:";
             // 
-            // label4
+            // LFuncionamiento
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(-2, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(225, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tiempo de funcionamiento:";
+            this.LFuncionamiento.AutoSize = true;
+            this.LFuncionamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFuncionamiento.Location = new System.Drawing.Point(4, 15);
+            this.LFuncionamiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LFuncionamiento.Name = "LFuncionamiento";
+            this.LFuncionamiento.Size = new System.Drawing.Size(225, 20);
+            this.LFuncionamiento.TabIndex = 7;
+            this.LFuncionamiento.Text = "Tiempo de funcionamiento:";
             // 
             // tabPage5
             // 
@@ -433,7 +471,8 @@ namespace InterfaceOneStation
             this.TopMost = true;
             this.tabPage2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -462,12 +501,6 @@ namespace InterfaceOneStation
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label EtiquetaMovimiento;
-        private System.Windows.Forms.Label EtiquetaLubricacion;
-        private System.Windows.Forms.Label Etiqueta1Funcionamiento;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -483,5 +516,14 @@ namespace InterfaceOneStation
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label EtiquetaCorte;
+        private System.Windows.Forms.Label tiempoCorte;
+        private System.Windows.Forms.Label EtiquetaMovimiento;
+        private System.Windows.Forms.Label EtiquetaLubricacion;
+        private System.Windows.Forms.Label Etiqueta1Funcionamiento;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LFuncionamiento;
     }
 }

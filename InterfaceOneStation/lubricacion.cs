@@ -133,6 +133,8 @@ namespace InterfaceOneStation
 
         private void buttonTesting_Click(object sender, EventArgs e)
         {
+            seconds = 0;
+            timer2.Enabled = false;
             //ciclo activo
             if (comboBoxLubricationActive.SelectedIndex == -1)
             {
@@ -144,10 +146,8 @@ namespace InterfaceOneStation
             DisableControls();
             conexionPhoenix.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_1);
             timer4.Enabled = true;
-            lubricacionTime.Text = "Tiempo de lubricacion";
             LubricationActive = (comboBoxLubricationActive.SelectedIndex + 1) * 5;
             radioButtonLSAactive.Checked = true;
-
             customMessageBox.set_color_texto(seconds.ToString(), Color.Gray);
             customMessageBox.ShowDialog();
         }
@@ -250,7 +250,7 @@ namespace InterfaceOneStation
             seconds++;
 
             labelTime.Text = TimeSpan.FromSeconds(seconds).ToString();
-            if (seconds == LubricationInterval * 3600)
+            if (seconds >= LubricationInterval * 3600)
             {
                 timer3.Enabled = true;
                 timer2.Enabled = false;
@@ -290,6 +290,7 @@ namespace InterfaceOneStation
             {
                 LubricationActive = 0;
                 timer4.Enabled = false;
+                timer2.Enabled = true;
                 seconds = 0;
                 conexionPhoenix.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_1);
                 radioButtonLSAactive.Checked = false;

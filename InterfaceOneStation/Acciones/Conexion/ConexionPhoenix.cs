@@ -64,6 +64,39 @@ namespace InterfaceOneStation.Acciones.ConexionPhoenix
                 CncVariableEx(ex.Message, f);
             }
         }
+        public bool CheckCncFunctionState(InputFunction f)
+        {
+            try
+            {
+                return SistemaCorte.Inputs[f].State;
+            }
+            catch (Exception ex)
+            {
+                CncVariableEx(ex.Message, f);
+                return false;
+            }
+        }
+        public bool CheckCncOutputState(OutputFunction f)
+        {
+            try
+            {
+                return SistemaCorte.Outputs[f].State;
+            }
+            catch (Exception ex)
+            {
+                CncVariableExOut(ex.Message, f);
+                return false;
+            }
+        }
+        private void CncVariableExOut(string ex, OutputFunction f)
+        {
+            if (BanderaBoxLS == false)
+            {
+                BanderaBoxLS = true;
+                customMessageBox.set_color_texto((ex) + "\nDar de alta la funcion: " + f.ToString(), Color.Red);
+                customMessageBox.ShowDialog();
+            }
+        }
         private void CncVariableEx(string ex, InputFunction f)
         {
             if (BanderaBoxLS == false)

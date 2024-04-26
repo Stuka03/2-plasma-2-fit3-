@@ -15,6 +15,7 @@ using Models;
 using InterfaceOneStation.Acciones.ConexionPhoenix;
 using InterfaceOneStation.Acciones.Variables;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace InterfaceOneStation
 {
@@ -30,10 +31,9 @@ namespace InterfaceOneStation
         //VARIABLES SISTEMA DE LUBRICACION
         public int LubricationActive;
         public int LubricationActiveRails;
-        private int seconds;
         private int tiempoFuncionamiento;
         private int tiempoOperacion;
-        private int tiempolubricacion; 
+        private int timepoCorte; 
         private string filePath;
         private bool BanderaBoxLS;
         XDocument xmlDocument;
@@ -60,9 +60,9 @@ namespace InterfaceOneStation
                                 {-1,  0,  3, -1, 12},
                                 { 7,  5,  2, -1, 11},
                                 {-1,  0,  3,  7, 12},
-                                {0, -1, -1, -1,  1},
+                                { 0, -1, -1, -1,  1},
                                 {12, 10, -1, -1,  2},
-                                {-1, 0, -1, -1,  3},
+                                {-1,  0, -1, -1,  3},
                             };
             Dictionary < string, dynamic> datos=var.datos;
             //APP SETUP
@@ -71,14 +71,11 @@ namespace InterfaceOneStation
             //PHOENIX COM SETUP
             SistemaCorte = obj.SistemaCorte;
             //LUBRICATION CONTROL SYSTEM
-            BanderaBoxLS = false;
-            seconds = 0;
-            
+            BanderaBoxLS = false;  
             //MONITOREO
             timer2.Interval = 500;
             timer2.Tick += new EventHandler(timer2_Tick);
             timer2.Enabled = true;
-
             BanderaBoxBW = false;
             BanderaBoxPS = false;
 
@@ -98,54 +95,6 @@ namespace InterfaceOneStation
             tabPage5.Controls.Add(lubri);
             lubri.Show();
         }
-        #region //METODOS STANDAR SOC-PHOENIX
-        
-        
-        private bool CheckCncFunctionState(InputFunction f)
-        {
-            try
-            {
-                return SistemaCorte.Inputs[f].State;
-            }
-            catch (Exception ex)
-            {
-                CncVariableEx(ex.Message, f);
-                return false;
-            }
-        }
-        private bool CheckCncOutputState(OutputFunction f)
-        {
-            try
-            {
-                return SistemaCorte.Outputs[f].State;
-            }
-            catch (Exception ex)
-            {
-                CncVariableExOut(ex.Message, f);
-                return false;
-            }
-        }
-        private void CncVariableEx(string ex, InputFunction f)
-        {
-            if (BanderaBoxLS == false)
-            {
-                BanderaBoxLS = true;
-                
-                customMessageBox.set_color_texto((ex) + "\nDar de alta la funcion: " + f.ToString(), Color.Red);
-                customMessageBox.ShowDialog();
-            }
-        }
-        private void CncVariableExOut(string ex, OutputFunction f)
-        {
-            if (BanderaBoxLS == false)
-            {
-                BanderaBoxLS = true;
-               
-                customMessageBox.set_color_texto((ex) + "\nDar de alta la funcion: " + f.ToString(), Color.Red);
-                customMessageBox.ShowDialog();
-            }
-        }
-        #endregion
         #region//CONTROLES OXICORTE
         //BOTON MODO AUTOMATICO/MANUAL
         private void pictureBoxTorchManualHC_Click(object sender, EventArgs e)
@@ -185,24 +134,12 @@ namespace InterfaceOneStation
             EstadoSistema(1);
         }
         #endregion
-        //FUNCION QUE OCTIENE LOS TIMEPO DE ENCENDIDO, MOVIMIENTO Y LUBRICASION.
-        private void Funcionamiento_Tick(object sender, EventArgs e)
-        {
-            tiempoFuncionamiento++;
-            if (CheckCncOutputState(OutputFunction.Motion_Output))
-            {
-                tiempoOperacion++;
-            }
-            Etiqueta1Funcionamiento.Text = TimeSpan.FromSeconds(tiempoFuncionamiento).ToString();
-            EtiquetaMovimiento.Text= TimeSpan.FromSeconds(tiempoOperacion).ToString();
-            EtiquetaLubricacion.Text = TimeSpan.FromSeconds(lubri.getTimepoLubricacion()).ToString();//Octiene el tiempo de lubricacion desde el form de lubricasion
-        }
+        
         /*FUNCION ENFOCADA EN PODER CAMBIAR ENTRE LOS DISTINTOS ESTADOS QUE PUEDE TEBER EL SISTEMA, DESDE ENCENDIO, APARAGDO
           ERROR, MOVILIDAD, PERFORRACION Y CORTE. ESTO MEDIANTE LA MATRIZ DE ESTADOS QUE INDICA A CUAL SE TIENE QUE DESPLAZAR.
          */
         private void EstadoSistema(int posicion)
         {
-
             if (matriz[pos, posicion] != -1)//Siempre que la pocicion  octenida de la matis desa diferente a -1 este cambiara la pocision del estado
                 pos = matriz[pos, posicion];
             label1.Text = (pos).ToString() + " " + posicion.ToString();//muestra en una label el esto actual en donde se encuntra la matriz
@@ -214,6 +151,7 @@ namespace InterfaceOneStation
                     {
                         DesactivarTorch1();
                         DesactivarTorch2();
+                        obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
                     }
                     else if (posicion == 0)
                     {
@@ -221,26 +159,32 @@ namespace InterfaceOneStation
                     }
                     else
                         DesactivarTorch2();
-                    if (CheckCncOutputState(OutputFunction.Cut_Control))
-                        obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
-
-                    if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
+                    if (obj.CheckCncOutputState(OutputFunction.Cut_Control) || obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
                     {
-                        obj.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_9);
+                        obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
+                        Thread.Sleep(1000);
+                        obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);                    
+                    }
+                    if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
+                    {
+                        obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
                         EstadoError = true;
                     }
                     break;
                 //Opcion para el encendio de la antorcha 1 y apagado de la antorcha 2
                 case 1:
-
-                    if (posicion == 0 || posicion == 2 || posicion==4)
+                    if(!obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
                     {
-                        EncedidoTorch1();
-                        if(CheckCncFunctionState(InputFunction.Front_Panel_Stop))
-                            obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
-                    }
-                    else
-                        DesactivarTorch2();
+                        if (posicion == 0 || posicion == 2 || posicion==4)
+                        {
+                            EncedidoTorch1();
+                            if(obj.CheckCncFunctionState(InputFunction.Front_Panel_Stop))
+                                obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
+                        }
+                        else
+                            DesactivarTorch2();
+                    }else
+                        pos = 0;
                     break;
                 //Opcion para el encendio de las dos antorchas
                 case 2:
@@ -252,19 +196,23 @@ namespace InterfaceOneStation
                     else if (posicion == 0)
                     {
                         EncedidoTorch1();
-                        if (CheckCncFunctionState(InputFunction.Front_Panel_Stop))
+                        if (obj.CheckCncFunctionState(InputFunction.Front_Panel_Stop))
                             obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
                     }
-
                     else
                         EncendidoTorch2();
                     break;
                 //Opcion para el encendio de la antorcha 2 y el apagado de la antorhca 1
                 case 3:
-                    if (posicion == 0 || posicion == 2 || posicion == 4)
-                        DesactivarTorch1();
+                    if (!obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
+                    {
+                        if (posicion == 0 || posicion == 2 || posicion == 4)
+                            DesactivarTorch1();
+                        else
+                            EncendidoTorch2();
+                    }
                     else
-                        EncendidoTorch2();
+                        pos = 0;
                     break;
                 //Opcion para iniciar la perforacion cunado solo este iniciada la antorcha 1
                 case 4:
@@ -396,11 +344,27 @@ namespace InterfaceOneStation
             TextBoxSystem.Text = "FIT+3 ST2 DESAHABILITADA";
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
-
+        //FUNCION QUE OCTIENE LOS TIMEPO DE ENCENDIDO, MOVIMIENTO Y LUBRICASION.
+        private void Funcionamiento_Tick(object sender, EventArgs e)
+        {
+            tiempoFuncionamiento++;
+            if (obj.CheckCncOutputState(OutputFunction.Motion_Output))
+            {
+                tiempoOperacion++;
+            }
+            if(obj.CheckCncOutputState(OutputFunction.Cut_Control))
+            {
+                timepoCorte++;
+            }
+            Etiqueta1Funcionamiento.Text = TimeSpan.FromSeconds(tiempoFuncionamiento).ToString();
+            EtiquetaMovimiento.Text = TimeSpan.FromSeconds(tiempoOperacion).ToString();
+            EtiquetaLubricacion.Text = TimeSpan.FromSeconds(lubri.getTimepoLubricacion()).ToString();//Octiene el tiempo de lubricacion desde el form de lubricasion
+            EtiquetaCorte.Text = TimeSpan.FromSeconds(timepoCorte).ToString();
+        }
         private void timer2_Tick(object sender, EventArgs e)
         {
             //MONITOREO BW
-            if (CheckCncFunctionState(InputFunction.Torch_Collision))
+            if (obj.CheckCncFunctionState(InputFunction.Torch_Collision))
             {
                 if (BanderaBoxBW == false)
                 {
@@ -415,7 +379,7 @@ namespace InterfaceOneStation
                 }
             }
             //MONITOREO SENSOR DE PRESION
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_6))
+            if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_6))
             {
                 if (BanderaBoxPS == false)
                 {
@@ -435,7 +399,7 @@ namespace InterfaceOneStation
                 }
             }
             //MONITOREO PROGRAM RUNNING
-            if (CheckCncOutputState(OutputFunction.Program_Running))
+            if (obj.CheckCncOutputState(OutputFunction.Program_Running))
             {
                 tranverse.ProgramanRuning();
                 groupBox2.Enabled = false;
@@ -445,39 +409,37 @@ namespace InterfaceOneStation
                 groupBox2.Enabled = true;
             }
             //PROGRAM INHIBIT - MOVE
-            radioButtonOkToMove.Checked = !CheckCncFunctionState(InputFunction.Program_Inhibit);
+            radioButtonOkToMove.Checked = !obj.CheckCncFunctionState(InputFunction.Program_Inhibit);
             //ERROR
-            radioButtonError.Checked = CheckCncFunctionState(InputFunction.Aux_Function_Select_9);
+            radioButtonError.Checked = obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9);
 
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && EstadoError)
+            if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && EstadoError)
             {
                 obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
                 EstadoSistema(4);
                 EstadoError = false;
             }
-            else if (!CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && !EstadoError)
+            else if (!obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && !EstadoError)
             {
                 obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
                 EstadoSistema(4);
                 EstadoError = true;
             }
-            if (CheckCncFunctionState(InputFunction.Aux_Function_Select_8))
+            if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_8))
             { 
                 obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
                 EstadoSistema(3);
             }
-            if (CheckCncOutputState(OutputFunction.Cut_Control )&& EstadoCorte)
+            if (obj.CheckCncOutputState(OutputFunction.Cut_Control )&& EstadoCorte)
             {
                 obj.TurnCncFunctionTrue(InputFunction.Program_Inhibit);
                 EstadoSistema(2);
                 EstadoCorte = false;
-            }else if(!CheckCncOutputState(OutputFunction.Cut_Control) && !EstadoCorte)
+            }else if(!obj.CheckCncOutputState(OutputFunction.Cut_Control) && !EstadoCorte)
             {
                 EstadoSistema(2);
                 EstadoCorte = true;
             }
-
-
         }
     }
 }
