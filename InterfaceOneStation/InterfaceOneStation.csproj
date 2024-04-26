@@ -67,11 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acciones\Conexion\ConexionPhoenix.cs" />
+    <Compile Include="Acciones\Lubricasion\Lubricasion.cs" />
+    <Compile Include="Acciones\Variables\varibalesDatos.cs" />
     <Compile Include="CustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomMessageBox.designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lubricacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lubricacion.Designer.cs">
+      <DependentUpon>lubricacion.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -91,10 +100,19 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Tranverse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tranverse.Designer.cs">
+      <DependentUpon>Tranverse.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lubricacion.resx">
+      <DependentUpon>lubricacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -102,6 +120,12 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tranverse.aa.resx">
+      <DependentUpon>Tranverse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tranverse.resx">
+      <DependentUpon>Tranverse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +135,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\ALARMA1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
