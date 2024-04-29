@@ -312,9 +312,9 @@ namespace InterfaceOneStation
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(192, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.Size = new System.Drawing.Size(41, 17);
             this.label1.TabIndex = 41;
-            this.label1.Text = "posicion";
+            this.label1.Text = "E 0,0";
             // 
             // pictureTorch2
             // 

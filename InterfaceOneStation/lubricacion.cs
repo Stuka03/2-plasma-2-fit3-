@@ -72,10 +72,12 @@ namespace InterfaceOneStation
         }
         private void buttonEnter_Click(object sender, EventArgs e)
         {
+
             if (textBoxPassword.Text == "1396")
             {
                 EnableButtons();
-                buttonEnter.Enabled = false;
+                activo = false;
+                buttonTesting_Click(sender, e);
                 customMessageBox.set_color_texto("Contraseña Valida", Color.Lime);
                 customMessageBox.ShowDialog();
                 return;
@@ -140,7 +142,8 @@ namespace InterfaceOneStation
         {
             if (activo)
             {
-                messageStatus = "Espera entre cliclo, lleva: ";
+                messageStatus = "Lubricasion en marcha, lleva: ";
+                lubricacionTime.Text = "tima lubri:";
                 DisableControls();
                 button3.Enabled = true;
                 button3.BackColor= Color.Lime;
@@ -157,7 +160,7 @@ namespace InterfaceOneStation
                 conexionPhoenix.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_1);
                 EnableButtons();
                 button3.Enabled = true;
-                button3.BackColor = SystemColors.ButtonFace;
+                button3.BackColor = SystemColors.ControlLight;
                 radioButtonLSAactive.Checked = false;
                 timer4.Enabled = false;
                 seconds = 0;
@@ -309,11 +312,11 @@ namespace InterfaceOneStation
                 conexionPhoenix.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_1);
                 seconds = 0;
                 messageStatus = "Lubricacion activa, lleva:";
+                lubricacionTime.Text = "time lubri:";
                 BombaL = true;
-                lubricacionTime.Text = "time lubracacion:";
             }
-                customMessageBox.set_texto(messageStatus + (seconds).ToString() + " segundos trascurridos");
-                labelTime.Text = TimeSpan.FromSeconds(seconds).ToString();
+            customMessageBox.set_texto(messageStatus + (seconds).ToString() + " segundos trascurridos");
+            labelTime.Text = TimeSpan.FromSeconds(seconds).ToString();
 
         }
         public int getTimepoLubricacion()

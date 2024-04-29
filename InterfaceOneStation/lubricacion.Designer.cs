@@ -98,7 +98,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonSave.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonSave.Enabled = false;
             this.buttonSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -109,7 +109,7 @@
             this.buttonSave.TabIndex = 22;
             this.buttonSave.Text = "SAVE";
             this.buttonSave.UseCompatibleTextRendering = true;
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // labelTime
@@ -180,6 +180,7 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(221, 58);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
@@ -187,7 +188,7 @@
             this.button3.Size = new System.Drawing.Size(85, 36);
             this.button3.TabIndex = 30;
             this.button3.Text = "TESTING";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.buttonTesting_Click);
             // 
             // groupBox3

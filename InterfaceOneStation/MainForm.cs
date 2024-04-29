@@ -142,7 +142,7 @@ namespace InterfaceOneStation
         {
             if (matriz[pos, posicion] != -1)//Siempre que la pocicion  octenida de la matis desa diferente a -1 este cambiara la pocision del estado
                 pos = matriz[pos, posicion];
-            label1.Text = (pos).ToString() + " " + posicion.ToString();//muestra en una label el esto actual en donde se encuntra la matriz
+            label1.Text = "E "+(pos).ToString() + "," + posicion.ToString();//muestra en una label el esto actual en donde se encuntra la matriz
             switch (pos)
             {
                 //Opcion para apagado de las 2 antorchas
@@ -259,7 +259,7 @@ namespace InterfaceOneStation
                     if (posicion == 0)
                         DesactivarTorch1();
                     PerforracionTorch2();
-                    TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
+                    TextBoxSystem.Text = "FIT+3 ST2 PERORANDO";
                     break;
                 //Opcion de error que se actuiva cunado el errro es detectado, y indica que hay un problema cambiando la antorcha 1 a color rojo
                 case 10:
@@ -364,87 +364,95 @@ namespace InterfaceOneStation
         }
         private void timer2_Tick(object sender, EventArgs e)
         {
-            //MONITOREO BW
-            if (obj.CheckCncFunctionState(InputFunction.Torch_Collision))
+            try
             {
-                if (BanderaBoxBW == false)
+                //MONITOREO BW
+                if (obj.CheckCncFunctionState(InputFunction.Torch_Collision))
                 {
-                    BanderaBoxBW = true;
-                    customMessageBox.set_color_texto("Torch Collision, Revisa estado del Breakaway!", Color.Red);
-                    customMessageBox.ShowDialog();
-                    //Check the result after the form is closed
-                    if (customMessageBox.CustomDialogResult == DialogResult.OK)
+                    if (BanderaBoxBW == false && !BanderaBoxPS)
                     {
-                        BanderaBoxBW = false;
-                    }
-                }
-            }
-            //MONITOREO SENSOR DE PRESION
-            if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_6))
-            {
-                if (BanderaBoxPS == false)
-                {
-                    obj.TurnCncFunctionTrue(InputFunction.Fast_Stop);
-                    if (BanderaBoxPS == false)
-                    {
-                        BanderaBoxPS = true;
-                        customMessageBox.set_color_texto("Low Air Pressure\nProgram Inhibit Activado\n¡Revisa estado del Suministro!", Color.Red);
+                        BanderaBoxBW = true;
+                        customMessageBox.set_color_texto("Torch Collision, Revisa estado del Breakaway!", Color.Red);
                         customMessageBox.ShowDialog();
                         //Check the result after the form is closed
                         if (customMessageBox.CustomDialogResult == DialogResult.OK)
                         {
-                            obj.TurnCncFunctionFalse(InputFunction.Fast_Stop);
-                            BanderaBoxPS = false;
+                            BanderaBoxBW = false;
                         }
                     }
                 }
-            }
-            //MONITOREO PROGRAM RUNNING
-            if (obj.CheckCncOutputState(OutputFunction.Program_Running))
-            {
-                tranverse.ProgramanRuning();
-                groupBox2.Enabled = false;
-            }
-            else
-            {
-                groupBox2.Enabled = true;
-            }
-            //PROGRAM INHIBIT - MOVE
-            radioButtonOkToMove.Checked = !obj.CheckCncFunctionState(InputFunction.Program_Inhibit);
-            //ERROR
-            radioButtonError.Checked = obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9);
+                //MONITOREO SENSOR DE PRESION
+                if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_6))
+                {
+                    if (BanderaBoxPS == false && !BanderaBoxBW)
+                    {
+                        obj.TurnCncFunctionTrue(InputFunction.Fast_Stop);
+                        if (BanderaBoxPS == false)
+                        {
+                            BanderaBoxPS = true;
+                            customMessageBox.set_color_texto("Low Air Pressure\nProgram Inhibit Activado\n¡Revisa estado del Suministro!", Color.Red);
+                            customMessageBox.ShowDialog();
+                            //Check the result after the form is closed
+                            if (customMessageBox.CustomDialogResult == DialogResult.OK)
+                            {
+                                obj.TurnCncFunctionFalse(InputFunction.Fast_Stop);
+                                BanderaBoxPS = false;
+                            }
+                        }
+                    }
+                }
+                //MONITOREO PROGRAM RUNNING
+                if (obj.CheckCncOutputState(OutputFunction.Program_Running))
+                {
+                    tranverse.ProgramanRuning();
+                    groupBox2.Enabled = false;
+                }
+                else
+                {
+                    groupBox2.Enabled = true;
+                }
+                //PROGRAM INHIBIT - MOVE
+                radioButtonOkToMove.Checked = !obj.CheckCncFunctionState(InputFunction.Program_Inhibit);
+                //ERROR
+                radioButtonError.Checked = obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9);
 
-            if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && EstadoError)
-            {
-                if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
+                if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && EstadoError)
+                {
+                    if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
+                        obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
+                    obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
+                    EstadoSistema(4);
+                    EstadoError = false;
+                }
+                else if (!obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && !EstadoError)
+                {
+                    obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
+                    EstadoSistema(4);
+                    EstadoError = true;
+                }
+                if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_8))
+                {
                     obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-                obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
-                EstadoSistema(4);
-                EstadoError = false;
+                    EstadoSistema(3);
+                }
+                if (obj.CheckCncOutputState(OutputFunction.Cut_Control) && EstadoCorte)
+                {
+                    obj.TurnCncFunctionTrue(InputFunction.Program_Inhibit);
+                    EstadoSistema(2);
+                    EstadoCorte = false;
+                } else if (!obj.CheckCncOutputState(OutputFunction.Cut_Control) && !EstadoCorte)
+                {
+                    if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
+                        obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
+                    EstadoSistema(2);
+                    EstadoCorte = true;
+                }
             }
-            else if (!obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && !EstadoError)
+            catch(Exception ex)
             {
-                obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
-                EstadoSistema(4);
-                EstadoError = true;
+                customMessageBox.set_color_texto(ex.ToString(), Color.Red);
+                customMessageBox.ShowDialog();
             }
-            if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_8))
-            { 
-                obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-                EstadoSistema(3);
-            }
-            if (obj.CheckCncOutputState(OutputFunction.Cut_Control )&& EstadoCorte)
-            {
-                obj.TurnCncFunctionTrue(InputFunction.Program_Inhibit);
-                EstadoSistema(2);
-                EstadoCorte = false;
-            }else if(!obj.CheckCncOutputState(OutputFunction.Cut_Control) && !EstadoCorte)
-            {
-                if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
-                    obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-                EstadoSistema(2);
-                EstadoCorte = true;
-            }
-        }
+           }
     }
 }
