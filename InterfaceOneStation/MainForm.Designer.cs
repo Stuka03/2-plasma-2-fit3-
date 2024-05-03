@@ -140,7 +140,7 @@ namespace InterfaceOneStation
             "18.- TORCH COLLISION",
             "",
             "\tMOTION",
-            "19.- MOTION OUTPUT",
+            "19.- MOTION INDICAITOR",
             "",
             "\tNOTES:",
             "-MATCH THE CNC FUNCTIONS WITH THE PHYSICAL IO FOR PROPER FUNCTIONING ",
@@ -252,9 +252,9 @@ namespace InterfaceOneStation
             this.label6.Location = new System.Drawing.Point(4, 143);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 20);
+            this.label6.Size = new System.Drawing.Size(188, 20);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Tiempo de libricacion:";
+            this.label6.Text = "Tiempo de lubricacion:";
             // 
             // LFuncionamiento
             // 

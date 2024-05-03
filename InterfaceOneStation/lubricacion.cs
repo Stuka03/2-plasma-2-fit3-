@@ -76,8 +76,10 @@ namespace InterfaceOneStation
             if (textBoxPassword.Text == "1396")
             {
                 EnableButtons();
-                activo = false;
-                buttonTesting_Click(sender, e);
+                if (!activo)
+                {
+                    buttonTesting_Click(sender, e);
+                }
                 customMessageBox.set_color_texto("Contraseña Valida", Color.Lime);
                 customMessageBox.ShowDialog();
                 return;
@@ -135,15 +137,17 @@ namespace InterfaceOneStation
             UpdateValues();
             DisableControls();
             CheckLubricationSystem();
-            lubricacionTime.Text = "Tiempo Ciclo";
+            lubricacionTime.Text = "Time Ciclo:";
         }
 
         private void buttonTesting_Click(object sender, EventArgs e)
         {
             if (activo)
             {
-                messageStatus = "Lubricasion en marcha, lleva: ";
-                lubricacionTime.Text = "tima lubri:";
+                BombaL = true;
+                conexionPhoenix.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_1);
+                messageStatus = "Lubricacion en marcha, lleva: ";
+                lubricacionTime.Text = "Time Lubri:";
                 DisableControls();
                 button3.Enabled = true;
                 button3.BackColor= Color.Lime;
@@ -166,7 +170,7 @@ namespace InterfaceOneStation
                 seconds = 0;
                 timer2.Enabled = true;
                 activo = true;
-                lubricacionTime.Text = "Time";
+                lubricacionTime.Text = "Time Ciclo";
             }
             
             
@@ -187,6 +191,7 @@ namespace InterfaceOneStation
             comboBoxLubricationActive.Enabled = false;
             buttonSave.Enabled = false;
             button3.Enabled = false;
+            button3.BackColor= SystemColors.ControlLight;
             checkBoxEnableLubrication.Enabled = false;
         }
         private void CheckLubricationSystem()
@@ -275,7 +280,7 @@ namespace InterfaceOneStation
                 timer3.Enabled = true;
                 timer2.Enabled = false;
                 seconds = 0;
-                lubricacionTime.Text = "Tiempo lubri";
+                lubricacionTime.Text = "Time Lubri";
             }
         }
         //#3 TIMER LUBRICACION, ACTIVA SEÑALES DE LUBRICACION Y CUENTA TIEMPO DE ACTIVACION
@@ -291,28 +296,31 @@ namespace InterfaceOneStation
             //TERMINA LA LUBRICACION AL TRANSCURRIR EL TIEMPO DEFINIDO PARA TRANS Y RIELES
             if (seconds >= LubricationActive)
             {
-                lubricacionTime.Text = "Tiempo ciclo";
+                lubricacionTime.Text = "Tiempo Ciclo";
                 EndTimerLubrication();
             }
         }
         private void timer4_Tick(object sender, EventArgs e)
         {
             seconds++;
-            if(seconds>30 && BombaL)
+            if(seconds> ((comboBoxLubricationActive.SelectedIndex+1) * 5) && BombaL)
             {
                 conexionPhoenix.TurnCncFunctionFalse(InputFunction.Aux_Function_Select_1);
                 seconds = 0;
                 messageStatus = "Espera entre cliclo, lleva: ";
-                lubricacionTime.Text = "time espera:";
+                lubricacionTime.Text = "Time stop:";
+                radioButtonLSAactive.Checked = false;
                 BombaL = false;
             }
             if(BombaL)
                 tiempolubricacion++;
-            if(seconds>30 && !BombaL) {
+            if(seconds>((comboBoxLubricationActive.SelectedIndex+1)*5) && !BombaL) 
+            {
                 conexionPhoenix.TurnCncFunctionTrue(InputFunction.Aux_Function_Select_1);
                 seconds = 0;
                 messageStatus = "Lubricacion activa, lleva:";
-                lubricacionTime.Text = "time lubri:";
+                lubricacionTime.Text = "Time Lubri:";
+                radioButtonLSAactive.Checked = true;
                 BombaL = true;
             }
             customMessageBox.set_texto(messageStatus + (seconds).ToString() + " segundos trascurridos");

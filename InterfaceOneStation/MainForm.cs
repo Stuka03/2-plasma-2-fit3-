@@ -50,7 +50,7 @@ namespace InterfaceOneStation
             pos = 0;
             matriz = new int[,]
                            {
-                                { 1,  3, -1, -1, -1},
+                                { 1,  3, -1, -1, 13},
                                 { 0,  2,  4, -1, 10},
                                 { 3,  1,  6, -1, 11},
                                 { 2,  0,  9, -1, 12},
@@ -60,9 +60,10 @@ namespace InterfaceOneStation
                                 {-1,  0,  3, -1, 12},
                                 { 7,  5,  2, -1, 11},
                                 {-1,  0,  3,  7, 12},
-                                { 0, -1, -1, -1,  1},
+                                {13, 11, -1, -1,  1},
                                 {12, 10, -1, -1,  2},
-                                {-1,  0, -1, -1,  3},
+                                {11, 13, -1, -1,  3},
+                                {10, 12, -1, -1,  0},
                             };
             Dictionary < string, dynamic> datos=var.datos;
             //APP SETUP
@@ -168,7 +169,7 @@ namespace InterfaceOneStation
                     if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
                     {
                         obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
-                        EstadoError = true;
+                        //EstadoError = true;
                     }
                     if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
                         obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
@@ -176,20 +177,15 @@ namespace InterfaceOneStation
                     break;
                 //Opcion para el encendio de la antorcha 1 y apagado de la antorcha 2
                 case 1:
-                    if(!obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
+                    if (posicion == 0 || posicion == 2 || posicion == 4)
                     {
-                        if (posicion == 0 || posicion == 2 || posicion==4)
-                        {
-                            EncedidoTorch1();
-                            if(obj.CheckCncFunctionState(InputFunction.Front_Panel_Stop))
-                                obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
-                        }
-                        else
-                            DesactivarTorch2();
-                        TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
+                        EncedidoTorch1();
+                        if (obj.CheckCncFunctionState(InputFunction.Front_Panel_Stop))
+                            obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
                     }
                     else
-                        pos = 0;
+                        DesactivarTorch2();
+                    TextBoxSystem.Text = "FIT+3 ST1 HABILITADA";
                     break;
                 //Opcion para el encendio de las dos antorchas
                 case 2:
@@ -210,16 +206,11 @@ namespace InterfaceOneStation
                     break;
                 //Opcion para el encendio de la antorcha 2 y el apagado de la antorhca 1
                 case 3:
-                    if (!obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
-                    {
-                        if (posicion == 1 || posicion == 2 || posicion == 4)
-                            EncendidoTorch2();
-                        else
-                            DesactivarTorch1();
-                        TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
-                    }
+                    if (posicion == 1 || posicion == 2 || posicion == 4)
+                        EncendidoTorch2();
                     else
-                        pos = 0;
+                        DesactivarTorch1();
+                    TextBoxSystem.Text = "FIT+3 ST2 HABILITADA";
                     break;
                 //Opcion para iniciar la perforacion cunado solo este iniciada la antorcha 1
                 case 4:
@@ -263,37 +254,52 @@ namespace InterfaceOneStation
                     break;
                 //Opcion de error que se actuiva cunado el errro es detectado, y indica que hay un problema cambiando la antorcha 1 a color rojo
                 case 10:
+                    if(posicion==0 || posicion==4)
+                        errorTorch1();
                     if (posicion == 1)
                         DesactivarTorch2();
-                    errorTorch1();
                     TextBoxSystem.Text = "FIT+3 ST1 ERROR";
                     break;
                 //Opcion de error que se actuiva cunado el errro es detectado, y indica que hay un problema cambiando las 2 antorcha a color rojo
                 case 11:
-                    errorTorch1();
-                    errorTorch2();
+                    if (posicion == 4)
+                    {
+                        errorTorch1();
+                        errorTorch2();
+                    }
+                    if (posicion == 0)
+                        errorTorch1();
+                    if(posicion==1)
+                        errorTorch2();
                     TextBoxSystem.Text = "FIT+3 ERROR";
                     break;
                 //Opcion de error que se actuiva cunado el errro es detectado, y indica que hay un problema cambiando la antorcha 2 a color rojo
                 case 12:
+                    if (posicion == 1 || posicion==4)
+                        errorTorch2();
                     if (posicion == 0)
                         DesactivarTorch1();
-                    errorTorch2();
                     TextBoxSystem.Text = "FIT+3 ST2 ERROR";
+                    break;
+                case 13:
+                    if (posicion == 0)
+                        DesactivarTorch1();
+                    if (posicion == 1)
+                        DesactivarTorch2();
                     break;
             }
         }
         //Metodo encargado de desabilitar en manuel select 3 y cambia de color a la antorcha  1 a color rojo
         private void errorTorch1()
         {
-            obj.TurnCncFunctionFalse(InputFunction.Manual_Select_3);
+            obj.TurnCncFunctionTrue(InputFunction.Manual_Select_3);
             pictureTorch.BackColor = Color.Red;
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
         //Metodo encargado de desabilitar en manuel select 4 y cambia de color a la antorcha  2 a color rojo
         private void errorTorch2()
         {
-            obj.TurnCncFunctionFalse(InputFunction.Manual_Select_4);
+            obj.TurnCncFunctionTrue(InputFunction.Manual_Select_4);
             pictureTorch2.BackColor = Color.Red;
             TextBoxSystem.BackColor = SystemColors.InactiveBorder;
         }
@@ -415,20 +421,36 @@ namespace InterfaceOneStation
                 radioButtonOkToMove.Checked = !obj.CheckCncFunctionState(InputFunction.Program_Inhibit);
                 //ERROR
                 radioButtonError.Checked = obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9);
+                
 
-                if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && EstadoError)
+                if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9))
                 {
-                    if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
-                        obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
-                    obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
-                    EstadoSistema(4);
-                    EstadoError = false;
+                    if (obj.CheckCncOutputState(OutputFunction.Cut_Control))
+                    {
+                        obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
+                        customMessageBox.set_color_texto("Existe un error, no puedes activar corte", Color.Red);
+                        customMessageBox.ShowDialog();
+                        obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
+                    }
+                    if(EstadoError)
+                    {
+                        EstadoError = false;
+                        if (obj.CheckCncFunctionState(InputFunction.Program_Inhibit))
+                            obj.TurnCncFunctionFalse(InputFunction.Program_Inhibit);
+                        obj.TurnCncFunctionTrue(InputFunction.Front_Panel_Stop);
+                        EstadoSistema(4);
+                        customMessageBox.set_color_texto("Acaba de ocurrir un error", Color.Red);
+                        customMessageBox.ShowDialog();
+                        obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
+                    }
                 }
                 else if (!obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_9) && !EstadoError)
                 {
-                    obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
-                    EstadoSistema(4);
+                    //obj.TurnCncFunctionFalse(InputFunction.Front_Panel_Stop);
                     EstadoError = true;
+                    EstadoSistema(4);
+                    customMessageBox.set_color_texto("Error Solucionado", Color.Lime);
+                    customMessageBox.ShowDialog();
                 }
                 if (obj.CheckCncFunctionState(InputFunction.Aux_Function_Select_8))
                 {
@@ -450,8 +472,8 @@ namespace InterfaceOneStation
             }
             catch(Exception ex)
             {
-                customMessageBox.set_color_texto(ex.ToString(), Color.Red);
-                customMessageBox.ShowDialog();
+               // customMessageBox.set_color_texto(ex.ToString(), Color.Red);
+                //customMessageBox.ShowDialog();
             }
            }
     }
